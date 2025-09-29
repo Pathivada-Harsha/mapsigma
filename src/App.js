@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import React, { Suspense } from "react"
 import './App.css';
 import Navbar from './components/Navbar';
-const Research_insights = React.lazy(() => import("./pages/Research_Insights"));
+import  Research_insights from "./pages/Research_Insights";
+const Culture = React.lazy(() => import("./pages/Culture"));
 function App() {
   return (
     <Router >
@@ -12,8 +13,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Research_insights />} />
-         
-          {/* Add a catch-all route for debugging */}
+          <Route path="/culture" element={<Culture />} />     
+      
           <Route
             path="*"
             element={
