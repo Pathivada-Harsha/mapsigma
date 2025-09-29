@@ -25,18 +25,13 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
         <div className="navbar-top">
           {/* Logo */}
           <div className="logo-container">
-            {logo1 ? (
+            
               <img 
                 src={logo1} 
                 alt={logoAlt}
                 className="logo-image"
               />
-            ) : (
-              <div className="logo-text">
-                MAPSIGMA
-                <span className="logo-superscript">50</span>
-              </div>
-            )}
+           
           </div>
 
           {/* Right Side Buttons */}
