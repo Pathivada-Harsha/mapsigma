@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import  "../pages_css/Research_insights.css"
+import Map_Your_Move from '../components/Map_Your_Move'
 export default function ResearchInsights() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [email, setEmail] = useState("")
@@ -175,8 +176,9 @@ export default function ResearchInsights() {
         </div>
       </section>
 
+      <Map_Your_Move/>
       {/* Newsletter Signup */}
-      <section className="ri-newsletter">
+      {/* <section className="ri-newsletter">
         <div className="ri-content-wrapper">
           <h2 className="ri-newsletter-title">Map Your Move</h2>
           <p className="ri-newsletter-subtitle">Subscribe for insights and market analysis from MAPSIGMA CAPITAL</p>
@@ -205,7 +207,7 @@ export default function ResearchInsights() {
             </button>
           </form>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
