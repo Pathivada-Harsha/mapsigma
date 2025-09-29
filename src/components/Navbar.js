@@ -146,23 +146,23 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
       </nav>
 
       {/* Spacer to prevent content from going under fixed navbar */}
-      <div style={{ height: '140px' }}></div>
+      <div style={{ height: '100px' }}></div>
 
       <style>{`
         /* Main Navbar Container */
 
-        @media (min-width:1440px){
-            .logo-link {
-                      margin-left:250px
-                    }
+        // @media (min-width:1440px){
+        //     .logo-link {
+        //               margin-left:250px
+        //             }
                 
-            .top-buttons-custom-margin{
-                        margin-right:100px
-                    }
-            .navbar-bottom-row {
-                      padding-left:280px ;
-                    }
-        }
+        //     .top-buttons-custom-margin{
+        //                 margin-right:100px
+        //             }
+        //     .navbar-bottom-row {
+        //               padding-left:280px ;
+        //             }
+        // }
 
         .custom-navbar {
           background: #ffffff;

@@ -1,8 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import  "../pages_css/Research_insights.css"
+import "../pages_css/Research_insights.css"
 import Map_Your_Move from '../components/Map_Your_Move'
+import Hero from "../components/Ri-Hero.js"
+import MapSigmaAboutSection from "../components/Ri-About.js"
+import ArticlesSection from "../components/Articles-Section.js"
+import VideoSection from "../components/Ri-Video-Section.js"
 export default function ResearchInsights() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [email, setEmail] = useState("")
@@ -87,17 +91,11 @@ export default function ResearchInsights() {
   return (
     <div className="ri-container">
       {/* Hero Section */}
-      <section className="ri-hero">
-        <div className="ri-hero-content">
-          <h1 className="ri-title">RESEARCH & INSIGHT</h1>
-          <div className="ri-hero-image">
-            <img src="/financial-research-and-data-analysis-charts.jpg" alt="Research and Insights" className="ri-hero-img" />
-          </div>
-        </div>
-      </section>
+      <Hero />
+      <MapSigmaAboutSection />
 
       {/* Main Write Up */}
-      <section className="ri-main-writeup">
+      {/* <section className="ri-main-writeup">
         <div className="ri-content-wrapper">
           <h2 className="ri-section-title">Driving Investment Excellence Through Deep Research</h2>
           <p className="ri-main-text">
@@ -107,10 +105,10 @@ export default function ResearchInsights() {
             clients benefit from the most informed investment strategies in the market.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Selected Insights Carousel */}
-      <section className="ri-insights-section">
+      {/* <section className="ri-insights-section">
         <div className="ri-content-wrapper">
           <h2 className="ri-section-title">Selected Insights from Our Research Library</h2>
 
@@ -145,10 +143,10 @@ export default function ResearchInsights() {
             <button className="ri-learn-more-btn">LEARN MORE</button>
           </div>
         </div>
-      </section>
-
+      </section> */}
+      <ArticlesSection />
       {/* Second Main Write Up */}
-      <section className="ri-main-writeup ri-main-writeup-secondary">
+      {/* <section className="ri-main-writeup ri-main-writeup-secondary">
         <div className="ri-content-wrapper">
           <h2 className="ri-section-title">Comprehensive Market Intelligence</h2>
           <p className="ri-main-text">
@@ -160,7 +158,6 @@ export default function ResearchInsights() {
         </div>
       </section>
 
-      {/* Additional Articles Grid */}
       <section className="ri-articles-grid">
         <div className="ri-content-wrapper">
           <div className="ri-grid">
@@ -174,9 +171,9 @@ export default function ResearchInsights() {
             ))}
           </div>
         </div>
-      </section>
-
-      <Map_Your_Move/>
+      </section> */}
+<VideoSection />
+      <Map_Your_Move />
       {/* Newsletter Signup */}
       {/* <section className="ri-newsletter">
         <div className="ri-content-wrapper">

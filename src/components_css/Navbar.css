@@ -42,7 +42,7 @@
   font-weight: 800;
   color: #000000;
   letter-spacing: -0.5px;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
 }
 
 .logo-superscript {
@@ -182,7 +182,7 @@
   padding: 20px 0;
   margin-right: 60px;
   transition: color 0.2s ease;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
 }
 
 .nav-link:last-child {
