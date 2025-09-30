@@ -2,19 +2,20 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import React, { Suspense } from "react"
 import './App.css';
 import Navbar from './components/Navbar';
-import  Research_insights from "./pages/Research_Insights";
+import Research_insights from "./pages/Research_Insights";
 const Culture = React.lazy(() => import("./pages/Culture"));
+const Principles = React.lazy(() => import("./pages/Principles.js"));
 function App() {
   return (
     <Router >
       <div className="min-h-screen bg-white">
-        
+
         <Navbar />
 
         <Routes>
           <Route path="/" element={<Research_insights />} />
-          <Route path="/culture" element={<Culture />} />     
-      
+          <Route path="/culture" element={<Culture />} />
+          <Route path="/principles" element={<Principles />} />
           <Route
             path="*"
             element={
@@ -25,7 +26,7 @@ function App() {
             }
           />
         </Routes>
-        
+
       </div>
     </Router>
   );

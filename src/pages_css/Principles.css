@@ -1,0 +1,805 @@
+/* Principles Page Styles with pr- prefix */
+
+.pr-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Scroll Animation Classes */
+.pr-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.pr-animate.pr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pr-animate-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.pr-animate-left.pr-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pr-animate-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.pr-animate-right.pr-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pr-animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.pr-animate-scale.pr-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hero Section */
+.pr-hero {
+  min-height: 100vh;
+  background: 
+    url("./../images/principles/bg3.png") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5%;
+  position: relative;
+  color: white;
+}
+
+.pr-hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 66, 37, 0.8) 0%, rgba(0, 104, 55, 0.6) 100%);
+  z-index: 1;
+}
+
+.pr-hero-content {
+  text-align: center;
+  max-width: 900px;
+  z-index: 2;
+  position: relative;
+}
+
+.pr-hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.pr-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.4;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.pr-hero-visual {
+  display: none;
+}
+
+/* Foundation Section */
+.pr-foundation {
+  padding: 8rem 5%;
+  background: #f8f9fa;
+}
+
+.pr-foundation-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pr-foundation-intro {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.pr-foundation-highlight {
+  background: #004225;
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pr-foundation-highlight::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: pr-shine 3s ease-in-out infinite;
+}
+
+@keyframes pr-shine {
+  0%,
+  100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.pr-foundation-belief {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.pr-foundation-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+/* Investment Framework Section */
+.pr-framework {
+  padding: 8rem 5%;
+  background: 
+    url("./../images/principles/bg1.png") center / cover no-repeat;
+  position: relative;
+}
+
+.pr-framework-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(248, 249, 250, 0.525) 0%, rgb(255, 255, 255) 100%);
+  z-index: 1;
+}
+
+.pr-framework-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.pr-framework-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004225;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.pr-framework-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.pr-framework-quotes {
+  margin: 2rem 0;
+}
+
+.pr-quote {
+  background: #004225;
+  color: white;
+  padding: 1.5rem 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+}
+
+.pr-framework-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.pr-framework-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pr-framework-image {
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.pr-framework-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 30px rgba(0, 66, 37, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.pr-framework-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Why Principles Matter Section */
+.pr-why-matters {
+  padding: 8rem 5%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.pr-why-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pr-why-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004225;
+  margin-bottom: 4rem;
+}
+
+.pr-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.pr-why-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pr-why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pr-why-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.pr-why-card p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+}
+
+.pr-why-statement {
+  background: #004225;
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/* Legacy Section */
+.pr-legacy {
+  padding: 8rem 5%;
+  background: white;
+}
+
+.pr-legacy-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.pr-legacy-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004225;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.pr-legacy-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.pr-legacy-values {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pr-value-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 15px;
+  border-left: 5px solid #004225;
+  transition: transform 0.3s ease;
+}
+
+.pr-value-item:hover {
+  transform: translateX(10px);
+}
+
+.pr-value-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #004225;
+}
+
+.pr-value-vs {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.pr-value-contrast {
+  font-size: 1.3rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* Photo Gallery Section */
+.pr-photo-gallery {
+  padding: 8rem 5%;
+  background: white;
+}
+
+.pr-gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pr-gallery-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004225;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pr-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  grid-auto-rows: 300px;
+}
+
+.pr-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pr-gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pr-gallery-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.pr-gallery-wide {
+  grid-column: span 2;
+}
+
+.pr-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pr-gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.pr-gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 66, 37, 0.9), transparent);
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.pr-gallery-item:hover .pr-gallery-caption {
+  transform: translateY(0);
+}
+
+/* Photo Showcase Section */
+.pr-photo-showcase {
+  padding: 8rem 5%;
+  background: #f8f9fa;
+}
+
+.pr-showcase-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.pr-showcase-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.pr-showcase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pr-showcase-content {
+  padding: 2rem;
+}
+
+.pr-showcase-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #004225;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.pr-showcase-text {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.pr-showcase-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pr-stat-item {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.pr-stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.pr-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #004225;
+  margin-bottom: 0.5rem;
+}
+
+.pr-stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Final Statement Section */
+.pr-final {
+  padding: 8rem 5%;
+  background: 
+    url("./../images/principles/bg2.png") center / cover no-repeat;
+  color: white;
+  position: relative;
+}
+
+.pr-final-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 66, 37, 0.85) 0%, rgba(0, 104, 55, 0.75) 100%);
+  z-index: 1;
+}
+
+.pr-final-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.pr-final-text {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+}
+
+.pr-final-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pr-final-principle {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .pr-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+  }
+
+  .pr-showcase-container {
+    gap: 4rem;
+  }
+
+  .pr-showcase-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .pr-framework-diagram {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .pr-diagram-circle {
+    width: 120px;
+    height: 120px;
+    font-size: 1rem;
+  }
+  
+  .pr-circle-2 {
+    bottom: 40px;
+    left: 20px;
+  }
+  
+  .pr-circle-3 {
+    bottom: 40px;
+    right: 20px;
+  }
+  
+  .pr-connector-1,
+  .pr-connector-2 {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pr-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    min-height: 80vh;
+  }
+
+  .pr-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .pr-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .pr-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+
+  .pr-gallery-large,
+  .pr-gallery-wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .pr-framework-grid,
+  .pr-legacy-content,
+  .pr-showcase-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .pr-showcase-image {
+    order: -1;
+  }
+
+  .pr-showcase-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-framework-visual {
+    order: -1;
+  }
+
+  .pr-value-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pr-final-text {
+    font-size: 1.5rem;
+  }
+
+  .pr-gallery-title,
+  .pr-showcase-title {
+    font-size: 2.5rem;
+  }
+  
+  .pr-framework-diagram {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .pr-diagram-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+  }
+  
+  .pr-circle-2 {
+    bottom: 30px;
+    left: 15px;
+  }
+  
+  .pr-circle-3 {
+    bottom: 30px;
+    right: 15px;
+  }
+  
+  .pr-connector-1 {
+    width: 120px;
+    top: 100px;
+    left: 60px;
+  }
+  
+  .pr-connector-2 {
+    width: 120px;
+    top: 100px;
+    right: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pr-hero-title {
+    font-size: 2rem;
+  }
+
+  .pr-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .pr-framework-title,
+  .pr-why-title,
+  .pr-legacy-title,
+  .pr-gallery-title,
+  .pr-showcase-title {
+    font-size: 2rem;
+  }
+
+  .pr-foundation-intro {
+    font-size: 1.2rem;
+  }
+
+  .pr-foundation-belief {
+    font-size: 1.5rem;
+  }
+
+  .pr-framework-text,
+  .pr-showcase-text {
+    font-size: 1.1rem;
+  }
+
+  .pr-stat-number {
+    font-size: 2rem;
+  }
+
+  .pr-gallery-grid {
+    gap: 1rem;
+    grid-auto-rows: 250px;
+  }
+  
+  .pr-framework-diagram {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .pr-diagram-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 0.75rem;
+  }
+  
+  .pr-circle-2 {
+    bottom: 20px;
+    left: 10px;
+  }
+  
+  .pr-circle-3 {
+    bottom: 20px;
+    right: 10px;
+  }
+  
+  .pr-connector-1 {
+    width: 100px;
+    top: 80px;
+    left: 45px;
+  }
+  
+  .pr-connector-2 {
+    width: 100px;
+    top: 80px;
+    right: 45px;
+  }
+}

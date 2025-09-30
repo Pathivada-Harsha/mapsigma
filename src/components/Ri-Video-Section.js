@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react"
 import "../components_css/Ri-Video-Section.css"
+import Videoimage1 from "../images/Research&insights/H-Video1.png"
+import Videoimage2 from "../images/Research&insights/H-Video2.png"
+import Videoimage3 from "../images/Research&insights/H-Video3.png"
+
+import Videoimage4 from "../images/Research&insights/H-Video4.png"
 
 const InteractiveVideoSection = () => {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -8,43 +13,48 @@ const InteractiveVideoSection = () => {
   const sectionRef = useRef(null)
 
   const videoCards = [
-    {
-      id: 1,
-      title: "Global Market Analysis",
-      subtitle: "Expert insights on worldwide trends",
-      description: "Discover how our analysts track and interpret market movements across 7 continents, providing actionable intelligence for strategic investment decisions.",
-      image: "/images/videos/market-analysis.jpg",
-      videoUrl: "/videos/market-analysis.mp4",
-      category: "Market Intelligence"
-    },
-    {
-      id: 2,
-      title: "Technology & Innovation",
-      subtitle: "Next-generation investment strategies",
-      description: "Explore how cutting-edge technology and AI-driven analytics power our research capabilities and enhance portfolio performance.",
-      image: "/images/videos/technology.jpg",
-      videoUrl: "/videos/technology.mp4",
-      category: "Innovation"
-    },
-    {
-      id: 3,
-      title: "Risk Management Excellence",
-      subtitle: "Protecting your investments",
-      description: "Learn about our comprehensive risk management framework that safeguards capital while maximizing growth opportunities in volatile markets.",
-      image: "/images/videos/risk-management.jpg",
-      videoUrl: "/videos/risk-management.mp4",
-      category: "Risk Strategy"
-    },
-    {
-      id: 4,
-      title: "Sustainable Investing",
-      subtitle: "ESG-focused portfolio strategies",
-      description: "Understand how we integrate environmental, social, and governance factors into our investment process for long-term value creation.",
-      image: "/images/videos/sustainable.jpg",
-      videoUrl: "/videos/sustainable.mp4",
-      category: "Sustainability"
-    }
-  ]
+  {
+    id: 1,
+    title: "Global Market Insights",
+    subtitle: "Clarity in Complexity",
+    description:
+      "Our analysts decode economic cycles and global shifts, providing clients with clarity, foresight, and strategies designed to endure across generations.",
+    image: Videoimage1,
+    videoUrl: "/videos/global-insights.mp4",
+    category: "Market Intelligence"
+  },
+  {
+    id: 2,
+    title: "Technology as a Strategic Edge",
+    subtitle: "AI-Driven Precision",
+    description:
+      "Discover how our real-time data infrastructure and AI-enhanced investment models empower smarter, faster, and more disciplined decisions.",
+    image: Videoimage2,
+    videoUrl: "/videos/technology-edge.mp4",
+    category: "Innovation"
+  },
+  {
+    id: 3,
+    title: "Risk Management with Purpose",
+    subtitle: "Turning Risk into Strength",
+    description:
+      "We don’t just protect capital—we transform risk into opportunity through disciplined systems, foresight, and principle-driven strategies.",
+    image: Videoimage3,
+    videoUrl: "/videos/risk-purpose.mp4",
+    category: "Risk Strategy"
+  },
+  {
+    id: 4,
+    title: "Sustainability & Legacy",
+    subtitle: "Beyond Returns",
+    description:
+      "Learn how we integrate responsibility, sustainability, and long-term purpose into every decision, building wealth that endures for future generations.",
+    image: Videoimage4,
+    videoUrl: "/videos/sustainability.mp4",
+    category: "Sustainability"
+  }
+]
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(

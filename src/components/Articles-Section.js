@@ -1,5 +1,18 @@
 import { useState, useEffect, useRef } from "react"
 import "../components_css/Articles-Section.css"
+import Article1 from "../images/Research&insights/H-Article1.png"
+import Article2 from "../images/Research&insights/H-Article2.png"
+import Article3 from "../images/Research&insights/H-Article3.png"
+import Article4 from "../images/Research&insights/H-Article4.png"
+import Article5 from "../images/Research&insights/H-Article5.png"
+import Article6 from "../images/Research&insights/H-Article6.png"
+import Article7 from "../images/Research&insights/H-Article7.png"
+import Article8 from "../images/Research&insights/H-Article8.png"
+import Article9 from "../images/Research&insights/H-Article9.png"
+import Article10 from "../images/Research&insights/H-Article10.png"
+import Article11 from "../images/Research&insights/H-Article11.png"
+import Article12 from "../images/Research&insights/H-Article12.png"
+import Article13 from "../images/Research&insights/H-Article13.png"
 
 const ArticlesSection = () => {
   const [visibleArticles, setVisibleArticles] = useState(6)
@@ -8,115 +21,116 @@ const ArticlesSection = () => {
 
   // Articles data
   const articles = [
-    {
-      id: 1,
-      title: "The Future of Sustainable Investment Strategies",
-      excerpt: "Exploring how ESG factors are reshaping investment portfolios and driving long-term value creation in emerging markets.",
-      category: "Market Analysis",
-      date: "December 15, 2024",
-      image: "/images/articles/sustainable-investment.jpg",
-      author: "Sarah Chen"
-    },
-    {
-      id: 2,
-      title: "AI-Driven Portfolio Management: A New Era",
-      excerpt: "How artificial intelligence and machine learning are revolutionizing investment decision-making processes.",
-      category: "Technology",
-      date: "December 10, 2024",
-      image: "/images/articles/ai-portfolio.jpg",
-      author: "Michael Roberts"
-    },
-    {
-      id: 3,
-      title: "Global Markets Outlook 2025",
-      excerpt: "Comprehensive analysis of macroeconomic trends and their implications for strategic asset allocation.",
-      category: "Economic Trends",
-      date: "December 5, 2024",
-      image: "/images/articles/global-outlook.jpg",
-      author: "David Thompson"
-    },
-    {
-      id: 4,
-      title: "Risk Management in Volatile Markets",
-      excerpt: "Advanced strategies for protecting capital while maintaining growth potential in uncertain economic conditions.",
-      category: "Risk Management",
-      date: "November 28, 2024",
-      image: "/images/articles/risk-management.jpg",
-      author: "Jennifer Lee"
-    },
-    {
-      id: 5,
-      title: "Emerging Markets: Opportunities and Challenges",
-      excerpt: "Deep dive into high-growth regions and the unique investment considerations for sophisticated investors.",
-      category: "Market Analysis",
-      date: "November 20, 2024",
-      image: "/images/articles/emerging-markets.jpg",
-      author: "Carlos Martinez"
-    },
-    {
-      id: 6,
-      title: "The Impact of Central Bank Policies on Equity Markets",
-      excerpt: "Understanding monetary policy shifts and their cascading effects on global investment landscapes.",
-      category: "Economic Trends",
-      date: "November 15, 2024",
-      image: "/images/articles/central-bank.jpg",
-      author: "Emily Watson"
-    },
-    {
-      id: 7,
-      title: "Cryptocurrency Integration in Traditional Portfolios",
-      excerpt: "Evaluating digital assets as a legitimate component of diversified investment strategies.",
-      category: "Technology",
-      date: "November 10, 2024",
-      image: "/images/articles/cryptocurrency.jpg",
-      author: "Alex Kim"
-    },
-    {
-      id: 8,
-      title: "Healthcare Innovation: Investment Opportunities",
-      excerpt: "Identifying breakthrough companies reshaping the future of medicine and biotechnology.",
-      category: "Sector Focus",
-      date: "November 5, 2024",
-      image: "/images/articles/healthcare.jpg",
-      author: "Dr. Rachel Green"
-    },
-    {
-      id: 9,
-      title: "Private Equity Trends in 2025",
-      excerpt: "Analysis of deal flow, valuations, and exit strategies in the evolving private markets landscape.",
-      category: "Market Analysis",
-      date: "October 30, 2024",
-      image: "/images/articles/private-equity.jpg",
-      author: "Robert Anderson"
-    },
-    {
-      id: 10,
-      title: "Climate Change and Investment Strategy",
-      excerpt: "How climate risk is becoming a critical factor in portfolio construction and long-term planning.",
-      category: "Sustainability",
-      date: "October 25, 2024",
-      image: "/images/articles/climate-change.jpg",
-      author: "Maria Santos"
-    },
-    {
-      id: 11,
-      title: "Real Estate Investment in Post-Pandemic Era",
-      excerpt: "Analyzing shifts in commercial and residential real estate markets and future growth sectors.",
-      category: "Sector Focus",
-      date: "October 20, 2024",
-      image: "/images/articles/real-estate.jpg",
-      author: "James Wilson"
-    },
-    {
-      id: 12,
-      title: "Quantitative Trading Strategies Explained",
-      excerpt: "Understanding algorithmic trading approaches and their role in modern portfolio management.",
-      category: "Technology",
-      date: "October 15, 2024",
-      image: "/images/articles/quant-trading.jpg",
-      author: "Dr. Wei Zhang"
-    }
-  ]
+  {
+    id: 1,
+    title: "Truth Before Trends: A Principles-Driven Investment Approach",
+    excerpt: "How MAPSIGMA CAPITAL applies timeless principles to navigate shifting markets with clarity, conviction, and resilience.",
+    category: "Principles",
+    date: "January 10, 2025",
+    image: Article1,
+    author: "Research Team"
+  },
+  {
+    id: 2,
+    title: "Technology as a Strategic Edge",
+    excerpt: "Exploring how our AI-driven investment models and real-time data infrastructure empower smarter decision-making.",
+    category: "Technology",
+    date: "January 8, 2025",
+    image: Article2,
+    author: "MAPSIGMA Tech Insights"
+  },
+  {
+    id: 3,
+    title: "Culture as the Hidden Engine of Performance",
+    excerpt: "Why culture is MAPSIGMA’s greatest asset—and how it shapes trust, innovation, and long-term client relationships.",
+    category: "Culture",
+    date: "January 5, 2025",
+    image:Article3,
+    author: "Editorial Board"
+  },
+  {
+    id: 4,
+    title: "Risk Management with Purpose",
+    excerpt: "Our disciplined approach to risk isn’t about avoiding uncertainty—it’s about turning risk into opportunity.",
+    category: "Risk Management",
+    date: "December 28, 2024",
+    image: Article4,
+    author: "Strategy Division"
+  },
+  {
+    id: 5,
+    title: "Building Legacy Beyond Returns",
+    excerpt: "How MAPSIGMA’s investment philosophy prioritizes generational wealth, responsibility, and long-term impact.",
+    category: "Legacy",
+    date: "December 22, 2024",
+    image: Article5,
+    author: "Austin Prakesh"
+  },
+  {
+    id: 6,
+    title: "Global Insights: Clarity in Complexity",
+    excerpt: "Analyzing global economic cycles and macro trends to provide clients with foresight and stability in uncertain times.",
+    category: "Market Analysis",
+    date: "December 15, 2024",
+    image: Article6,
+    author: "Research Team"
+  },
+  {
+    id: 7,
+    title: "People First: Investing in Human Capital",
+    excerpt: "Why our strongest returns come from investing in people, not just portfolios.",
+    category: "People",
+    date: "December 10, 2024",
+    image: Article7,
+    author: "HR & Leadership"
+  },
+  {
+    id: 8,
+    title: "Sustainability and Responsibility in Investing",
+    excerpt: "How MAPSIGMA integrates sustainability and social responsibility into long-term wealth creation.",
+    category: "Sustainability",
+    date: "December 3, 2024",
+    image: Article8,
+    author: "Impact Division"
+  },
+  {
+    id: 9,
+    title: "Clarity in Uncertainty: Strategic Foresight",
+    excerpt: "Using deep research and historical analysis to guide investment decisions in volatile markets.",
+    category: "Research",
+    date: "November 28, 2024",
+    image: Article9,
+    author: "Research Team"
+  },
+  {
+    id: 10,
+    title: "The Role of Principles in Leadership",
+    excerpt: "How MAPSIGMA leaders use principles to guide decisions, shape culture, and inspire performance.",
+    category: "Leadership",
+    date: "November 22, 2024",
+    image: Article10,
+    author: "Leadership Insights"
+  },
+  {
+    id: 11,
+    title: "Client Trust as the Core of Wealth Management",
+    excerpt: "Why every MAPSIGMA decision begins with safeguarding client trust and building long-term relationships.",
+    category: "Clients",
+    date: "November 15, 2024",
+    image: Article11,
+    author: "Client Relations"
+  },
+  {
+    id: 12,
+    title: "Future of Finance: A Next-Gen Perspective",
+    excerpt: "Exploring how new technologies, global shifts, and principles-driven thinking are shaping tomorrow’s economy.",
+    category: "Future",
+    date: "November 5, 2024",
+    image: Article12,
+    author: "MAPSIGMA Strategy Team"
+  }
+]
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
