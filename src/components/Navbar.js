@@ -15,9 +15,9 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
     { name: 'CULTURE', path: '/culture' },
     { name: 'PRINCIPLES', path: '/principles' },
     { name: 'PEOPLE', path: '/people' },
-    { name: 'TECHNOLOGY', path: '/technology' },
+    { name: 'TECHNOLOGY', path: '/Technology' },
     { name: 'LIFE AT MAPSIGMA', path: '/life-at-mapsigma' },
-    { name: 'OUR FOUNDER', path: '/our-founder' }
+    { name: 'OUR FOUNDER', path: '/Founder' }
   ];
 
   return (

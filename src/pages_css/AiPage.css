@@ -1,0 +1,165 @@
+/* page-local CSS with aim- prefix */
+.aim-page {
+  background: var(--background);
+  color: var(--foreground);
+}
+.aim-hero {
+  background-size: cover;
+  background-position: center;
+  padding: 64px 0;
+  position: relative;
+}
+.aim-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--background) 30%, black 70%);
+  opacity: 0.35;
+}
+.aim-hero-inner {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.aim-hero-left {
+  flex: 1 1 56%;
+}
+.aim-hero-right {
+  flex: 1 1 44%;
+  display: flex;
+  justify-content: flex-end;
+}
+.aim-side-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+.aim-title {
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+.aim-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  color: var(--muted-foreground);
+}
+.aim-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.aim-button-primary {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  text-decoration: none;
+  font-weight: 600;
+}
+.aim-button-ghost {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 600;
+}
+.aim-section {
+  padding: 40px 0;
+}
+.aim-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.aim-h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+.aim-p {
+  margin: 0;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+.aim-features {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.aim-feature-card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.aim-feature-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.aim-feature-body {
+  margin: 0;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+@media (max-width: 960px) {
+  .aim-hero-inner {
+    flex-direction: column;
+  }
+  .aim-hero-right {
+    justify-content: center;
+  }
+  .aim-features {
+    grid-template-columns: 1fr;
+  }
+}
+/* Split layout sections */
+.aim-split,
+.aim-split-reverse {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.aim-split .aim-text,
+.aim-split-reverse .aim-text {
+  flex: 1 1 50%;
+}
+.aim-split .aim-image,
+.aim-split-reverse .aim-image {
+  flex: 1 1 50%;
+}
+.aim-split img,
+.aim-split-reverse img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.aim-split-reverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 960px) {
+  .aim-split,
+  .aim-split-reverse {
+    flex-direction: column;
+  }
+}
