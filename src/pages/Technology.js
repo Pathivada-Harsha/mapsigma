@@ -3,6 +3,9 @@
 import "../pages_css/Technology.css"
 import { useState, useEffect, useRef } from "react"
 import TechnologyPillars from "../components/Technology-pillars.js"
+import ClientExperienceSection from "../components/Technology-client.js"
+import Hero from "../components/Technology-Hero.js"
+import Tech1 from "./../images/Technology/Tech-Home1.jpg"
 export default function TechnologyPage() {
     const [visibleSections, setVisibleSections] = useState(new Set())
     const [activeFeature, setActiveFeature] = useState(0)
@@ -81,7 +84,7 @@ export default function TechnologyPage() {
     return (
         <div className="tech-container">
             {/* Hero Section */}
-            <section className="tech-hero">
+            {/* <section className="tech-hero">
                 <div className="tech-hero-overlay"></div>
                 <div className="tech-hero-content">
                     <div
@@ -112,10 +115,10 @@ export default function TechnologyPage() {
                     </div>
                 </div>
                 <div className="tech-hero-grid-bg"></div>
-            </section>
-
+            </section> */}
+            <Hero />
             {/* Platform Overview */}
-            <section className="tech-platform">
+            {/* <section className="tech-platform">
                 <div className="tech-platform-container">
                     <div
                         className={`tech-platform-content tech-animate-left ${isVisible('platform') ? 'tech-visible' : ''}`}
@@ -152,8 +155,42 @@ export default function TechnologyPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <section className="tech-platform">
+                <div className="tech-platform-container">
+                    <div
+                        className={`tech-platform-content tech-animate-left ${isVisible('platform') ? 'tech-visible' : ''}`}
+                        data-section="platform"
+                    >
+                        <div className="tech-platform-label">OUR PLATFORM</div>
+                        <h2 className="tech-section-title">An Integrated Platform Built for Performance</h2>
+                        <p className="tech-section-text">
+                            Our proprietary platform seamlessly connects data, people and process into one powerful decision-making
+                            engine. This system allows our investment and operations teams to move faster, see deeper and act with precision.
+                        </p>
 
+                        <button className="tech-platform-btn">
+                            Get Expert Advice
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        className={`tech-platform-visual tech-animate-right ${isVisible('platform') ? 'tech-visible' : ''}`}
+                        data-section="platform"
+                    >
+                        <img
+                            src={Tech1}
+                            alt="MAPSIGMA CAPITAL Technology Platform"
+                            className="tech-platform-image"
+                            onError={(e) => {
+                                e.target.src = "https://via.placeholder.com/800x600/004225/FFFFFF?text=Technology+Platform"
+                            }}
+                        />
+                    </div>
+                </div>
+            </section>
             {/* Tech Pillars */}
             {/* <section className="tech-pillars">
         <div className="tech-pillars-container">
@@ -202,7 +239,7 @@ export default function TechnologyPage() {
       </section> */}
             <TechnologyPillars />
             {/* Client Portal */}
-            <section className="tech-client">
+            {/* <section className="tech-client">
                 <div className="tech-client-bg"></div>
                 <div className="tech-client-container">
                     <div
@@ -270,8 +307,8 @@ export default function TechnologyPage() {
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </section> */}
+            < ClientExperienceSection />
             {/* Future Focus */}
             <section className="tech-future">
                 <div className="tech-future-container">

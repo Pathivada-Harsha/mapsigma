@@ -53,13 +53,14 @@
 /* Hero Section */
 .tech-hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #001a0f 0%, #004225 50%, #006837 100%);
+  background: 
+    url("./../images/principles/bg1.png") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 100px 5%;
   position: relative;
-  color: white;
+  color: #1f2937;
   overflow: hidden;
 }
 
@@ -69,8 +70,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(0, 104, 55, 0.3), transparent 50%),
-              radial-gradient(circle at 70% 50%, rgba(0, 66, 37, 0.3), transparent 50%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(248, 249, 250, 0.45) 100%);
   z-index: 1;
 }
 
@@ -81,10 +81,10 @@
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 66, 37, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 66, 37, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
-  opacity: 0.5;
+  opacity: 0.6;
   z-index: 1;
 }
 
@@ -97,11 +97,15 @@
 
 .tech-hero-label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
+  color: #004225;
   margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
 }
 
 .tech-hero-title {
@@ -109,30 +113,40 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 32px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #004225;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
 }
 
 .tech-hero-text {
   font-size: 20px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
   margin-bottom: 48px;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
 }
 
 .tech-hero-goal {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 32px 48px;
   border-radius: 16px;
   font-size: 22px;
   line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(0, 66, 37, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  color: #374151;
+}
+
+.tech-hero-goal strong {
+  color: #004225;
+  font-weight: 700;
 }
 
 /* Platform Section */
 .tech-platform {
   padding: 120px 5%;
-  background: linear-gradient(180deg, #ffffff 0%, #f0f9f4 100%);
+  background: #ffffff;
 }
 
 .tech-platform-container {
@@ -144,85 +158,81 @@
   align-items: center;
 }
 
+.tech-platform-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #004225;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  background: rgba(0, 66, 37, 0.1);
+  border-radius: 20px;
+}
+
 .tech-section-title {
   font-size: 48px;
   font-weight: 700;
-  color: #004225;
+  color: #1f2937;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 
 .tech-section-text {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
-  color: #333;
-  margin-bottom: 48px;
+  color: #6b7280;
+  margin-bottom: 32px;
 }
 
-.tech-platform-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.tech-platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.tech-stat-box {
-  background: white;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 66, 37, 0.1);
-  text-align: center;
-  border-left: 4px solid #004225;
+.tech-platform-btn:hover {
+  background: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tech-platform-btn svg {
   transition: transform 0.3s ease;
 }
 
-.tech-stat-box:hover {
-  transform: translateY(-8px);
-}
-
-.tech-stat-number {
-  font-size: 48px;
-  font-weight: 800;
-  color: #004225;
-  margin-bottom: 8px;
-}
-
-.tech-stat-label {
-  font-size: 14px;
-  color: #666;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.tech-platform-btn:hover svg {
+  transform: translateX(4px);
 }
 
 .tech-platform-visual {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.tech-visual-card {
-  background: linear-gradient(135deg, #004225, #006837);
-  padding: 48px;
-  border-radius: 24px;
-  color: white;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 66, 37, 0.3);
+.tech-platform-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
-.tech-visual-icon {
-  font-size: 80px;
-  margin-bottom: 24px;
-}
-
-.tech-visual-card h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.tech-visual-card p {
-  font-size: 18px;
-  opacity: 0.9;
-  line-height: 1.6;
+.tech-platform-image:hover {
+  transform: scale(1.02);
 }
 
 /* Tech Pillars - Hover Expand Style */
