@@ -468,7 +468,7 @@ export default function FounderContent() {
                     </div>
                 </div>
             </section> */}
-<FounderLegacy />
+            <FounderLegacy />
             {/* Legacy Section */}
             {/* <section className="founder-legacy">
                 <div className="legacy-container">

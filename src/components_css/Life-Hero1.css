@@ -237,6 +237,7 @@
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .life-hero1-btn-primary {

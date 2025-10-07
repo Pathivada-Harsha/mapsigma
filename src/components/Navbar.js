@@ -47,10 +47,10 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
                     <span className="me-1"><i className="bi bi-envelope"></i></span>
                     <span>NEWSLETTER</span>
                   </NavLink>
-                  <NavLink to="/clients" className="top-btn clients-button">
+                  <NavLink to="/Clients" className="top-btn clients-button">
                     CLIENTS
                   </NavLink>
-                  <NavLink to="/alumni" className="top-btn alumni-button">
+                  <NavLink to="/Alumni" className="top-btn alumni-button">
                     ALUMNI
                   </NavLink>
                 </div>

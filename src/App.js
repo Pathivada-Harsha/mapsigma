@@ -21,7 +21,8 @@ const PartnerGrid = React.lazy(() => import("./components/PartnerGrid.js"));
 const LeadershipDetailPage = React.lazy(() => import("./components/OurLeader.js"));
 const StoryDetailPage = React.lazy(() => import("./components/StoryDetailPage.js"));
 const NewsLetter = React.lazy(() => import("./pages/NewsLetter.js"));
-
+const Clients = React.lazy(() => import("./pages/Clients.js"));
+const Alumni = React.lazy(() => import("./pages/Alumni.js"));
 function App() {
   return (
     <Router >
@@ -48,7 +49,9 @@ function App() {
           <Route path="/LifeAtMapSigma" element={<LifeAtMapSigma />} />
           <Route path="/Careers" element={<Careers />} />
           <Route path="/Newsletter" element={<NewsLetter />} />
-
+          <Route path="/Clients" element={<Clients />} />
+          <Route path="/Alumni" element={<Alumni />} />
+          {/* Fallback route for undefined paths */}
           <Route
             path="*"
             element={
