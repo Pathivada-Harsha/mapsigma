@@ -15,6 +15,7 @@ const ClientCommand = React.lazy(() => import("./pages/ClientCommand.js"));
 const Founder = React.lazy(() => import("./pages/Founder.js"));
 const LifeAtMapSigma = React.lazy(() => import("./pages/LifeAtMapSigma.js"));
 const Careers = React.lazy(() => import("./pages/Careers.js"));
+const NewsLetter = React.lazy(() => import("./pages/NewsLetter.js"));
 function App() {
   return (
     <Router >
@@ -36,6 +37,7 @@ function App() {
           <Route path="/Founder" element={<Founder />} />
           <Route path="/LifeAtMapSigma" element={<LifeAtMapSigma />} />
           <Route path="/Careers" element={<Careers />} />
+          <Route path="/Newsletter" element={<NewsLetter />} />
           <Route
             path="*"
             element={
