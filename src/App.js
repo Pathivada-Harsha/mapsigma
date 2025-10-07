@@ -20,13 +20,15 @@ const People = React.lazy(() => import("./pages/People.js"));
 const PartnerGrid = React.lazy(() => import("./components/PartnerGrid.js"));
 const LeadershipDetailPage = React.lazy(() => import("./components/OurLeader.js"));
 const StoryDetailPage = React.lazy(() => import("./components/StoryDetailPage.js"));
+const NewsLetter = React.lazy(() => import("./pages/NewsLetter.js"));
+
 function App() {
   return (
     <Router >
       <div className="min-h-screen bg-white">
 
         <Navbar />
-        <ScrollToTop /> 
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Research_insights />} />
           <Route path="/culture" element={<Culture />} />
@@ -45,6 +47,8 @@ function App() {
           <Route path="/Founder" element={<Founder />} />
           <Route path="/LifeAtMapSigma" element={<LifeAtMapSigma />} />
           <Route path="/Careers" element={<Careers />} />
+          <Route path="/Newsletter" element={<NewsLetter />} />
+
           <Route
             path="*"
             element={
