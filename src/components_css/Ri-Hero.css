@@ -1,4 +1,4 @@
-/* Hero Carousel Styles with hc- prefix */
+/* Hero Carousel Styles with hc- prefix - Updated */
 
 .hc-carousel-container {
   position: relative;
@@ -6,7 +6,7 @@
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
-  background: linear-gradient(135deg, #004225 0%, #005a32 100%);
+  background: linear-gradient(135deg, #f8fafb 0%, #e8edf2 50%, #dfe6ed 100%);
 }
 
 .hc-carousel-wrapper {
@@ -46,18 +46,20 @@
 .hc-text-section {
   flex: 1;
   max-width: 600px;
-  color: white;
   z-index: 2;
 }
 
 .hc-subtitle {
   font-size: 16px;
-  font-weight: 500;
-  color: #a8d5ba;
+  font-weight: 600;
+  color: #004225;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 16px;
-  opacity: 0.9;
+  background: rgba(0, 66, 37, 0.08);
+  padding: 8px 20px;
+  border-radius: 30px;
+  display: inline-block;
 }
 
 .hc-title {
@@ -65,15 +67,18 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 32px;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
 }
 
 .hc-description {
   font-size: 18px;
   line-height: 1.7;
   margin-bottom: 48px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #555;
   font-weight: 400;
 }
 
@@ -81,8 +86,8 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: white;
-  color: #004225;
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  color: white;
   border: none;
   padding: 16px 32px;
   font-size: 16px;
@@ -90,13 +95,12 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 66, 37, 0.25);
 }
 
 .hc-cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  background: #f8f9fa;
+  box-shadow: 0 12px 32px rgba(0, 66, 37, 0.35);
 }
 
 .hc-button-arrow {
@@ -128,11 +132,12 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 12px;
-  filter: brightness(1.05) contrast(1.02);
+  border-radius: 20px;
+  filter: brightness(1.02) contrast(1.02);
   z-index: 2;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(0, 66, 37, 0.1);
 }
 
 .hc-decoration-circle {
@@ -141,7 +146,7 @@
   right: -20px;
   width: 120px;
   height: 120px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(0, 66, 37, 0.15);
   border-radius: 50%;
   z-index: 1;
 }
@@ -152,7 +157,7 @@
   left: -30px;
   width: 80px;
   height: 80px;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px);
+  background-image: radial-gradient(circle, rgba(0, 66, 37, 0.2) 2px, transparent 2px);
   background-size: 20px 20px;
   z-index: 1;
 }
@@ -174,23 +179,25 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  background: white;
+  border: 2px solid #e0e0e0;
+  color: #004225;
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
   pointer-events: all;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hc-nav-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: #004225;
+  border-color: #004225;
+  color: white;
   transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 66, 37, 0.3);
 }
 
 .hc-nav-button:active {
@@ -211,7 +218,7 @@
 .hc-indicator {
   width: 60px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 66, 37, 0.2);
   border: none;
   border-radius: 2px;
   cursor: pointer;
@@ -221,11 +228,11 @@
 }
 
 .hc-indicator:hover {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 66, 37, 0.3);
 }
 
 .hc-indicator.hc-active {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 66, 37, 0.3);
 }
 
 .hc-indicator-progress {
@@ -233,7 +240,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: white;
+  background: #004225;
   transition: none;
   border-radius: 2px;
 }
@@ -249,14 +256,15 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 66, 37, 0.1);
   z-index: 10;
 }
 
 .hc-progress-fill {
   height: 100%;
-  background: white;
+  background: linear-gradient(90deg, #004225 0%, #006837 100%);
   transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(0, 66, 37, 0.5);
 }
 
 /* Responsive Design */
@@ -313,6 +321,10 @@
   .hc-carousel-container {
     height: 100vh;
     min-height: 500px;
+  }
+
+  .hc-slide {
+    padding: 0 30px;
   }
 
   .hc-title {
