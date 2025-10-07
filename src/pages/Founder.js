@@ -470,7 +470,7 @@ export default function FounderContent() {
             </section> */}
 <FounderLegacy />
             {/* Legacy Section */}
-            <section className="founder-legacy">
+            {/* <section className="founder-legacy">
                 <div className="legacy-container">
                     <h2 className="section-title">Strategic Innovations and Legacy in the Making</h2>
                     <p>
@@ -503,7 +503,7 @@ export default function FounderContent() {
                         most trusted, principled and future ready.
                     </p>
                 </div>
-            </section>
+            </section> */}
 
             {/* Quote Section */}
             <section className="founder-quote">
