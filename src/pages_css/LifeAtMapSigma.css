@@ -1,0 +1,798 @@
+/* Life at MAPSIGMA Styles */
+
+.life-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+/* New curved shape hero layout inspired by reference image */
+.life-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.life-hero-curved-bg {
+  flex: 1;
+  background: #004225;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 60px 80px 80px;
+  clip-path: ellipse(85% 100% at 0% 50%);
+  z-index: 2;
+}
+
+.life-hero-text {
+  max-width: 700px;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+.life-hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: white;
+}
+
+.life-hero-subtitle {
+  font-size: 22px;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  opacity: 0.95;
+  color: white;
+}
+
+.life-hero-btn {
+  background: white;
+  color: #004225;
+  border: 2px solid white;
+  padding: 18px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.life-hero-btn:hover {
+  background: #004225;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+}
+
+.life-hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.life-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Insights & Opportunities Section */
+.life-insights {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 40px;
+}
+
+.life-insights-card {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: white;
+  border-radius: 20px;
+  padding: 60px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.life-insights-card:hover {
+  box-shadow: 0 8px 40px rgba(0, 66, 37, 0.15);
+  transform: translateY(-5px);
+}
+
+.life-insights-card-right {
+  flex-direction: row-reverse;
+}
+
+.life-insights-img {
+  width: 45%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.life-insights-text {
+  flex: 1;
+}
+
+.life-insights-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #004225;
+  margin: 0 0 20px 0;
+}
+
+.life-insights-desc {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0 0 30px 0;
+}
+
+.life-insights-link {
+  color: #004225;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.life-insights-link:hover {
+  color: #006837;
+  transform: translateX(5px);
+}
+
+/* Pictures Section */
+/* Redesigned to match reference layout with header and asymmetric grid */
+.life-pictures {
+  background: #f5f5f5; /* Changed from white to light grey background */
+  padding: 120px 40px;
+}
+
+.life-pictures-header {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.life-pictures-header-left {
+  flex: 1;
+}
+
+.life-pictures-heading {
+  font-size: 64px;
+  font-weight: 700;
+  color: #004225;
+  margin: 0;
+  line-height: 1.2;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.life-pictures-header-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.life-pictures-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+.life-pictures-btn {
+  background: #004225;
+  color: white;
+  border: 2px solid #004225;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.life-pictures-btn:hover {
+  background: #006837;
+  border-color: #006837;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 66, 37, 0.3);
+}
+
+.life-pictures-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 350px);
+  gap: 20px;
+}
+
+.life-picture-item {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.life-picture-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.life-picture-top-left {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.life-picture-top-center {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.life-picture-top-right {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.life-picture-bottom-left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.life-picture-bottom-right {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.life-picture-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Principles Section */
+.life-principles {
+  background: linear-gradient(135deg, #004225 0%, #006837 50%, #008a4a 100%);
+  padding: 150px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.life-principles::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+}
+
+.life-principles-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.life-principles-main {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 80px 0;
+  letter-spacing: -1px;
+}
+
+.life-principles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.life-principles-item {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+/* Job Openings Section */
+.life-jobs {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 40px;
+}
+
+.life-jobs-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.life-jobs-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #004225;
+  margin: 0 0 20px 0;
+}
+
+.life-jobs-subtitle {
+  font-size: 24px;
+  color: #666;
+  margin: 0 0 50px 0;
+}
+
+.life-jobs-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.life-jobs-select {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: 2px solid #004225;
+  border-radius: 10px;
+  background: white;
+  color: #004225;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.life-jobs-select:hover {
+  background: #f8f9fa;
+}
+
+.life-jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.life-jobs-department {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.life-jobs-even {
+  background: white;
+}
+
+.life-jobs-odd {
+  background: #f8f9fa;
+}
+
+.life-jobs-dept-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.life-jobs-dept-header:hover {
+  background: rgba(0, 66, 37, 0.05);
+}
+
+.life-jobs-dept-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #004225;
+  margin: 0;
+  text-align: left;
+}
+
+.life-jobs-toggle {
+  font-size: 32px;
+  font-weight: 300;
+  color: #004225;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 66, 37, 0.1);
+}
+
+.life-jobs-roles {
+  padding: 0 40px 30px;
+}
+
+.life-jobs-role {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.life-jobs-role:hover {
+  border-color: #004225;
+  box-shadow: 0 4px 15px rgba(0, 66, 37, 0.1);
+  transform: translateX(5px);
+}
+
+.life-jobs-role-name {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.life-jobs-apply-btn {
+  background: #004225;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.life-jobs-apply-btn:hover {
+  background: #006837;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 66, 37, 0.3);
+}
+
+/* Responsive Design */
+/* Updated responsive styles for new curved hero layout */
+@media (max-width: 1024px) {
+  .life-hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .life-hero-curved-bg {
+    clip-path: none;
+    padding: 100px 40px 60px;
+    width: 100%;
+  }
+
+  .life-hero-text {
+    max-width: 100%;
+  }
+
+  .life-hero-title {
+    font-size: 56px;
+  }
+
+  .life-hero-subtitle {
+    font-size: 20px;
+  }
+
+  .life-hero-image {
+    position: relative;
+    width: 100%;
+    height: 500px;
+  }
+
+  .life-insights-card {
+    flex-direction: column !important;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .life-insights-img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .life-insights-title {
+    font-size: 30px;
+  }
+
+  .life-pictures-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .life-picture-large,
+  .life-picture-medium {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .life-principles-main {
+    font-size: 36px;
+  }
+
+  .life-principles-item {
+    font-size: 22px;
+  }
+
+  .life-jobs-title {
+    font-size: 42px;
+  }
+
+  .life-jobs-dept-name {
+    font-size: 24px;
+  }
+
+  .life-pictures-header {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .life-pictures-heading {
+    font-size: 48px;
+  }
+
+  .life-pictures-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 300px);
+  }
+
+  .life-picture-top-left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .life-picture-top-center {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .life-picture-top-right {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .life-picture-bottom-left {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .life-picture-bottom-right {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .life-hero-curved-bg {
+    padding: 80px 30px 50px;
+  }
+
+  .life-hero-title {
+    font-size: 42px;
+  }
+
+  .life-hero-subtitle {
+    font-size: 18px;
+  }
+
+  .life-hero-btn {
+    padding: 15px 36px;
+    font-size: 16px;
+  }
+
+  .life-hero-image {
+    height: 400px;
+  }
+
+  .life-insights {
+    padding: 80px 20px;
+  }
+
+  .life-insights-card {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .life-insights-title {
+    font-size: 26px;
+  }
+
+  .life-insights-desc {
+    font-size: 16px;
+  }
+
+  .life-pictures {
+    padding: 80px 20px;
+  }
+
+  .life-pictures-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .life-pictures-grid {
+    gap: 20px;
+  }
+
+  .life-principles {
+    padding: 100px 20px;
+  }
+
+  .life-principles-main {
+    font-size: 28px;
+  }
+
+  .life-principles-item {
+    font-size: 18px;
+  }
+
+  .life-jobs {
+    padding: 80px 20px;
+  }
+
+  .life-jobs-title {
+    font-size: 36px;
+  }
+
+  .life-jobs-subtitle {
+    font-size: 18px;
+  }
+
+  .life-jobs-filter {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .life-jobs-dept-header {
+    padding: 20px 25px;
+  }
+
+  .life-jobs-dept-name {
+    font-size: 20px;
+  }
+
+  .life-jobs-roles {
+    padding: 0 25px 20px;
+  }
+
+  .life-jobs-role {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .life-jobs-role-name {
+    font-size: 16px;
+  }
+
+  .life-jobs-apply-btn {
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  .life-pictures-header {
+    margin-bottom: 50px;
+  }
+
+  .life-pictures-heading {
+    font-size: 36px;
+  }
+
+  .life-pictures-description {
+    font-size: 16px;
+  }
+
+  .life-pictures-btn {
+    width: 100%;
+  }
+
+  .life-pictures-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 250px);
+    gap: 15px;
+  }
+
+  .life-picture-top-left,
+  .life-picture-top-center,
+  .life-picture-top-right,
+  .life-picture-bottom-left,
+  .life-picture-bottom-right {
+    grid-column: 1 / 2;
+  }
+
+  .life-picture-top-left {
+    grid-row: 1 / 2;
+  }
+
+  .life-picture-top-center {
+    grid-row: 2 / 3;
+  }
+
+  .life-picture-top-right {
+    grid-row: 3 / 4;
+  }
+
+  .life-picture-bottom-left {
+    grid-row: 4 / 5;
+  }
+
+  .life-picture-bottom-right {
+    grid-row: 5 / 6;
+  }
+}
+
+@media (max-width: 480px) {
+  .life-hero-curved-bg {
+    padding: 60px 20px 40px;
+  }
+
+  .life-hero-title {
+    font-size: 32px;
+  }
+
+  .life-hero-subtitle {
+    font-size: 16px;
+  }
+
+  .life-hero-image {
+    height: 300px;
+  }
+
+  .life-insights-title {
+    font-size: 22px;
+  }
+
+  .life-pictures-title {
+    font-size: 28px;
+  }
+
+  .life-principles-main {
+    font-size: 22px;
+  }
+
+  .life-principles-item {
+    font-size: 16px;
+  }
+
+  .life-jobs-title {
+    font-size: 28px;
+  }
+
+  .life-jobs-dept-name {
+    font-size: 18px;
+  }
+
+  .life-pictures-heading {
+    font-size: 28px;
+  }
+
+  .life-pictures-grid {
+    grid-template-rows: repeat(5, 200px);
+  }
+}

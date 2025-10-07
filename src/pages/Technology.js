@@ -323,10 +323,15 @@ export default function TechnologyPage() {
                             party APIs and platforms to maintain interoperability and innovation.
                         </p>
                         <div className="tech-future-statement">
-                            MAPSIGMA CAPITAL is not just tech enabled. <strong>We are tech driven, insight led and future focused.</strong>
+                            <span className="tech-future-statement-company">
+                                MAPSIGMA CAPITAL is not just tech enabled.
+                            </span>
+                            <span className="tech-future-statement-highlight">
+                                We are tech driven, insight led and future focused.
+                            </span>
                         </div>
                     </div>
-                    <div className="tech-future-grid">
+                    {/* <div className="tech-future-grid">
                         <div
                             className={`tech-future-card tech-animate-scale ${isVisible('future-1') ? 'tech-visible' : ''}`}
                             data-section="future-1"
@@ -353,7 +358,7 @@ export default function TechnologyPage() {
                             <h3>Future-Ready</h3>
                             <p>Scalable architecture for tomorrow's needs</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>

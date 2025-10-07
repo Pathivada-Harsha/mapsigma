@@ -1,7 +1,7 @@
 /* Main Container */
 .tp-main-container {
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #ffffff;
   padding: 4rem 1.5rem;
 }
 
@@ -73,32 +73,47 @@
 .tp-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 0;
+  border-left: 1px solid #e5e7eb;
 }
 
 /* Industry Card */
 .tp-industry-card {
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
   cursor: pointer;
   height: 500px;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.tp-industry-card:hover {
+  z-index: 10;
 }
 
 .tp-card-image {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 180px;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 150px;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
+  opacity: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transform-origin: bottom center;
 }
 
 .tp-card-image.tp-hovered {
   height: 100%;
   bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  opacity: 1;
 }
 
 .tp-card-image img {
@@ -115,12 +130,12 @@
 .tp-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
-  transition: opacity 0.6s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.1) 0%, transparent 100%);
+  transition: all 0.6s ease;
 }
 
-.tp-card-image:not(.tp-hovered) .tp-image-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+.tp-card-image.tp-hovered .tp-image-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
 }
 
 .tp-card-content {
@@ -129,34 +144,34 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 }
 
 .tp-card-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .tp-icon-container {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 0.75rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  background: rgba(96, 165, 250, 0.2);
+  background: #e0f2fe;
   transition: all 0.5s ease;
 }
 
 .tp-icon-container.tp-hovered {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
 }
 
 .tp-icon {
-  width: 2rem;
-  height: 2rem;
-  color: #60a5fa;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #0369a1;
   transition: color 0.5s ease;
 }
 
@@ -165,10 +180,28 @@
 }
 
 .tp-industry-title {
-  font-size: 1.875rem;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #059669;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  transition: color 0.5s ease;
+}
+
+.tp-industry-card:hover .tp-industry-title {
   color: white;
-  line-height: 1.2;
+}
+
+.tp-industry-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  transition: color 0.5s ease;
+}
+
+.tp-industry-card:hover .tp-industry-subtitle {
+  color: #e5e7eb;
 }
 
 .tp-description-section {
@@ -178,7 +211,8 @@
   transition: all 0.6s ease;
   pointer-events: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 1rem;
 }
 
 .tp-description-section.tp-visible {
@@ -189,8 +223,8 @@
 
 .tp-description-text {
   color: #e5e7eb;
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -198,7 +232,7 @@
   margin-top: auto;
   padding-top: 1rem;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease 0.2s;
 }
 
 .tp-learn-more-link.tp-visible {
@@ -225,12 +259,44 @@
 }
 
 .tp-arrow-right {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   transition: transform 0.3s ease;
 }
 
 .tp-learn-button:hover .tp-arrow-right {
   transform: translateX(3px);
+}
+
+/* View Industry Link - Only shown when NOT hovered */
+.tp-view-link {
+  margin-top: auto;
+  padding-top: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tp-view-link.tp-hidden {
+  opacity: 0;
+}
+
+.tp-view-button {
+  background: none;
+  border: none;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tp-view-button:hover {
+  gap: 0.75rem;
+  color: #047857;
 }
 
 /* Responsive Design */
@@ -253,5 +319,9 @@
   
   .tp-main-title {
     font-size: 2rem;
+  }
+  
+  .tp-industry-card {
+    height: 450px;
   }
 }

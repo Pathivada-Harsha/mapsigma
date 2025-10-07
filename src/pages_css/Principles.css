@@ -50,120 +50,86 @@
   transform: scale(1);
 }
 
-/* Hero Section */
-.pr-hero {
-  min-height: 100vh;
-  background: 
-    url("./../images/principles/bg3.png") center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5%;
-  position: relative;
-  color: white;
-}
-
-.pr-hero-bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 66, 37, 0.8) 0%, rgba(0, 104, 55, 0.6) 100%);
-  z-index: 1;
-}
-
-.pr-hero-content {
-  text-align: center;
-  max-width: 900px;
-  z-index: 2;
-  position: relative;
-}
-
-.pr-hero-title {
-  font-size: 4rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
-}
-
-.pr-hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1.4;
-  opacity: 0.9;
-  font-style: italic;
-}
-
-.pr-hero-visual {
-  display: none;
-}
-
-/* Foundation Section */
+/* Foundation Section - Redesigned */
 .pr-foundation {
-  padding: 8rem 5%;
-  background: #f8f9fa;
+  padding: 5rem 5%;
+  background: #ffffff;
 }
 
 .pr-foundation-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.pr-foundation-image {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.pr-foundation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.pr-foundation-image:hover img {
+  transform: scale(1.05);
+}
+
+.pr-foundation-text-content {
+  padding: 2rem 0;
+}
+
+.pr-foundation-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #004225;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  background: rgba(0, 66, 37, 0.1);
+  border-radius: 20px;
+}
+
+.pr-foundation-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #374151;
+  line-height: 1.2;
+  margin-bottom: 2rem;
 }
 
 .pr-foundation-intro {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 3rem;
-  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.pr-foundation-intro:last-of-type {
+  margin-bottom: 0;
 }
 
 .pr-foundation-highlight {
   background: #004225;
   color: white;
-  padding: 3rem;
-  border-radius: 20px;
-  margin: 3rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.pr-foundation-highlight::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: rotate(45deg);
-  animation: pr-shine 3s ease-in-out infinite;
-}
-
-@keyframes pr-shine {
-  0%,
-  100% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-  }
-  50% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
-  }
-}
-
-.pr-foundation-belief {
-  font-size: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  font-size: 1.125rem;
+  line-height: 1.8;
   font-weight: 600;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.pr-foundation-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #555;
-  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 66, 37, 0.2);
 }
 
 /* Investment Framework Section */
@@ -255,132 +221,315 @@
   transform: scale(1.05);
 }
 
-/* Why Principles Matter Section */
+/* Why Principles Matter Section - Redesigned */
 .pr-why-matters {
   padding: 8rem 5%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  /* background: #e8e5e1; */
+  background: 
+    url("./../images/principles/PrincipleHome4.png") center / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.pr-why-matters::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(200, 195, 210, 0.4) 0%, transparent 70%);
+
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .pr-why-content {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.pr-why-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6b5b7d;
+  margin-bottom: 1rem;
 }
 
 .pr-why-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #004225;
-  margin-bottom: 4rem;
-}
-
-.pr-why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-bottom: 4rem;
-}
-
-.pr-why-card {
-  background: white;
-  padding: 3rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.pr-why-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.pr-why-icon {
-  font-size: 3rem;
+  color: #4a4458;
   margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
-.pr-why-card p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: #333;
-  margin: 0;
+.pr-why-highlight {
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: 'Beyond Infinity Demo', 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-style: italic;
+  color: #c4a590;
+  margin-bottom: 4rem;
+  letter-spacing: 1px;
+}
+
+.pr-why-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.pr-why-principle-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.pr-why-principle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pr-why-principle-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  background: rgba(196, 165, 144, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #c4a590;
+  font-size: 2rem;
+}
+
+.pr-why-principle-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5a5266;
+}
+
+.pr-why-principle-text strong {
+  color: #4a4458;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .pr-why-statement {
-  background: #004225;
-  color: white;
-  padding: 3rem;
-  border-radius: 20px;
   font-size: 1.3rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: #4a4458;
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* Remove old unused styles */
+.pr-why-description,
+.pr-why-grid,
+.pr-why-card,
+.pr-why-icon,
+.pr-why-principles-list,
+.pr-why-principle-item {
+  display: none;
 }
 
 /* Legacy Section */
-.pr-legacy {
+.pr-legacy-final-combined {
   padding: 8rem 5%;
-  background: white;
+  background: linear-gradient(135deg, #001a0f 0%, #004225 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.pr-legacy-content {
+.pr-legacy-final-wrapper {
   max-width: 1400px;
   margin: 0 auto;
+}
+
+/* Top Cards Section */
+.pr-legacy-cards-section {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.pr-legacy-main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.pr-legacy-main-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pr-legacy-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pr-legacy-value-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.pr-legacy-value-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pr-legacy-card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.pr-legacy-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.pr-legacy-card-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Bottom Content Section */
+.pr-legacy-final-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 8rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.pr-legacy-final-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.pr-legacy-title {
-  font-size: 3rem;
+.pr-legacy-final-image img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.3));
+}
+
+.pr-legacy-final-content {
+  padding: 2rem 0;
+}
+
+.pr-legacy-final-title {
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #004225;
+  color: white;
   margin-bottom: 2rem;
   line-height: 1.2;
 }
 
-.pr-legacy-text {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.pr-legacy-values {
+.pr-legacy-final-features {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.pr-value-item {
+.pr-legacy-final-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pr-legacy-final-check {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 15px;
-  border-left: 5px solid #004225;
-  transition: transform 0.3s ease;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.pr-value-item:hover {
-  transform: translateX(10px);
-}
-
-.pr-value-label {
-  font-size: 1.5rem;
+.pr-legacy-final-check::before {
+  content: '✓';
+  color: white;
   font-weight: 700;
+  font-size: 14px;
+}
+
+.pr-legacy-final-feature-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.pr-legacy-final-feature-text strong {
+  color: white;
+  font-weight: 700;
+}
+
+.pr-legacy-final-cta {
+  margin-top: 3rem;
+}
+
+.pr-legacy-final-button {
+  display: inline-block;
+  background: white;
   color: #004225;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.pr-value-vs {
-  font-size: 1.2rem;
-  color: #666;
-  font-style: italic;
+.pr-legacy-final-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.pr-value-contrast {
-  font-size: 1.3rem;
-  color: #999;
-  text-decoration: line-through;
+/* Hide old separate sections */
+.pr-legacy,
+.pr-final {
+  display: none;
 }
 
 /* Photo Gallery Section */
@@ -605,50 +754,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
-  
-  .pr-framework-diagram {
-    width: 400px;
-    height: 400px;
-  }
-  
-  .pr-diagram-circle {
-    width: 120px;
-    height: 120px;
-    font-size: 1rem;
-  }
-  
-  .pr-circle-2 {
-    bottom: 40px;
-    left: 20px;
-  }
-  
-  .pr-circle-3 {
-    bottom: 40px;
-    right: 20px;
-  }
-  
-  .pr-connector-1,
-  .pr-connector-2 {
-    width: 150px;
+
+  .pr-foundation-content {
+    gap: 4rem;
   }
 }
 
 @media (max-width: 768px) {
-  .pr-hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
-    min-height: 80vh;
-  }
-
-  .pr-hero-title {
-    font-size: 2.5rem;
-  }
-
-  .pr-hero-subtitle {
-    font-size: 1.2rem;
-  }
-
   .pr-gallery-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: 300px;
@@ -696,64 +808,49 @@
   .pr-showcase-title {
     font-size: 2.5rem;
   }
-  
-  .pr-framework-diagram {
-    width: 350px;
-    height: 350px;
+
+  .pr-foundation-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  
-  .pr-diagram-circle {
-    width: 100px;
-    height: 100px;
-    font-size: 0.9rem;
+
+  .pr-foundation-image {
+    order: -1;
   }
-  
-  .pr-circle-2 {
-    bottom: 30px;
-    left: 15px;
+
+  .pr-foundation-title {
+    font-size: 2.5rem;
   }
-  
-  .pr-circle-3 {
-    bottom: 30px;
-    right: 15px;
+
+  .pr-why-title {
+    font-size: 2.5rem;
   }
-  
-  .pr-connector-1 {
-    width: 120px;
-    top: 100px;
-    left: 60px;
+
+  .pr-why-highlight {
+    font-size: 2rem;
   }
-  
-  .pr-connector-2 {
-    width: 120px;
-    top: 100px;
-    right: 60px;
+
+  .pr-why-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pr-why-statement {
+    font-size: 1.1rem;
+  }
+
+  .pr-why-principle-text {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .pr-hero-title {
-    font-size: 2rem;
-  }
-
-  .pr-hero-subtitle {
-    font-size: 1rem;
-  }
-
   .pr-framework-title,
   .pr-why-title,
   .pr-legacy-title,
   .pr-gallery-title,
   .pr-showcase-title {
     font-size: 2rem;
-  }
-
-  .pr-foundation-intro {
-    font-size: 1.2rem;
-  }
-
-  .pr-foundation-belief {
-    font-size: 1.5rem;
   }
 
   .pr-framework-text,
@@ -769,37 +866,20 @@
     gap: 1rem;
     grid-auto-rows: 250px;
   }
-  
-  .pr-framework-diagram {
-    width: 280px;
-    height: 280px;
+
+  .pr-foundation-title {
+    font-size: 2rem;
   }
-  
-  .pr-diagram-circle {
-    width: 80px;
-    height: 80px;
-    font-size: 0.75rem;
+
+  .pr-foundation-intro {
+    font-size: 1rem;
   }
-  
-  .pr-circle-2 {
-    bottom: 20px;
-    left: 10px;
+
+  .pr-why-highlight {
+    font-size: 2rem;
   }
-  
-  .pr-circle-3 {
-    bottom: 20px;
-    right: 10px;
-  }
-  
-  .pr-connector-1 {
-    width: 100px;
-    top: 80px;
-    left: 45px;
-  }
-  
-  .pr-connector-2 {
-    width: 100px;
-    top: 80px;
-    right: 45px;
+
+  .pr-why-grid {
+    grid-template-columns: 1fr;
   }
 }

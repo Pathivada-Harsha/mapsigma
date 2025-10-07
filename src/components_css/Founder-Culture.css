@@ -1,0 +1,553 @@
+/* Modern Founder Culture Section */
+
+.founder-culture-modern {
+  position: relative;
+  padding: 120px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafb 100%);
+  overflow: hidden;
+}
+
+.founder-culture-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 66, 37, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.founder-culture-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.founder-culture-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.founder-culture-visible .founder-culture-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.founder-culture-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.founder-culture-label-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #004225;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.founder-culture-label-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #004225 0%, transparent 100%);
+}
+
+.founder-culture-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin: 0 0 25px 0;
+}
+
+.founder-culture-accent {
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.founder-culture-intro {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* Main Grid Layout */
+.founder-culture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+/* Left Column - Description */
+.founder-culture-description {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.founder-culture-visible .founder-culture-description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.founder-culture-text-block p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+/* Image Card */
+.founder-culture-image-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s ease;
+}
+
+.founder-culture-image-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+}
+
+.founder-culture-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.founder-culture-image-card:hover .founder-culture-image {
+  transform: scale(1.1);
+}
+
+.founder-culture-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 30px;
+  background: linear-gradient(to top, rgba(0, 66, 37, 0.95) 0%, transparent 100%);
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.founder-culture-image-card:hover .founder-culture-image-overlay {
+  transform: translateY(0);
+}
+
+.founder-culture-overlay-text h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.founder-culture-overlay-text p {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Statement Block */
+.founder-culture-statement {
+  position: relative;
+  background: linear-gradient(135deg, #f8fafb 0%, #e8f0ed 100%);
+  padding: 40px 40px 40px 80px;
+  border-radius: 20px;
+  border-left: 5px solid #004225;
+}
+
+.founder-culture-quote-mark {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 80px;
+  font-weight: 700;
+  color: #004225;
+  opacity: 0.15;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.founder-culture-statement p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #004225;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Right Column - Pillars */
+.founder-culture-pillars-section {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.founder-culture-visible .founder-culture-pillars-section {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.founder-culture-pillars-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 35px 0;
+}
+
+.founder-culture-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.founder-culture-pillar {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: founder-culture-pillar-fade 0.6s ease forwards;
+}
+
+.founder-culture-visible .founder-culture-pillar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes founder-culture-pillar-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.founder-culture-pillar:hover {
+  border-color: #004225;
+  box-shadow: 0 8px 30px rgba(0, 66, 37, 0.15);
+  transform: translateX(5px);
+}
+
+.founder-culture-pillar-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f8f4 0%, #e0f0e8 100%);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.founder-culture-pillar:hover .founder-culture-pillar-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+}
+
+.founder-culture-pillar-content {
+  flex: 1;
+}
+
+.founder-culture-pillar-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  transition: color 0.3s ease;
+}
+
+.founder-culture-pillar:hover .founder-culture-pillar-title {
+  color: #004225;
+}
+
+.founder-culture-pillar-subtitle {
+  font-size: 14px;
+  color: #004225;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  opacity: 0.8;
+}
+
+.founder-culture-pillar-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.founder-culture-pillar-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 72px;
+  font-weight: 800;
+  color: #004225;
+  opacity: 0.05;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.founder-culture-pillar:hover .founder-culture-pillar-number {
+  opacity: 0.1;
+  transform: scale(1.1);
+}
+
+/* Bottom Features */
+.founder-culture-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.6s;
+}
+
+.founder-culture-visible .founder-culture-features {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.founder-culture-feature {
+  text-align: center;
+  padding: 40px 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+}
+
+.founder-culture-feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 66, 37, 0.12);
+}
+
+.founder-culture-feature-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #f0f8f4 0%, #e0f0e8 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.founder-culture-feature:hover .founder-culture-feature-icon {
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  transform: scale(1.1);
+}
+
+.founder-culture-feature:hover .founder-culture-feature-icon svg path {
+  fill: white;
+  stroke: white;
+}
+
+.founder-culture-feature h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.founder-culture-feature p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .founder-culture-title {
+    font-size: 48px;
+  }
+
+  .founder-culture-grid {
+    gap: 50px;
+  }
+
+  .founder-culture-image-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-culture-modern {
+    padding: 80px 20px;
+  }
+
+  .founder-culture-header {
+    margin-bottom: 60px;
+  }
+
+  .founder-culture-title {
+    font-size: 36px;
+  }
+
+  .founder-culture-intro {
+    font-size: 18px;
+  }
+
+  .founder-culture-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-culture-image-card {
+    height: 300px;
+  }
+
+  .founder-culture-statement {
+    padding: 30px 30px 30px 70px;
+  }
+
+  .founder-culture-statement p {
+    font-size: 18px;
+  }
+
+  .founder-culture-pillars-title {
+    font-size: 28px;
+  }
+
+  .founder-culture-pillar {
+    padding: 25px;
+  }
+
+  .founder-culture-pillar-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+  }
+
+  .founder-culture-features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .founder-culture-modern {
+    padding: 60px 15px;
+  }
+
+  .founder-culture-title {
+    font-size: 28px;
+  }
+
+  .founder-culture-intro {
+    font-size: 16px;
+  }
+
+  .founder-culture-text-block p {
+    font-size: 16px;
+  }
+
+  .founder-culture-image-card {
+    height: 250px;
+    border-radius: 16px;
+  }
+
+  .founder-culture-statement {
+    padding: 25px 25px 25px 60px;
+    border-radius: 16px;
+  }
+
+  .founder-culture-quote-mark {
+    font-size: 60px;
+    left: 15px;
+  }
+
+  .founder-culture-statement p {
+    font-size: 16px;
+  }
+
+  .founder-culture-pillars-title {
+    font-size: 24px;
+  }
+
+  .founder-culture-pillar {
+    padding: 20px;
+    border-radius: 16px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .founder-culture-pillar-title {
+    font-size: 18px;
+  }
+
+  .founder-culture-pillar-description {
+    font-size: 14px;
+  }
+
+  .founder-culture-feature {
+    padding: 30px 20px;
+  }
+
+  .founder-culture-feature h4 {
+    font-size: 18px;
+  }
+
+  .founder-culture-feature p {
+    font-size: 14px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .founder-culture-header,
+  .founder-culture-description,
+  .founder-culture-pillars-section,
+  .founder-culture-features,
+  .founder-culture-pillar {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .founder-culture-visible .founder-culture-header,
+  .founder-culture-visible .founder-culture-description,
+  .founder-culture-visible .founder-culture-pillars-section,
+  .founder-culture-visible .founder-culture-features {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,554 @@
+/* Vertical Timeline Section */
+
+.founder-time-ver-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 20px;
+  background: linear-gradient(180deg, #f8fafb 0%, #ffffff 50%, #f5f7f9 100%);
+  overflow: hidden;
+}
+
+/* Header */
+.founder-time-ver-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 100px;
+}
+
+.founder-time-ver-main-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.founder-time-ver-subtitle {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Container */
+.founder-time-ver-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Central Vertical Line */
+.founder-time-ver-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.founder-time-ver-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, #004225 0%, #006837 50%, #004225 100%);
+  box-shadow: 0 0 20px rgba(0, 66, 37, 0.5);
+  transition: height 0.3s ease-out;
+}
+
+/* Glowing Circle with Sparkles */
+.founder-time-ver-glow-circle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, #004225 0%, #006837 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 30px rgba(0, 66, 37, 0.8),
+    0 0 60px rgba(0, 104, 55, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.3);
+  z-index: 3;
+  transition: top 0.3s ease-out;
+}
+
+.founder-time-ver-glow-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 66, 37, 0.3);
+  border-radius: 50%;
+  animation: founder-time-ver-pulse 2s ease-out infinite;
+}
+
+/* Sparkles */
+.founder-time-ver-sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #FFD700;
+  border-radius: 50%;
+  animation: founder-time-ver-sparkle 1.5s ease-in-out infinite;
+}
+
+.founder-time-ver-sparkle:nth-child(1) {
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.founder-time-ver-sparkle-2 {
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  animation-delay: 0.5s;
+}
+
+.founder-time-ver-sparkle-3 {
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  animation-delay: 1s;
+}
+
+@keyframes founder-time-ver-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes founder-time-ver-sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Timeline Container */
+.founder-time-ver-timeline {
+  position: relative;
+  z-index: 2;
+}
+
+/* Timeline Item */
+.founder-time-ver-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.founder-time-ver-item:last-child {
+  margin-bottom: 0;
+}
+
+.founder-time-ver-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left Items */
+.founder-time-ver-left {
+  justify-content: flex-end;
+  padding-right: calc(50% + 60px);
+}
+
+.founder-time-ver-left .founder-time-ver-card {
+  transform-origin: right center;
+}
+
+.founder-time-ver-left .founder-time-ver-dot {
+  right: calc(50% - 14px);
+}
+
+/* Right Items */
+.founder-time-ver-right {
+  justify-content: flex-start;
+  padding-left: calc(50% + 60px);
+}
+
+.founder-time-ver-right .founder-time-ver-card {
+  transform-origin: left center;
+}
+
+.founder-time-ver-right .founder-time-ver-dot {
+  left: calc(50% - 14px);
+}
+
+/* Connection Dot */
+.founder-time-ver-dot {
+  position: absolute;
+  top: 50px;
+  width: 28px;
+  height: 28px;
+  background: white;
+  border: 4px solid #004225;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 0.4s ease;
+}
+
+.founder-time-ver-active .founder-time-ver-dot {
+  border-color: #004225;
+  background: #004225;
+  box-shadow: 0 0 25px rgba(0, 66, 37, 0.6);
+  transform: scale(1.3);
+}
+
+.founder-time-ver-dot-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #004225;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.founder-time-ver-active .founder-time-ver-dot-inner {
+  background: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.founder-time-ver-dot-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0, 66, 37, 0.3);
+  border-radius: 50%;
+  animation: founder-time-ver-ring 2s ease-out infinite;
+  opacity: 0;
+}
+
+.founder-time-ver-active .founder-time-ver-dot-ring {
+  opacity: 1;
+}
+
+@keyframes founder-time-ver-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Event Card */
+.founder-time-ver-card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+
+.founder-time-ver-active .founder-time-ver-card {
+  box-shadow: 0 20px 60px rgba(0, 66, 37, 0.15);
+  border-color: #004225;
+}
+
+.founder-time-ver-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 70px rgba(0, 66, 37, 0.2);
+}
+
+/* Card Inner Layout */
+.founder-time-ver-card-inner {
+  display: flex;
+  gap: 25px;
+  padding: 35px;
+}
+
+/* Content Side */
+.founder-time-ver-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-time-ver-year {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.founder-time-ver-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.founder-time-ver-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* Image Side */
+.founder-time-ver-image-wrapper {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e8f0ed 0%, #d5e5df 100%);
+}
+
+.founder-time-ver-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.founder-time-ver-card:hover .founder-time-ver-image {
+  transform: scale(1.1);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .founder-time-ver-main-title {
+    font-size: 48px;
+  }
+
+  .founder-time-ver-subtitle {
+    font-size: 18px;
+  }
+
+  .founder-time-ver-left {
+    padding-right: calc(50% + 50px);
+  }
+
+  .founder-time-ver-right {
+    padding-left: calc(50% + 50px);
+  }
+
+  .founder-time-ver-card {
+    max-width: 400px;
+  }
+
+  .founder-time-ver-card-inner {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .founder-time-ver-year {
+    font-size: 44px;
+  }
+
+  .founder-time-ver-title {
+    font-size: 20px;
+  }
+
+  .founder-time-ver-image-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .founder-time-ver-section {
+    padding: 80px 20px;
+  }
+
+  .founder-time-ver-header {
+    margin-bottom: 60px;
+  }
+
+  .founder-time-ver-main-title {
+    font-size: 36px;
+  }
+
+  .founder-time-ver-subtitle {
+    font-size: 16px;
+  }
+
+  /* Move line to left side */
+  .founder-time-ver-line {
+    left: 30px;
+    transform: none;
+  }
+
+  .founder-time-ver-progress {
+    left: 0;
+  }
+
+  .founder-time-ver-glow-circle {
+    left: 30px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Stack all items on right side */
+  .founder-time-ver-left,
+  .founder-time-ver-right {
+    justify-content: flex-start;
+    padding-left: 80px;
+    padding-right: 0;
+  }
+
+  .founder-time-ver-card {
+    max-width: 100%;
+  }
+
+  .founder-time-ver-left .founder-time-ver-dot,
+  .founder-time-ver-right .founder-time-ver-dot {
+    left: -30px;
+    right: auto;
+  }
+
+  .founder-time-ver-item {
+    margin-bottom: 60px;
+  }
+
+  .founder-time-ver-card-inner {
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .founder-time-ver-image-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+  }
+
+  .founder-time-ver-year {
+    font-size: 40px;
+  }
+
+  .founder-time-ver-title {
+    font-size: 20px;
+  }
+
+  .founder-time-ver-description {
+    font-size: 15px;
+  }
+
+  .founder-time-ver-sparkle {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .founder-time-ver-section {
+    padding: 60px 15px;
+  }
+
+  .founder-time-ver-main-title {
+    font-size: 28px;
+  }
+
+  .founder-time-ver-subtitle {
+    font-size: 15px;
+  }
+
+  .founder-time-ver-line {
+    left: 20px;
+  }
+
+  .founder-time-ver-glow-circle {
+    left: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .founder-time-ver-left,
+  .founder-time-ver-right {
+    padding-left: 60px;
+  }
+
+  .founder-time-ver-left .founder-time-ver-dot,
+  .founder-time-ver-right .founder-time-ver-dot {
+    left: -24px;
+    width: 24px;
+    height: 24px;
+    border-width: 3px;
+  }
+
+  .founder-time-ver-dot-inner {
+    width: 8px;
+    height: 8px;
+  }
+
+  .founder-time-ver-card-inner {
+    padding: 20px;
+  }
+
+  .founder-time-ver-year {
+    font-size: 36px;
+  }
+
+  .founder-time-ver-title {
+    font-size: 18px;
+  }
+
+  .founder-time-ver-description {
+    font-size: 14px;
+  }
+
+  .founder-time-ver-image-wrapper {
+    height: 180px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .founder-time-ver-item,
+  .founder-time-ver-glow-circle,
+  .founder-time-ver-sparkle,
+  .founder-time-ver-dot-ring,
+  .founder-time-ver-progress {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .founder-time-ver-active {
+    opacity: 1;
+    transform: none;
+  }
+
+  .founder-time-ver-glow-circle::before {
+    display: none;
+  }
+}

@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  /* background: linear-gradient(135deg, #004225 0%, #006837 100%); */
   /* background-image: url("./../images/people/Austin.jpg"); */
   background-size: cover;
   background-position: center;

@@ -636,16 +636,42 @@
   letter-spacing: 0.5px;
 }
 
-/* Future Section */
+/* Future Section - REDESIGNED */
 .tech-future {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 120px 5%;
-  background: linear-gradient(180deg, #001a0f 0%, #004225 100%);
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(30, 30, 30, 0.8) 100%),
+    url("./../images/Research&insights/H-Article11.png") center / cover no-repeat;
+  background-attachment: fixed;
   color: white;
+  overflow: hidden;
+}
+
+.tech-future::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .tech-future-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .tech-future-content {
@@ -653,60 +679,117 @@
   margin-bottom: 80px;
 }
 
+.tech-section-title-center {
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
 .tech-future-text {
   font-size: 20px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
   max-width: 900px;
-  margin: 0 auto 48px;
+  margin: 0 auto 64px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .tech-future-statement {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 32px 48px;
-  border-radius: 16px;
-  font-size: 24px;
-  line-height: 1.6;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  padding: 48px 64px;
+  border-radius: 24px;
+  font-size: 22px;
+  line-height: 1.8;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-future-statement:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.tech-future-statement-company {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+}
+
+.tech-future-statement:hover .tech-future-statement-company {
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.tech-future-statement-highlight {
+  display: block;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #E8B4A0;
+  font-family: 'Beyond Infinity Demo', 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin-top: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.tech-future-statement:hover .tech-future-statement-highlight {
+  transform: scale(1.05);
+  color: #F5C7B8;
+  text-shadow: 3px 3px 8px rgba(232, 180, 160, 0.4);
+  letter-spacing: 3px;
 }
 
 .tech-future-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  margin-top: 80px;
 }
 
 .tech-future-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
   padding: 40px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tech-future-card:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .tech-future-icon {
   font-size: 56px;
   margin-bottom: 24px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .tech-future-card h3 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: white;
 }
 
 .tech-future-card p {
   font-size: 16px;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 
@@ -817,9 +900,37 @@
     padding: 16px;
   }
 
+  .tech-future {
+    min-height: auto;
+    background-attachment: scroll;
+  }
+
+  .tech-future-text {
+    font-size: 16px;
+  }
+
+  .tech-future-statement {
+    padding: 32px 24px;
+    font-size: 16px;
+  }
+
+  .tech-future-statement-company {
+    font-size: 15px;
+  }
+
+  .tech-future-statement-highlight {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+
+  .tech-future-statement:hover .tech-future-statement-highlight {
+    letter-spacing: 2px;
+  }
+
   .tech-future-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+    margin-top: 48px;
   }
 }
 
@@ -887,7 +998,26 @@
   }
 
   .tech-future-statement {
-    padding: 24px 32px;
-    font-size: 20px;
+    padding: 24px 20px;
+    font-size: 15px;
+  }
+
+  .tech-future-statement-company {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .tech-future-statement-highlight {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .tech-future-statement:hover .tech-future-statement-highlight {
+    letter-spacing: 1.5px;
+  }
+
+  .tech-future-text {
+    font-size: 15px;
+    margin-bottom: 48px;
   }
 }
