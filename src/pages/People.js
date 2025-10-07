@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import MapYourMove from '../components/Map_Your_Move';
 import { useNavigate } from 'react-router-dom';
+import people_01 from '../images/people/people_02.png'
+import people_02 from '../images/people/people_03.png'
+import people_03 from '../images/people/people_04.png'
 
 const PeoplePage = () => {
   const [showAllVideos, setShowAllVideos] = useState(false);
@@ -30,14 +33,14 @@ const PeoplePage = () => {
     navigate('/people/partners');
   };
   
-  // ADD these functions after handleNavigate:
-const handleLeaderClick = (leader) => {
-  navigate('/people/leader-detail', { state: { leader } });
-};
+  const handleLeaderClick = (leader) => {
+    navigate('/people/leader-detail', { state: { leader } });
+  };
 
-const handleStoryClick = (story) => {
-  navigate('/people/story-detail', { state: { story } });
-};
+  const handleStoryClick = (story) => {
+    navigate('/people/story-detail', { state: { story } });
+  };
+
   const leaders = [
     {
       name: "Rajesh Kumar",
@@ -372,8 +375,8 @@ const handleStoryClick = (story) => {
       <style>{`
       .people-page { 
            background-color: #f9fafb; 
-           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-           overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+           overflow-x: hidden;           
          }
         
          /* Reveal Animation Keyframes */
@@ -521,11 +524,7 @@ const handleStoryClick = (story) => {
            background: white; 
            padding: 48px 0;
          }
-         .container {
-           max-width: 1200px;
-           margin: 0 auto;
-           padding: 0 24px;
-         }
+        
          .section-title { 
            font-size: 2.5rem; 
            font-weight: bold; 
@@ -533,23 +532,68 @@ const handleStoryClick = (story) => {
            margin-bottom: 24px; 
            color: #004225;
          }
-         .intro-section { 
-           max-width: 900px; 
-           margin: 0 auto 48px;
+         
+         /* NEW STYLES FOR INTRO SECTION WITH IMAGES */
+         .intro-section-enhanced { 
+            max-width: 1400px; 
+           margin: 0 auto 64px;
          }
-         .intro-section h3 { 
-           font-size: 2rem; 
+         
+         .intro-section-enhanced h3 { 
+           font-size: 2.5rem; 
            font-weight: bold; 
            text-align: center; 
-           margin-bottom: 24px; 
+           margin-bottom: 48px; 
            color: #004225;
          }
-         .intro-section p { 
+         
+         .intro-content-row {
+           display: flex;
+           align-items: center;
+           gap: 48px;
+           margin-bottom: 48px;
+         }
+         
+         .intro-content-row:nth-child(even) {
+           flex-direction: row-reverse;
+         }
+         
+         .intro-text-col {
+           flex: 1;
+           min-width: 0;
+         }
+         
+         .intro-image-col {
+           flex: 1;
+           min-width: 0;
+         }
+         
+         .intro-content-row p { 
            font-size: 1.125rem; 
            color: #374151; 
            margin-bottom: 16px; 
-           line-height: 1.7;
+           line-height: 1.8;
          }
+         
+         .intro-image-wrapper {
+           position: relative;
+           border-radius: 10px;
+           overflow: hidden;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+           height: 400px;
+         }
+         
+         .intro-image-wrapper img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.5s ease;
+         }
+         
+         .intro-image-wrapper:hover img {
+           transform: scale(1.05);
+         }
+         
          .section-description { 
            max-width: 900px; 
            margin: 0 auto 48px; 
@@ -722,6 +766,9 @@ const handleStoryClick = (story) => {
          .text-center { 
            text-align: center;
          }
+         .text-end {
+           text-align: right;
+         }
          .mb-5 {
            margin-bottom: 3rem;
          }
@@ -739,7 +786,26 @@ const handleStoryClick = (story) => {
            .col-lg-3 {
              width: 50%;
            }
+           .intro-content-row {
+             gap: 32px;
+           }
          }
+         
+         @media (max-width: 768px) { 
+           .intro-content-row,
+           .intro-content-row:nth-child(even) {
+             flex-direction: column;
+           }
+           
+           .intro-image-wrapper {
+             height: 250px;
+           }
+           
+           .intro-section-enhanced h3 {
+             font-size: 2rem;
+           }
+         }
+         
          @media (max-width: 640px) { 
            .stories-grid { 
              grid-template-columns: 1fr;
@@ -750,38 +816,16 @@ const handleStoryClick = (story) => {
            .hero-title {
              font-size: 2.5rem;
            }
+           .intro-content-row {
+             gap: 24px;
+           }
+           .intro-image-wrapper {
+             height: 220px;
+           }
          }
-        
-        .person-card { 
-          position: relative; 
-          height: 400px; 
-          border-radius: 8px; 
-          overflow: hidden; 
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-          transition: all 0.3s ease; 
-          cursor: pointer; 
-          margin-bottom: 24px;
-        }
-        .person-card:hover { 
-          transform: translateY(-8px); 
-          box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .story-card { 
-          position: relative; 
-          border-radius: 12px; 
-          overflow: hidden; 
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-          transition: all 0.5s ease; 
-          cursor: pointer; 
-          height: 280px; 
-          display: flex; 
-          align-items: center; 
-          justify-content: center;
-        }
       `}</style>
 
-      {/* Hero Section - same as before */}
+      {/* Hero Section */}
       <div className="hero-section">
         <img 
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=500&fit=crop&q=80"
@@ -799,39 +843,90 @@ const handleStoryClick = (story) => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="content-section">
-        <div className="container">
-          {/* Introduction - same as before */}
-          <div className="intro-section">
+ 
+     
+        
+       
+          <div className="container-fluid intro-section-enhanced mt-4" >
             <h3 
               data-animate-id="intro-title"
               className={animatedElements.has('intro-title') ? 'animate-fade-up' : ''}
             >
               The Heart of MAPSIGMA CAPITAL
             </h3>
-            <p 
-              data-animate-id="intro-p1"
-              className={animatedElements.has('intro-p1') ? 'animate-fade-up animate-delay-1' : ''}
-            >
-              At MAPSIGMA CAPITAL, we believe the true value of any firm lies not in its assets but in its people.
-            </p>
-            <p 
-              data-animate-id="intro-p2"
-              className={animatedElements.has('intro-p2') ? 'animate-fade-up animate-delay-2' : ''}
-            >
-              We don't just build portfolios. We build character, discipline and clarity in the people who manage them.
-            </p>
-            <p 
-              data-animate-id="intro-p3"
-              className={animatedElements.has('intro-p3') ? 'animate-fade-up animate-delay-3' : ''}
-            >
-              Our people come from all walks of life: entrepreneurs, technologists, analysts, veterans and creative thinkers.
-            </p>
+            
+            {/* First Row: Text Left, Image Right */}
+            <div className="intro-content-row">
+              <div className="intro-text-col">
+                <p 
+                  data-animate-id="intro-p1"
+                  className={animatedElements.has('intro-p1') ? 'animate-fade-up animate-delay-1' : ''}
+                >
+                  At MAPSIGMA CAPITAL, we believe the true value of any firm lies not in its assets but in its people. Our team is our greatest strength, bringing together diverse expertise, unwavering commitment, and a shared vision for excellence in investment management.
+                </p>
+              </div>
+              <div className="intro-image-col">
+                <div 
+                  className="intro-image-wrapper"
+                >
+                  <img 
+                    src={people_01}
+                    alt="Team collaboration at MAPSIGMA"
+                    className={animatedElements.has('intro-img1') ? 'animate-reveal-right animate-delay-2' : ''}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Second Row: Image Left, Text Right */}
+            <div className="intro-content-row">
+              <div className="intro-text-col">
+                <p 
+                  data-animate-id="intro-p2"
+                  className={animatedElements.has('intro-p2') ? 'animate-fade-up animate-delay-1' : ''}
+                >
+                  We don't just build portfolios. We build character, discipline and clarity in the people who manage them. Every member of our team embodies our core values of integrity, innovation, and excellence, ensuring that our clients receive not just superior returns, but also unwavering dedication and transparency.
+                </p>
+              </div>
+              <div className="intro-image-col">
+                <div 
+                  className="intro-image-wrapper"
+                >
+                  <img 
+                    src={people_02}
+                    alt="Building character and discipline"
+                    className={animatedElements.has('intro-img2') ? 'animate-reveal-left animate-delay-2' : ''}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Third Row: Text Left, Image Right */}
+            <div className="intro-content-row">
+              <div className="intro-text-col">
+                <p 
+                  data-animate-id="intro-p3"
+                  className={animatedElements.has('intro-p3') ? 'animate-fade-up animate-delay-1' : ''}
+                >
+                  Our people come from all walks of life: entrepreneurs, technologists, analysts, veterans and creative thinkers. This diversity of backgrounds and perspectives is what enables us to see opportunities others miss and build strategies that stand the test of time.
+                </p>
+              </div>
+              <div className="intro-image-col">
+                <div 
+                  className="intro-image-wrapper"
+                >
+                  <img 
+                    src={people_03}
+                    alt="Diverse team of professionals"
+                    className={animatedElements.has('intro-img3') ? 'animate-reveal-right animate-delay-2' : ''}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Leadership Section with onClick */}
-          <section className="mb-5">
+          {/* Leadership Section */}
+          <section className="mb-5 container">
             <h2 
                data-animate-id="leadership-title"
                className={`section-title ${animatedElements.has('leadership-title') ? 'animate-fade-scale' : ''}`}
@@ -873,24 +968,26 @@ const handleStoryClick = (story) => {
             </div>
           </section>
 
-          {/* Partners Section - same as before */}
-          <section className="mb-5">
+          {/* Partners Section */}
+          <section className="container-fluid mb-5 pt-4 pb-4" style={{background:"#f0f0f0"}}>
             <h2 
               data-animate-id="partners-title"
               className={`section-title ${animatedElements.has('partners-title') ? 'animate-fade-scale' : ''}`}
             >
               Our Partners
             </h2>
-            <div className="intro-section">
+            <div className="intro-section-enhanced">
               <p 
                 data-animate-id="partners-p1"
                 className={animatedElements.has('partners-p1') ? 'animate-fade-up animate-delay-1' : ''}
+                style={{textAlign: 'center', fontSize: '1.125rem', color: '#374151', lineHeight: '1.7', marginBottom: '16px'}}
               >
                 Our partners are more than executives and staff, they are the driving force behind MAPSIGMA CAPITAL.
               </p>
               <p 
                 data-animate-id="partners-p2"
                 className={animatedElements.has('partners-p2') ? 'animate-fade-up animate-delay-2' : ''}
+                style={{textAlign: 'center', fontSize: '1.125rem', color: '#374151', lineHeight: '1.7'}}
               >
                 Together, they operate with discipline, agility and trust building the systems, relationships and results that define our success.
               </p>
@@ -907,8 +1004,8 @@ const handleStoryClick = (story) => {
             </div>
           </section>
 
-          {/* Stories Section with onClick */}
-          <section className="mb-5">
+          {/* Stories Section */}
+          <section className="mb-5 container">
             <h2 
               data-animate-id="stories-title"
               className={`section-title ${animatedElements.has('stories-title') ? 'animate-fade-scale' : ''}`}
@@ -987,12 +1084,10 @@ const handleStoryClick = (story) => {
               </div>
             )}
           </section>
-        </div>
-      </div>
+       
+      
       
       <MapYourMove/>
-      
-     
     </div>
   );
 };

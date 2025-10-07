@@ -124,7 +124,7 @@ const Culture = () => {
                         alt="Park pathway"
                         className="hero-image"
                     />
-                    <div className="hero-overlay"></div>
+                    {/* <div className="hero-overlay"></div> */}
                     <h1 className="hero-title">CULTURE</h1>
                 </section>
 
