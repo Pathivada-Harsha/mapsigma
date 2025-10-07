@@ -1,0 +1,553 @@
+/* Life At MAPSIGMA Hero Section */
+
+.life-hero1-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafb 0%, #ffffff 50%, #f5f7f9 100%);
+}
+
+/* Background Pattern */
+.life-hero1-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.life-hero1-pattern {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 66, 37, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 66, 37, 0.02) 0%, transparent 50%);
+}
+
+/* Decorative Shapes */
+.life-hero1-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 66, 37, 0.05) 0%, rgba(255, 215, 0, 0.03) 100%);
+  z-index: 1;
+  animation: life-hero1-float 20s ease-in-out infinite;
+}
+
+.life-hero1-shape-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.life-hero1-shape-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: 5%;
+  animation-delay: 5s;
+}
+
+.life-hero1-shape-3 {
+  width: 200px;
+  height: 200px;
+  top: 40%;
+  left: -50px;
+  animation-delay: 10s;
+}
+
+@keyframes life-hero1-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+/* Container */
+.life-hero1-container {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Left Content */
+.life-hero1-content {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.life-hero1-loaded .life-hero1-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Badge */
+.life-hero1-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(0, 66, 37, 0.08);
+  border: 1px solid rgba(0, 66, 37, 0.15);
+  border-radius: 30px;
+  color: #004225;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+
+.life-hero1-badge svg {
+  color: #FFD700;
+}
+
+/* Title */
+.life-hero1-title {
+  font-size: 64px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin: 0 0 25px 0;
+  letter-spacing: -1px;
+}
+
+.life-hero1-highlight {
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+}
+
+.life-hero1-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700 0%, transparent 100%);
+}
+
+/* Description */
+.life-hero1-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0 0 40px 0;
+  max-width: 550px;
+}
+
+/* Values Grid */
+.life-hero1-values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.life-hero1-value-card {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.life-hero1-value-card:hover {
+  border-color: #004225;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 66, 37, 0.1);
+}
+
+.life-hero1-value-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: linear-gradient(135deg, #f0f8f4 0%, #e0f0e8 100%);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.life-hero1-value-card:hover .life-hero1-value-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.life-hero1-value-content {
+  flex: 1;
+}
+
+.life-hero1-value-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 5px 0;
+}
+
+.life-hero1-value-text {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Action Buttons */
+.life-hero1-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.life-hero1-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.life-hero1-btn-primary {
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 66, 37, 0.25);
+}
+
+.life-hero1-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 66, 37, 0.35);
+}
+
+.life-hero1-btn-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.life-hero1-btn-primary:hover svg {
+  transform: translateX(5px);
+}
+
+.life-hero1-btn-secondary {
+  background: white;
+  color: #004225;
+  border-color: #e0e0e0;
+}
+
+.life-hero1-btn-secondary:hover {
+  border-color: #004225;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 66, 37, 0.15);
+}
+
+/* Right Image Grid */
+.life-hero1-image-section {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.life-hero1-loaded .life-hero1-image-section {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.life-hero1-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  gap: 20px;
+}
+
+.life-hero1-image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.life-hero1-image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 66, 37, 0.15);
+}
+
+.life-hero1-card-large {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.life-hero1-card-small {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.life-hero1-card-medium {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+
+.life-hero1-card-accent {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.life-hero1-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.life-hero1-image-card:hover .life-hero1-image {
+  transform: scale(1.1);
+}
+
+.life-hero1-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.life-hero1-image-card:hover .life-hero1-image-overlay {
+  transform: translateY(0);
+}
+
+.life-hero1-image-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(255, 215, 0, 0.9);
+  color: #004225;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* Scroll Indicator */
+.life-hero1-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  animation: life-hero1-scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes life-hero1-scroll-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+.life-hero1-scroll-line {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent 0%, #004225 50%, transparent 100%);
+}
+
+.life-hero1-scroll span {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .life-hero1-container {
+    gap: 60px;
+  }
+
+  .life-hero1-title {
+    font-size: 56px;
+  }
+
+  .life-hero1-image-grid {
+    grid-template-rows: repeat(3, 140px);
+  }
+}
+
+@media (max-width: 992px) {
+  .life-hero1-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 0 30px;
+  }
+
+  .life-hero1-title {
+    font-size: 48px;
+  }
+
+  .life-hero1-values {
+    grid-template-columns: 1fr;
+  }
+
+  .life-hero1-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 200px);
+  }
+
+  .life-hero1-card-large {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .life-hero1-card-small {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .life-hero1-card-medium {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .life-hero1-card-accent {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .life-hero1-section {
+    padding: 80px 0;
+  }
+
+  .life-hero1-container {
+    padding: 0 20px;
+  }
+
+  .life-hero1-title {
+    font-size: 40px;
+  }
+
+  .life-hero1-description {
+    font-size: 16px;
+  }
+
+  .life-hero1-values {
+    gap: 15px;
+  }
+
+  .life-hero1-value-card {
+    padding: 15px;
+  }
+
+  .life-hero1-actions {
+    flex-direction: column;
+  }
+
+  .life-hero1-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .life-hero1-image-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 180px);
+    gap: 15px;
+  }
+
+  .life-hero1-card-large,
+  .life-hero1-card-small,
+  .life-hero1-card-medium {
+    grid-column: 1 / 2;
+  }
+
+  .life-hero1-card-large {
+    grid-row: 1 / 2;
+  }
+
+  .life-hero1-card-small {
+    grid-row: 2 / 3;
+  }
+
+  .life-hero1-card-medium {
+    grid-row: 3 / 4;
+  }
+
+  .life-hero1-shape {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .life-hero1-title {
+    font-size: 32px;
+  }
+
+  .life-hero1-description {
+    font-size: 15px;
+  }
+
+  .life-hero1-btn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+
+  .life-hero1-badge {
+    font-size: 11px;
+    padding: 8px 16px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .life-hero1-shape,
+  .life-hero1-scroll {
+    animation: none !important;
+  }
+
+  .life-hero1-content,
+  .life-hero1-image-section {
+    transition: none !important;
+  }
+
+  .life-hero1-loaded .life-hero1-content,
+  .life-hero1-loaded .life-hero1-image-section {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import "../pages_css/LifeAtMapSigma.css"
-import LifeHero from "../components/Life-Hero.js"
+import LifeHero from "../components/Life-Hero1.js"
 import LifeCta from "../components/Life-Cta.js"
 import LifeCareers from "../components/Life-Careers.js"
 import LifeValues from "../components/Life-Values.js"

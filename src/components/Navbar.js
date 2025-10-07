@@ -43,7 +43,7 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
               <div className="col-6 col-lg d-flex justify-content-end align-items-center">
                 {/* Desktop Buttons */}
                 <div className="d-none d-lg-flex align-items-center ms-auto top-buttons-custom-margin">
-                  <NavLink to="/newsletter" className="top-btn newsletter-button">
+                  <NavLink to="/Newsletter" className="top-btn newsletter-button">
                     <span className="me-1"><i className="bi bi-envelope"></i></span>
                     <span>NEWSLETTER</span>
                   </NavLink>
