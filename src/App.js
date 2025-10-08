@@ -4,30 +4,33 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Research_insights from "./pages/Research_Insights";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 const Culture = React.lazy(() => import("./pages/Culture"));
-const Principles = React.lazy(() => import("./pages/Principles.js"));
-const Technology = React.lazy(() => import("./pages/Technology.js"));
-const RealTime = React.lazy(() => import("./pages/RealTime.js"));
-const AiPage = React.lazy(() => import("./pages/AiPage.js"));
-const PMS = React.lazy(() => import("./pages/PMS.js"));
-const RiskCommand = React.lazy(() => import("./pages/RiskCommand.js"));
-const Cybersecurity = React.lazy(() => import("./pages/CyberSecurity.js"));
-const ClientCommand = React.lazy(() => import("./pages/ClientCommand.js"));
-const Founder = React.lazy(() => import("./pages/Founder.js"));
-const LifeAtMapSigma = React.lazy(() => import("./pages/LifeAtMapSigma.js"));
-const Careers = React.lazy(() => import("./pages/Careers.js"));
-const People = React.lazy(() => import("./pages/People.js"));
-const PartnerGrid = React.lazy(() => import("./components/PartnerGrid.js"));
-const LeadershipDetailPage = React.lazy(() => import("./components/OurLeader.js"));
-const StoryDetailPage = React.lazy(() => import("./components/StoryDetailPage.js"));
-const NewsLetter = React.lazy(() => import("./pages/NewsLetter.js"));
-const Clients = React.lazy(() => import("./pages/Clients.js"));
-const Alumni = React.lazy(() => import("./pages/Alumni.js"));
+const Principles = React.lazy(() => import("./pages/Principles"));
+const Technology = React.lazy(() => import("./pages/Technology"));
+const RealTime = React.lazy(() => import("./pages/RealTime"));
+const AiPage = React.lazy(() => import("./pages/AiPage"));
+const PMS = React.lazy(() => import("./pages/PMS"));
+const RiskCommand = React.lazy(() => import("./pages/RiskCommand"));
+const Cybersecurity = React.lazy(() => import("./pages/CyberSecurity"));
+const ClientCommand = React.lazy(() => import("./pages/ClientCommand"));
+const Founder = React.lazy(() => import("./pages/Founder"));
+const LifeAtMapSigma = React.lazy(() => import("./pages/LifeAtMapSigma"));
+const Careers = React.lazy(() => import("./pages/Careers"));
+const People = React.lazy(() => import("./pages/People"));
+const PartnerGrid = React.lazy(() => import("./components/PartnerGrid"));
+const LeadershipDetailPage = React.lazy(() => import("./components/OurLeader"));
+const StoryDetailPage = React.lazy(() => import("./components/StoryDetailPage"));
+const NewsLetter = React.lazy(() => import("./pages/NewsLetter"));
+const Clients = React.lazy(() => import("./pages/Clients"));
+const Alumni = React.lazy(() => import("./pages/Alumni"));
+const PrivacyPolicy = React.lazy(() => import("./pages/documents/privacy-policy"));
+const Terms_Conditions = React.lazy(() => import("./pages/documents/terms-of-service"));
+const CookiePolicy = React.lazy(() => import("./pages/documents/cookie-policy"));
+const Preloader = React.lazy(() => import("./components/Preloader"));
 function App() {
   return (
     <Router >
-      <div className="min-h-screen bg-white">
-
         <Navbar />
         <ScrollToTop />
         <Routes>
@@ -51,7 +54,10 @@ function App() {
           <Route path="/Newsletter" element={<NewsLetter />} />
           <Route path="/Clients" element={<Clients />} />
           <Route path="/Alumni" element={<Alumni />} />
-          {/* Fallback route for undefined paths */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<Terms_Conditions />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/preloader" element={<Preloader />} />
           <Route
             path="*"
             element={
@@ -62,8 +68,7 @@ function App() {
             }
           />
         </Routes>
-
-      </div>
+        <Footer/>
     </Router>
   );
 }

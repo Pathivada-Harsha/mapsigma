@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo1 from "../images/logo1.png";
+import SparkleNavbar from './SparkleNavbar';
 import '../components_css/Navbar.css'
 
 const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
@@ -30,7 +31,7 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
             <div className="row align-items-center">
               {/* Logo - Left Side */}
               <div className="col-6 col-lg-auto">
-                <NavLink to="/" className="logo-link" >
+                <NavLink to="/" className="logo-link">
                   <img
                     src={logo1}
                     alt={logoAlt}
@@ -74,23 +75,13 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
           </div>
         </div>
 
-        {/* Bottom Section: Navigation Menu (Desktop) */}
-        <div className="navbar-bottom-row d-none d-lg-block">
-          <div className="container-fluid px-4 px-lg-5">
-            <div className="d-flex align-items-center">
-              {mainMenuItems.map((item, index) => (
-                <NavLink
-                  key={index}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `bottom-nav-link${isActive ? " active" : ""}`
-                  }
-                >
-                  {item.name}
-                </NavLink>
-
-              ))}
-            </div>
+        {/* Bottom Section: SparkleNavbar (Desktop Only) */}
+        <div className="navbar-bottom-row d-none d-lg-block bg-dark">
+          <div className="container-fluid ">
+            <SparkleNavbar 
+              items={mainMenuItems}
+              color="#006837"
+            />
           </div>
         </div>
 
@@ -119,7 +110,7 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
               {/* Mobile Buttons */}
               <div className="mobile-buttons-section">
                 <NavLink
-                  to="/newsletter"
+                  to="/Newsletter"
                   className="mobile-btn mobile-newsletter"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -127,14 +118,14 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
                   NEWSLETTER
                 </NavLink>
                 <NavLink
-                  to="/clients"
+                  to="/Clients"
                   className="mobile-btn mobile-clients"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   CLIENTS
                 </NavLink>
                 <NavLink
-                  to="/alumni"
+                  to="/Alumni"
                   className="mobile-btn mobile-alumni"
                   onClick={() => setIsMenuOpen(false)}
                 >

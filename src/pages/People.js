@@ -562,6 +562,10 @@ const PeoplePage = () => {
            flex: 1;
            min-width: 0;
          }
+         .intro-text-col p{
+             text-align: justify;
+         }
+          
          
          .intro-image-col {
            flex: 1;
