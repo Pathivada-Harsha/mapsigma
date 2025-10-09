@@ -1,4 +1,12 @@
 import "../pages_css/RealTime.css"
+import Rtd1 from "../images/Technology/Rtd1.png"
+import Rtd2 from "../images/Technology/Rtd2.png"
+import Rtd3 from "../images/Technology/Rtd3.png"
+import Rtd4 from "../images/Technology/Rtd4.png"
+import Rtd5 from "../images/Technology/Rtd5.png"
+import Rtd6 from "../images/Technology/Rtd6.png"
+import Rtd7 from "../images/Technology/Rtd7.png"
+import Rtd8 from "../images/Technology/Rtd8.png"
 
 export default function RealTimeData() {
   const items = [
@@ -47,7 +55,7 @@ export default function RealTimeData() {
           <div className="rtd-hero-right">
             <img
               className="rtd-side-image"
-              src="/images/side-real-time.jpg"
+              src={Rtd8}
               alt="Streaming market data and charts"
             />
           </div>
@@ -79,7 +87,7 @@ export default function RealTimeData() {
             </p>
           </div>
           <div className="rtd-split-right">
-            <img src="/images/market-feeds.jpg" alt="Continuous live market feeds" className="rtd-split-image" />
+            <img src={Rtd3} alt="Continuous live market feeds" className="rtd-split-image" />
           </div>
         </div>
       </section>
@@ -98,7 +106,7 @@ export default function RealTimeData() {
             </p>
           </div>
           <div className="rtd-split-right">
-            <img src="/images/data-sources.jpg" alt="Diverse data sources" className="rtd-split-image" />
+            <img src={Rtd1} alt="Diverse data sources" className="rtd-split-image" />
           </div>
         </div>
       </section>
@@ -114,7 +122,7 @@ export default function RealTimeData() {
             <p>This edge in speed and precision is critical in today’s fast-moving, interconnected financial landscape.</p>
           </div>
           <div className="rtd-split-right">
-            <img src="/images/low-latency.jpg" alt="Low latency data processing" className="rtd-split-image" />
+            <img src={Rtd6} alt="Low latency data processing" className="rtd-split-image" />
           </div>
         </div>
       </section>
