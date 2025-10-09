@@ -338,3 +338,11 @@
     padding: 60px 0;
   }
 }
+
+
+.customTextAlignment p{
+  text-align: justify;
+}
+.customTextAlignment li{
+  text-align: justify;
+}

@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo1 from "../images/logo1.png";
 import SparkleNavbar from './SparkleNavbar';
 import '../components_css/Navbar.css'
 
-const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
+const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL", onLogoClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (onLogoClick) {
+      onLogoClick();
+    }
   };
 
   const mainMenuItems = [
@@ -31,13 +39,13 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL" }) => {
             <div className="row align-items-center">
               {/* Logo - Left Side */}
               <div className="col-6 col-lg-auto">
-                <NavLink to="/" className="logo-link">
+                <a href="/" onClick={handleLogoClick} className="logo-link">
                   <img
                     src={logo1}
                     alt={logoAlt}
                     className="navbar-logo"
                   />
-                </NavLink>
+                </a>
               </div>
 
               {/* Buttons - Right Side (Desktop) */}

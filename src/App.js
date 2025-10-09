@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import React, { Suspense } from "react"
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom"
+import React, { useState, useEffect } from "react"
 import './App.css';
 import Navbar from './components/Navbar';
 import Research_insights from "./pages/Research_Insights";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+
 const Culture = React.lazy(() => import("./pages/Culture"));
 const Principles = React.lazy(() => import("./pages/Principles"));
 const Technology = React.lazy(() => import("./pages/Technology"));
@@ -28,48 +29,89 @@ const PrivacyPolicy = React.lazy(() => import("./pages/documents/privacy-policy"
 const Terms_Conditions = React.lazy(() => import("./pages/documents/terms-of-service"));
 const CookiePolicy = React.lazy(() => import("./pages/documents/cookie-policy"));
 const Preloader = React.lazy(() => import("./components/Preloader"));
+
+// Main App Content Component
+function AppContent() {
+  const navigate = useNavigate();
+  const [showPreloader, setShowPreloader] = useState(true);
+  const [hasShownPreloader, setHasShownPreloader] = useState(false);
+
+  useEffect(() => {
+    // Always show preloader on initial page load (any URL)
+    if (!hasShownPreloader) {
+      setShowPreloader(true);
+      
+      // Hide preloader and redirect to home after 5 seconds
+      const timer = setTimeout(() => {
+        setShowPreloader(false);
+        setHasShownPreloader(true);
+        navigate('/');
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [navigate, hasShownPreloader]);
+
+  // Function to handle logo click - show preloader then navigate
+  const handleLogoClick = () => {
+    setShowPreloader(true);
+    setHasShownPreloader(false);
+  };
+
+  // Show preloader on initial load or when logo is clicked
+  if (showPreloader && !hasShownPreloader) {
+    return <Preloader />;
+  }
+
+  // Show main app content
+  return (
+    <>
+      <Navbar onLogoClick={handleLogoClick} />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Research_insights />} />
+        <Route path="/culture" element={<Culture />} />
+        <Route path="/principles" element={<Principles />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/people/partners" element={<PartnerGrid />} />
+        <Route path="/people/leader-detail" element={<LeadershipDetailPage />} />
+        <Route path="/people/story-detail" element={<StoryDetailPage />} />
+        <Route path="/Technology" element={<Technology />} />
+        <Route path="/RealTime" element={<RealTime />} />
+        <Route path="/AiPage" element={<AiPage />} />
+        <Route path="/PMS" element={<PMS />} />
+        <Route path="/RiskCommand" element={<RiskCommand />} />
+        <Route path="/Cybersecurity" element={<Cybersecurity />} />
+        <Route path="/ClientCommand" element={<ClientCommand />} />
+        <Route path="/Founder" element={<Founder />} />
+        <Route path="/LifeAtMapSigma" element={<LifeAtMapSigma />} />
+        <Route path="/Careers" element={<Careers />} />
+        <Route path="/Newsletter" element={<NewsLetter />} />
+        <Route path="/Clients" element={<Clients />} />
+        <Route path="/Alumni" element={<Alumni />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<Terms_Conditions />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route
+          path="*"
+          element={
+            <div style={{ padding: "50px", textAlign: "center" }}>
+              <h2>Page Not Found</h2>
+              <p>The requested page could not be found.</p>
+            </div>
+          }
+        />
+      </Routes>
+      <Footer />
+    </>
+  );
+}
+
 function App() {
   return (
-    <Router >
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Research_insights />} />
-          <Route path="/culture" element={<Culture />} />
-          <Route path="/principles" element={<Principles />} />
-          <Route path="/people" element={<People />} />
-          <Route path="/people/partners" element={<PartnerGrid />} />
-          <Route path="/people/leader-detail" element={<LeadershipDetailPage />} />
-          <Route path="/people/story-detail" element={<StoryDetailPage />} />
-          <Route path="/Technology" element={<Technology />} />
-          <Route path="/RealTime" element={<RealTime />} />
-          <Route path="/AiPage" element={<AiPage />} />
-          <Route path="/PMS" element={<PMS />} />
-          <Route path="/RiskCommand" element={<RiskCommand />} />
-          <Route path="/Cybersecurity" element={<Cybersecurity />} />
-          <Route path="/ClientCommand" element={<ClientCommand />} />
-          <Route path="/Founder" element={<Founder />} />
-          <Route path="/LifeAtMapSigma" element={<LifeAtMapSigma />} />
-          <Route path="/Careers" element={<Careers />} />
-          <Route path="/Newsletter" element={<NewsLetter />} />
-          <Route path="/Clients" element={<Clients />} />
-          <Route path="/Alumni" element={<Alumni />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions" element={<Terms_Conditions />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/preloader" element={<Preloader />} />
-          <Route
-            path="*"
-            element={
-              <div style={{ padding: "50px", textAlign: "center" }}>
-                <h2>Page Not Found</h2>
-                <p>The requested page could not be found.</p>
-              </div>
-            }
-          />
-        </Routes>
-        <Footer/>
-    </Router>
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

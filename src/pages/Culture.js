@@ -3,7 +3,11 @@ import Map_Your_Move from '../components/Map_Your_Move'
 import '../pages_css/Culture.css'
 import Culture_01 from '../images/Culture/culture_01.png'
 
+
 const Culture = () => {
+    const [showAllHighlights, setShowAllHighlights] = useState(false);
+    const [selectedVideo, setSelectedVideo] = useState(null);
+    const [showModal, setShowModal] = useState(false);
     const sectionRefs = useRef([]);
     const highlightsRef = useRef(null);
 
@@ -25,7 +29,6 @@ const Culture = () => {
             if (ref) observer.observe(ref);
         });
 
-        // Observe highlights section
         if (highlightsRef.current) {
             observer.observe(highlightsRef.current);
         }
@@ -95,36 +98,84 @@ const Culture = () => {
         {
             title: "Building Trust Through Transparency",
             description: "Our leadership team discusses how radical honesty and transparency have shaped our investment philosophy and strengthened relationships with our clients and partners.",
-            video: true
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         },
         {
             title: "Excellence in Action: Our Investment Process",
             description: "A deep dive into how our culture of meritocracy and continuous improvement drives our decision-making process and delivers sustainable value for our clients.",
-            video: true
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
         },
         {
             title: "Voices from Within: Life at MAPSIGMA CAPITAL",
             description: "Team members share their experiences of working in an environment where meaningful work meets meaningful relationships, and how our culture shapes their daily contributions.",
-            video: true
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
         },
         {
             title: "Culture as Our Greatest Edge",
             description: "Discover how MAPSIGMA CAPITAL's culture—built on trust, truth, and meaningful work—shapes every decision, strengthens relationships, and turns a firm into a force for lasting impact.",
-            video: true
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+        },
+        {
+            title: "Innovation and Collaboration",
+            description: "Explore how our collaborative approach fosters innovation and drives breakthrough solutions in wealth management and investment strategies.",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+        },
+        {
+            title: "Client Success Stories",
+            description: "Real stories from clients about how our culture of care and excellence has transformed their financial journey and secured their family's future.",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
+        },
+        {
+            title: "Sustainable Investment Practices",
+            description: "Learn about our commitment to sustainable and responsible investing, and how we balance financial returns with positive social impact.",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+        },
+        {
+            title: "Leadership Insights",
+            description: "Our founders and executives share their vision for the future and the principles that guide every decision at MAPSIGMA CAPITAL.",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+        },
+        {
+            title: "Team Development and Growth",
+            description: "Discover our approach to professional development, mentorship programs, and creating pathways for career advancement within the organization.",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4"
+        },
+        {
+            title: "Community Impact Initiatives",
+            description: "See how MAPSIGMA CAPITAL gives back to the community through various programs, partnerships, and initiatives that create lasting positive change.",
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
         }
     ];
+
+    const displayedHighlights = showAllHighlights ? highlights : highlights.slice(0, 4);
+
+    const handleCardClick = (highlight) => {
+        setSelectedVideo(highlight);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setSelectedVideo(null);
+    };
+
+    useEffect(() => {
+        if (showModal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [showModal]);
 
     return (
         <>
             <div className="culture-page">
                 {/* Hero Section */}
                 <section className="hero-section">
-                    <img
-                        src={Culture_01}
-                        alt="Park pathway"
-                        className="hero-image"
-                    />
-                    {/* <div className="hero-overlay"></div> */}
+                    <img src={Culture_01} alt="Park pathway" className="hero-image" />
                     <h1 className="hero-title">CULTURE</h1>
                 </section>
 
@@ -167,8 +218,12 @@ const Culture = () => {
                     <h2 className="highlights-title">Selected Highlights</h2>
 
                     <div className="highlights-grid">
-                        {highlights.map((highlight, index) => (
-                            <div key={index} className="highlight-card">
+                        {displayedHighlights.map((highlight, index) => (
+                            <div 
+                                key={index} 
+                                className="highlight-card"
+                                onClick={() => handleCardClick(highlight)}
+                            >
                                 <div className="highlight-content">
                                     <h3 className="highlight-title">
                                         {highlight.title}
@@ -185,9 +240,57 @@ const Culture = () => {
                             </div>
                         ))}
                     </div>
+
+                    {!showAllHighlights && highlights.length > 4 && (
+                        <div className="show-more-container">
+                            <button 
+                                className="show-more-btn"
+                                onClick={() => setShowAllHighlights(true)}
+                            >
+                                Show More <i className="bi bi-arrow-down"></i>
+                            </button>
+                        </div>
+                    )}
+
+                    {showAllHighlights && (
+                        <div className="show-more-container">
+                            <button 
+                                className="show-more-btn"
+                                onClick={() => setShowAllHighlights(false)}
+                            >
+                               <i className="bi bi-arrow-up"></i> Show Less
+                            </button>
+                        </div>
+                    )}
                 </section>
-                <Map_Your_Move />                
             </div>
+
+            {/* Video Modal */}
+            {showModal && selectedVideo && (
+                <div className="video-modal-overlay" onClick={handleCloseModal}>
+                    <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal-close-btn" onClick={handleCloseModal}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <h3 className="modal-title">{selectedVideo.title}</h3>
+                        <div className="video-container">
+                            <video 
+                                controls 
+                                autoPlay 
+                                className="modal-video"
+                                key={selectedVideo.videoUrl}
+                            >
+                                <source src={selectedVideo.videoUrl} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p className="modal-description">{selectedVideo.description}</p>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

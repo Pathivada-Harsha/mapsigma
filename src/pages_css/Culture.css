@@ -23,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1)); */
+  
 }
 
 .hero-title {
@@ -37,6 +37,8 @@
   margin: 0;
   letter-spacing: 2px;
 }
+
+
 
 /* Split Screen Layout */
 .content-section {
@@ -230,7 +232,7 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #212529;
+  color: #004225;
   margin-bottom: 60px;
   opacity: 0;
   transform: translateY(30px);
@@ -270,6 +272,7 @@
   transform: translateY(50px) rotateX(10deg);
   transform-style: preserve-3d;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .highlights-section.animate-in .highlight-card {
@@ -290,6 +293,30 @@
 
 .highlights-section.animate-in .highlight-card:nth-child(4) {
   animation-delay: 0.55s;
+}
+
+.highlights-section.animate-in .highlight-card:nth-child(5) {
+  animation-delay: 0.1s;
+}
+
+.highlights-section.animate-in .highlight-card:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+.highlights-section.animate-in .highlight-card:nth-child(7) {
+  animation-delay: 0.4s;
+}
+
+.highlights-section.animate-in .highlight-card:nth-child(8) {
+  animation-delay: 0.55s;
+}
+
+.highlights-section.animate-in .highlight-card:nth-child(9) {
+  animation-delay: 0.7s;
+}
+
+.highlights-section.animate-in .highlight-card:nth-child(10) {
+  animation-delay: 0.85s;
 }
 
 @keyframes cardFlipIn {
@@ -378,6 +405,138 @@
   transition: transform 0.3s ease;
   position: relative;
   z-index: 1;
+}
+
+/* Show More Button */
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.show-more-btn {
+  padding: 10px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.show-more-btn:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 66, 37, 0.3);
+}
+
+.show-more-btn:active {
+  transform: translateY(0);
+}
+
+/* Video Modal */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.video-modal-content {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-right: 50px;
+}
+
+.video-container {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 60vh;
+}
+
+.modal-description {
+  color: #b0b0b0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Responsive Design */
@@ -479,6 +638,25 @@
     height: 80px;
     align-self: flex-start;
   }
+
+  .video-modal-content {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+    padding-right: 40px;
+  }
+
+  .modal-video {
+    max-height: 50vh;
+  }
+
+  .show-more-btn {
+    padding: 12px 40px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -504,5 +682,31 @@
   
   .highlights-title {
     font-size: 1.75rem;
+  }
+
+  .video-modal-content {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .modal-close-btn {
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .show-more-btn {
+    padding: 10px 30px;
+    font-size: 0.85rem;
   }
 }

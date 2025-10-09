@@ -6,7 +6,7 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
   
   const getActiveIndex = () => {
     const index = items.findIndex(item => item.path === location.pathname);
-    return index >= 0 ? index : 0;
+    return index >= 0 ? index : -1; // Return -1 when no match found
   };
 
   const [activeIndex, setActiveIndex] = useState(getActiveIndex());
@@ -63,11 +63,14 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
 
   useLayoutEffect(() => {
     const activeButton = buttonRefs.current[activeIndex];
-    if (navRef.current && activeElementRef.current && activeButton) {
+    if (navRef.current && activeElementRef.current && activeButton && activeIndex !== -1) {
       const el = activeElementRef.current;
       const offset = getOffsetLeft(activeButton);
       el.style.transform = `translateX(${offset}px)`;
       el.style.setProperty('--active-element-show', '1');
+    } else if (activeElementRef.current && activeIndex === -1) {
+      // Hide the underline when on a page not in the nav items
+      activeElementRef.current.style.setProperty('--active-element-show', '0');
     }
   }, [activeIndex]);
 
