@@ -294,3 +294,6 @@
     border-radius: 12px;
   }
 }
+.ri-about-button {
+  text-decoration: none;
+}

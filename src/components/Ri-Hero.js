@@ -1,12 +1,17 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { NavLink } from "react-router-dom" // Add this import
 import "../components_css/Ri-Hero.css"
 import hero1 from "./../images/Research&insights/ri1.png"
 import hero2 from "./../images/Research&insights/ri2.png"
 import hero3 from "./../images/Research&insights/ri3.png"
 import hero4 from "./../images/Research&insights/ri4.png"
 import hero5 from "./../images/Research&insights/ri5.png"
+import hero6 from "./../images/Research&insights/Ri9.png"
+import hero7 from "./../images/Research&insights/Ri12.png"
+import hero8 from "./../images/Research&insights/Ri11.png"
+
 const HeroCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [progress, setProgress] = useState(0)
@@ -21,7 +26,8 @@ const HeroCarousel = () => {
             description:
                 "At MAPSIGMA CAPITAL, we go beyond headlines. Our research uncovers patterns, opportunities, and risks others overlook—helping clients make decisions with clarity and conviction.",
             buttonText: "Explore Insights",
-            illustration: hero2,
+            buttonLink: "/Insights", // Add link property
+            illustration: hero6,
         },
         {
             title: "Principles That Guide Decisions.",
@@ -29,7 +35,8 @@ const HeroCarousel = () => {
             description:
                 "Markets shift daily, but principles stand firm. Our insights cut through noise, grounded in discipline, precision, and decades of real-world experience.",
             buttonText: "Read Principles",
-            illustration: hero1,
+            buttonLink: "/Principles", // Add link property
+            illustration: hero7,
         },
         {
             title: "Intelligence That Builds Legacy.",
@@ -37,10 +44,10 @@ const HeroCarousel = () => {
             description:
                 "Our insights connect technology, global markets, and human values. We provide foresight that protects today and builds for tomorrow.",
             buttonText: "Discover More",
-            illustration: hero5,
+            buttonLink: "/Technology", // Add link property
+            illustration: hero8,
         },
     ]
-
 
     const SLIDE_DURATION = 5000 // 5 seconds
 
@@ -133,10 +140,10 @@ const HeroCarousel = () => {
                                     <div className="hc-subtitle">{slide.subtitle}</div>
                                     <h1 className="hc-title">{slide.title}</h1>
                                     <p className="hc-description">{slide.description}</p>
-                                    <button className="hc-cta-button">
+                                    <NavLink to={slide.buttonLink} className="hc-cta-button">
                                         {slide.buttonText}
                                         <span className="hc-button-arrow">→</span>
-                                    </button>
+                                    </NavLink>
                                 </div>
                                 <div className="hc-visual-section">
                                     <div className="hc-illustration-container">
@@ -198,16 +205,6 @@ const HeroCarousel = () => {
                         ></span>
                     </button>
                 ))}
-            </div>
-
-            {/* Progress Bar */}
-            <div className="hc-progress-bar">
-                <div
-                    className="hc-progress-fill"
-                    style={{
-                        width: `${((currentSlide + (progress / 100)) / slides.length) * 100}%`,
-                    }}
-                ></div>
             </div>
         </div>
     )

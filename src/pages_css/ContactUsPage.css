@@ -1,0 +1,362 @@
+/* Contact Us Page Styles for Map Sigma */
+
+/* Hero Section */
+.contactus-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contactus-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.contactus-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(20, 30, 48, 0.85) 0%, rgba(36, 59, 85, 0.75) 100%);
+  z-index: 2;
+}
+
+.contactus-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #ffffff;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.contactus-hero-title {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+}
+
+.contactus-hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #e8e8e8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Main Container */
+.contactus-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Contact Section */
+.contactus-section {
+  padding: 100px 0;
+  background: #f8f6f3;
+}
+
+.contactus-grid {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* Form Section */
+.contactus-form-wrapper {
+  flex: 1.2;
+}
+
+.contactus-form-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.contactus-form-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+}
+
+.contactus-form {
+  background: #ffffff;
+  padding: 48px;
+  border-radius: 2px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contactus-form-group {
+  margin-bottom: 28px;
+}
+
+.contactus-form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contactus-form-input,
+.contactus-form-textarea,
+.contactus-form-select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.contactus-form-input:focus,
+.contactus-form-textarea:focus,
+.contactus-form-select:focus {
+  outline: none;
+  border-color: #243b55;
+  background: #ffffff;
+}
+
+.contactus-form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contactus-form-button {
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contactus-form-button:hover {
+  background: #243b55;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Info Section */
+.contactus-info-wrapper {
+  flex: 0.8;
+}
+
+.contactus-info-title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0 0 40px 0;
+  letter-spacing: -0.01em;
+}
+
+.contactus-info-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.contactus-info-card-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #243b55;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contactus-info-card-content {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.contactus-info-card-link {
+  color: #243b55;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactus-info-card-link:hover {
+  color: #1a1a1a;
+}
+
+.contactus-info-hours {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.contactus-info-hours-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #243b55;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contactus-info-hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactus-info-hours-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.contactus-info-hours-day {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Values Section */
+.contactus-values-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.contactus-values-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 60px 0;
+  letter-spacing: -0.01em;
+}
+
+.contactus-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.contactus-value-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.contactus-value-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 24px;
+  background: #f8f6f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.contactus-value-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.contactus-value-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contactus-grid {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .contactus-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contactus-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .contactus-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .contactus-section {
+    padding: 60px 0;
+  }
+
+  .contactus-form {
+    padding: 32px 24px;
+  }
+
+  .contactus-form-title,
+  .contactus-info-title,
+  .contactus-values-title {
+    font-size: 2rem;
+  }
+
+  .contactus-values-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contactus-values-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactus-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .contactus-hero-title {
+    font-size: 2rem;
+  }
+
+  .contactus-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .contactus-form {
+    padding: 24px 20px;
+  }
+}

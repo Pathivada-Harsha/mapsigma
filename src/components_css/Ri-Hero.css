@@ -355,3 +355,13 @@
     width: 40px;
   }
 }
+.hc-cta-button {
+    text-decoration: none;
+}
+
+.hc-cta-button:hover,
+.hc-cta-button:focus,
+.hc-cta-button:active,
+.hc-cta-button:visited {
+    text-decoration: none;
+}

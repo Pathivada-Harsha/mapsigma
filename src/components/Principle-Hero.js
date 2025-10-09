@@ -33,7 +33,7 @@ const PrinciplesHero = () => {
         </p>
 
         {/* CTA Button */}
-        <NavLink to="/contact" className="principles-home-cta-button">
+        <NavLink to="/ApproachPage" className="principles-home-cta-button">
           Learn Our Approach →
         </NavLink>
       </div>

@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Research_insights from "./pages/Research_Insights";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
-
+import BackToTop from "./components/BackToTopArrow.js";
 const Culture = React.lazy(() => import("./pages/Culture"));
 const Principles = React.lazy(() => import("./pages/Principles"));
 const Technology = React.lazy(() => import("./pages/Technology"));
@@ -29,7 +29,9 @@ const PrivacyPolicy = React.lazy(() => import("./pages/documents/privacy-policy"
 const Terms_Conditions = React.lazy(() => import("./pages/documents/terms-of-service"));
 const CookiePolicy = React.lazy(() => import("./pages/documents/cookie-policy"));
 const Preloader = React.lazy(() => import("./components/Preloader"));
-
+const Insights = React.lazy(() => import("./pages/Insights"));
+const OurApproach = React.lazy(() => import("./pages/OurApproach"));
+const ContactPage = React.lazy(() => import("./pages/ContactUsPage"));
 // Main App Content Component
 function AppContent() {
   const navigate = useNavigate();
@@ -92,6 +94,9 @@ function AppContent() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<Terms_Conditions />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+         <Route path="/Insights" element={<Insights />} />
+        <Route path="/ApproachPage" element={<OurApproach />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route
           path="*"
           element={
@@ -103,6 +108,7 @@ function AppContent() {
         />
       </Routes>
       <Footer />
+      <BackToTop />
     </>
   );
 }

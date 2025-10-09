@@ -20,7 +20,7 @@ const InteractiveVideoSection = () => {
     description:
       "Our analysts decode economic cycles and global shifts, providing clients with clarity, foresight, and strategies designed to endure across generations.",
     image: Videoimage1,
-    videoUrl: "/videos/global-insights.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     category: "Market Intelligence"
   },
   {
@@ -30,7 +30,7 @@ const InteractiveVideoSection = () => {
     description:
       "Discover how our real-time data infrastructure and AI-enhanced investment models empower smarter, faster, and more disciplined decisions.",
     image: Videoimage2,
-    videoUrl: "/videos/technology-edge.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     category: "Innovation"
   },
   {
@@ -40,7 +40,7 @@ const InteractiveVideoSection = () => {
     description:
       "We don’t just protect capital—we transform risk into opportunity through disciplined systems, foresight, and principle-driven strategies.",
     image: Videoimage3,
-    videoUrl: "/videos/risk-purpose.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     category: "Risk Strategy"
   },
   {
@@ -50,7 +50,7 @@ const InteractiveVideoSection = () => {
     description:
       "Learn how we integrate responsibility, sustainability, and long-term purpose into every decision, building wealth that endures for future generations.",
     image: Videoimage4,
-    videoUrl: "/videos/sustainability.mp4",
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     category: "Sustainability"
   }
 ]

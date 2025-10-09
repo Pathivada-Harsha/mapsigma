@@ -1,0 +1,935 @@
+/* Our Approach Page Styles */
+
+/* Container */
+.Approach1-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.Approach1-container-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.Approach1-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  overflow: hidden;
+}
+
+.Approach1-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/Research&insights/Ri13.png") center / cover no-repeat;
+  opacity: 0.15;
+}
+
+.Approach1-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.Approach1-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.Approach1-hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Culture Introduction */
+.Approach1-culture-intro {
+  padding: 100px 0;
+  background: white;
+}
+
+.Approach1-culture-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.Approach1-large-text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #004225;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.Approach1-body-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.Approach1-culture-card {
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0, 66, 37, 0.2);
+}
+
+.Approach1-culture-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.Approach1-culture-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.Approach1-culture-card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Values Section - Alternating Layout */
+.Approach1-values {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
+
+.Approach1-value-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 60px 0;
+}
+
+.Approach1-value-item:last-child {
+  margin-bottom: 0;
+}
+
+.Approach1-value-content {
+  padding: 20px;
+}
+
+.Approach1-value-title {
+  font-size: 2.5rem;
+  color: #004225;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.Approach1-value-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.Approach1-value-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.Approach1-value-image {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.Approach1-value-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.Approach1-value-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Belonging Section */
+.Approach1-belonging {
+  position: relative;
+  padding: 120px 0;
+  background: #004225;
+  color: white;
+}
+
+.Approach1-belonging-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/Research&insights/Ri15.png") center / cover no-repeat;
+  opacity: 0.1;
+}
+
+.Approach1-belonging-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.Approach1-belonging-title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.Approach1-belonging-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.Approach1-belonging-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.Approach1-belonging-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.Approach1-belonging-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.Approach1-belonging-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.Approach1-belonging-card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Edge Section */
+.Approach1-edge {
+  padding: 100px 0;
+  background: white;
+  text-align: center;
+}
+
+.Approach1-edge-title {
+  font-size: 3rem;
+  color: #004225;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.Approach1-edge-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+}
+
+.Approach1-edge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.Approach1-edge-item {
+  padding: 40px 30px;
+  background: #f8f8f8;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.Approach1-edge-item:hover {
+  background: #004225;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 66, 37, 0.2);
+}
+
+.Approach1-edge-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.Approach1-edge-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.Approach1-edge-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.Approach1-edge-conclusion {
+  font-size: 1.5rem;
+  color: #004225;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+/* Principles Hero */
+.Approach1-principles-hero {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  color: white;
+}
+
+.Approach1-principles-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/Technology/Rtd1.png") center / cover no-repeat;
+  opacity: 0.1;
+}
+
+.Approach1-principles-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Approach1-principles-title {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.Approach1-principles-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.Approach1-principles-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* Framework Section */
+.Approach1-framework {
+  padding: 100px 0;
+  background: white;
+}
+
+.Approach1-section-title {
+  font-size: 3rem;
+  color: #004225;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.Approach1-section-intro {
+  font-size: 1.3rem;
+  color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 1.8;
+}
+
+.Approach1-framework-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.Approach1-framework-card {
+  background: #f8f8f8;
+  padding: 40px 30px;
+  border-radius: 15px;
+  border-left: 5px solid #004225;
+  transition: all 0.3s ease;
+}
+
+.Approach1-framework-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 66, 37, 0.15);
+}
+
+.Approach1-framework-number {
+  font-size: 2.5rem;
+  color: #004225;
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+
+.Approach1-framework-card h3 {
+  font-size: 1.8rem;
+  color: #004225;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.Approach1-framework-card p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Why Principles Section */
+.Approach1-why-principles {
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+
+.Approach1-why-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Approach1-why-title {
+  font-size: 3rem;
+  color: #004225;
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.Approach1-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.Approach1-why-item {
+  text-align: center;
+}
+
+.Approach1-why-highlight {
+  background: #004225;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.Approach1-why-item p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.Approach1-why-conclusion {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Legacy Section */
+.Approach1-legacy {
+  padding: 100px 0;
+  background: white;
+}
+
+.Approach1-legacy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.Approach1-legacy-image {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.Approach1-legacy-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.Approach1-legacy-title {
+  font-size: 2.5rem;
+  color: #004225;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.Approach1-legacy-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.Approach1-legacy-points {
+  margin-top: 30px;
+}
+
+.Approach1-legacy-point {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.Approach1-legacy-bullet {
+  color: #004225;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.Approach1-legacy-point p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Leadership Section */
+.Approach1-leadership {
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+
+.Approach1-leadership-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.Approach1-leader-profile {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  margin-bottom: 60px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.Approach1-leader-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.Approach1-leader-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 66, 37, 0.15);
+}
+
+.Approach1-leader-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Approach1-leader-name {
+  font-size: 2rem;
+  color: #004225;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.Approach1-leader-title {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.Approach1-leader-summary {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.Approach1-leader-bio {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.Approach1-leader-highlights h4 {
+  font-size: 1.5rem;
+  color: #004225;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.Approach1-leader-list {
+  list-style: none;
+  padding: 0;
+}
+
+.Approach1-leader-list li {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.8;
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.Approach1-leader-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #004225;
+  font-weight: 700;
+}
+
+/* Partners Section */
+.Approach1-partners {
+  padding: 100px 0;
+  background: white;
+  text-align: center;
+}
+
+.Approach1-partners-description {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+/* People Section */
+.Approach1-people {
+  padding: 100px 0;
+  background: #f8f8f8;
+}
+
+.Approach1-people-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.Approach1-people-content {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.Approach1-people-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.Approach1-people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.Approach1-people-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.Approach1-people-card:hover {
+  transform: translateY(-10px);
+}
+
+.Approach1-people-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Look For Section */
+.Approach1-look-for {
+  padding: 100px 0;
+  background: white;
+}
+
+.Approach1-look-for-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.Approach1-look-for-title {
+  font-size: 2.5rem;
+  color: #004225;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.Approach1-look-for-intro {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.Approach1-look-for-list {
+  margin-bottom: 30px;
+}
+
+.Approach1-look-for-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.Approach1-check {
+  color: #004225;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.Approach1-look-for-item p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.Approach1-look-for-conclusion {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.Approach1-look-for-card {
+  background: linear-gradient(135deg, #004225 0%, #006837 100%);
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0, 66, 37, 0.2);
+}
+
+.Approach1-look-for-card h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.Approach1-look-for-card > p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.Approach1-look-for-description p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  opacity: 0.95;
+}
+
+/* Final Section */
+.Approach1-final {
+  position: relative;
+  padding: 120px 0;
+  background: #004225;
+  color: white;
+  text-align: center;
+}
+
+.Approach1-final-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../images/Technology/Rtd2.png") center / cover no-repeat;
+  opacity: 0.1;
+}
+
+.Approach1-final-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.Approach1-final-title {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.Approach1-final-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.Approach1-final-conclusion {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-top: 50px;
+}
+
+.Approach1-final-conclusion strong {
+  font-size: 1.8rem;
+  display: block;
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .Approach1-hero-title {
+    font-size: 3rem;
+  }
+
+  .Approach1-culture-grid,
+  .Approach1-value-item,
+  .Approach1-legacy-grid,
+  .Approach1-look-for-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .Approach1-value-right .Approach1-value-image {
+    order: -1;
+  }
+
+  .Approach1-belonging-grid,
+  .Approach1-edge-grid,
+  .Approach1-framework-grid,
+  .Approach1-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Approach1-people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Approach1-leader-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .Approach1-leader-photo {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .Approach1-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .Approach1-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .Approach1-section-title {
+    font-size: 2rem;
+  }
+
+  .Approach1-value-title,
+  .Approach1-belonging-title,
+  .Approach1-edge-title,
+  .Approach1-principles-title {
+    font-size: 2rem;
+  }
+
+  .Approach1-people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Approach1-leader-profile {
+    padding: 30px 20px;
+  }
+
+  .Approach1-final-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Approach1-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .Approach1-hero-title {
+    font-size: 2rem;
+  }
+
+  .Approach1-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .Approach1-container-width {
+    padding: 0 15px;
+  }
+
+  .Approach1-culture-intro,
+  .Approach1-values,
+  .Approach1-belonging,
+  .Approach1-edge,
+  .Approach1-framework,
+  .Approach1-leadership,
+  .Approach1-people,
+  .Approach1-look-for,
+  .Approach1-final {
+    padding: 60px 0;
+  }
+}
