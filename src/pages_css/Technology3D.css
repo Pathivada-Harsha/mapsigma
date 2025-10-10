@@ -1,0 +1,351 @@
+/* Updated all class names to use Technology3d- prefix */
+
+/* Technology Page Styles */
+
+.Technology3d-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.Technology3d-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  overflow: hidden;
+}
+
+.Technology3d-hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.Technology3d-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 40px;
+  color: #ffffff;
+}
+
+.Technology3d-hero-title {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.Technology3d-hero-subtitle {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.Technology3d-hero-description {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Tech Sections */
+.Technology3d-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 60px;
+}
+
+.Technology3d-section-light {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.Technology3d-section-dark {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.Technology3d-section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Technology3d-section-reverse {
+  flex-direction: row-reverse;
+}
+
+.Technology3d-text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.Technology3d-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin-bottom: 20px;
+}
+
+.Technology3d-section-dark .Technology3d-label {
+  color: #60a5fa;
+}
+
+.Technology3d-section-title {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 30px 0;
+  letter-spacing: -1px;
+}
+
+.Technology3d-section-description {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0 0 50px 0;
+  color: #475569;
+}
+
+.Technology3d-section-dark .Technology3d-section-description {
+  color: #cbd5e1;
+}
+
+.Technology3d-features {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Technology3d-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.Technology3d-feature-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+
+.Technology3d-section-dark .Technology3d-feature-icon {
+  background: #1e293b;
+}
+
+.Technology3d-feature-text h3 {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #0f172a;
+}
+
+.Technology3d-section-dark .Technology3d-feature-text h3 {
+  color: #ffffff;
+}
+
+.Technology3d-feature-text p {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  color: #64748b;
+}
+
+.Technology3d-section-dark .Technology3d-feature-text p {
+  color: #94a3b8;
+}
+
+.Technology3d-canvas-container {
+  flex: 1;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.Technology3d-section-dark .Technology3d-canvas-container {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Closing Section */
+.Technology3d-closing {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 60px;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  color: #ffffff;
+}
+
+.Technology3d-closing-content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.Technology3d-closing-title {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 40px 0;
+  letter-spacing: -1px;
+}
+
+.Technology3d-closing-text {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  margin: 0 0 40px 0;
+  color: #e0f2fe;
+}
+
+.Technology3d-closing-emphasis {
+  font-family: "Geist Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .Technology3d-section-content {
+    gap: 60px;
+  }
+
+  .Technology3d-canvas-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 968px) {
+  .Technology3d-hero-title {
+    font-size: 64px;
+  }
+
+  .Technology3d-hero-subtitle {
+    font-size: 24px;
+  }
+
+  .Technology3d-section {
+    padding: 80px 40px;
+  }
+
+  .Technology3d-section-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .Technology3d-section-reverse {
+    flex-direction: column;
+  }
+
+  .Technology3d-text-content {
+    max-width: 100%;
+  }
+
+  .Technology3d-canvas-container {
+    width: 100%;
+    height: 400px;
+  }
+
+  .Technology3d-section-title {
+    font-size: 40px;
+  }
+
+  .Technology3d-closing-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .Technology3d-hero {
+    height: 80vh;
+  }
+
+  .Technology3d-hero-title {
+    font-size: 48px;
+  }
+
+  .Technology3d-hero-subtitle {
+    font-size: 20px;
+  }
+
+  .Technology3d-hero-description {
+    font-size: 16px;
+  }
+
+  .Technology3d-section {
+    padding: 60px 20px;
+  }
+
+  .Technology3d-section-title {
+    font-size: 32px;
+  }
+
+  .Technology3d-section-description {
+    font-size: 16px;
+  }
+
+  .Technology3d-canvas-container {
+    height: 300px;
+  }
+
+  .Technology3d-closing {
+    padding: 80px 20px;
+  }
+
+  .Technology3d-closing-title {
+    font-size: 32px;
+  }
+
+  .Technology3d-closing-text {
+    font-size: 18px;
+  }
+
+  .Technology3d-closing-emphasis {
+    font-size: 20px;
+  }
+}

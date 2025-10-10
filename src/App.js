@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTopArrow.js";
 const Culture = React.lazy(() => import("./pages/Culture"));
 const Principles = React.lazy(() => import("./pages/Principles"));
-const Technology = React.lazy(() => import("./pages/Technology"));
+const Technology = React.lazy(() => import("./pages/Technology3D"));
 const RealTime = React.lazy(() => import("./pages/RealTime"));
 const AiPage = React.lazy(() => import("./pages/AiPage"));
 const PMS = React.lazy(() => import("./pages/PMS"));

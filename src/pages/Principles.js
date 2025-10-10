@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import { NavLink } from "react-router-dom";
 import "../pages_css/Principles.css"
 import PrinciplesHero from "../components/Principle-Hero"
 import principle1 from "../images/principles/principle1.png"
@@ -398,9 +399,9 @@ export default function PrinciplesContent() {
                                 </div>
                             </div>
                             <div className="pr-legacy-final-cta">
-                                <a href="/contact" className="pr-legacy-final-button">
+                                <NavLink to="/contact" className="pr-legacy-final-button">
                                     Get Started
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
                     </div>

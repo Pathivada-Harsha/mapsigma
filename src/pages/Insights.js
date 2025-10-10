@@ -109,7 +109,7 @@ export default function InsightsPage() {
       {/* Hero Section with Background Image */}
       <section 
         className="insights-hero"
-        style={{ backgroundImage: "url(/images/insights-hero-bg.jpg)" }}
+        
       >
         <div className="insights-hero-inner">
           <div className="breadcrumb">Home / Insights</div>
