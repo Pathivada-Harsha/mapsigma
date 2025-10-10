@@ -463,3 +463,12 @@
     justify-content: center;
   }
 }
+.article-read-more {
+  text-decoration: none;
+}
+
+.article-read-more:hover,
+.article-read-more:focus,
+.article-read-more:visited {
+  text-decoration: none;
+}

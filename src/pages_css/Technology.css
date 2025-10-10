@@ -1021,3 +1021,14 @@
     margin-bottom: 48px;
   }
 }
+
+.tech-platform-btn {
+    text-decoration: none;
+}
+
+.tech-platform-btn:hover,
+.tech-platform-btn:focus,
+.tech-platform-btn:active,
+.tech-platform-btn:visited {
+    text-decoration: none;
+}

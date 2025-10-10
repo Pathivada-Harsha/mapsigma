@@ -2,6 +2,7 @@
 
 import "../pages_css/Technology.css"
 import { useState, useEffect, useRef } from "react"
+import {NavLink} from "react-router-dom"
 import TechnologyPillars from "../components/Technology-pillars.js"
 import ClientExperienceSection from "../components/Technology-client.js"
 import Hero from "../components/Technology-Hero.js"
@@ -169,12 +170,12 @@ export default function TechnologyPage() {
                             engine. This system allows our investment and operations teams to move faster, see deeper and act with precision.
                         </p>
 
-                        <button className="tech-platform-btn">
+                        <NavLink to="/contact" className="tech-platform-btn">
                             Get Expert Advice
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                        </button>
+                        </NavLink>
                     </div>
                     <div
                         className={`tech-platform-visual tech-animate-right ${isVisible('platform') ? 'tech-visible' : ''}`}

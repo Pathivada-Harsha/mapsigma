@@ -2,11 +2,12 @@
 
 import { useState } from "react"
 import "../pages_css/LifeAtMapSigma.css"
+import { NavLink } from "react-router-dom"
 import LifeHero from "../components/Life-Hero1.js"
-import LifeCta from "../components/Life-Cta.js"
+
 import LifeCareers from "../components/Life-Careers.js"
 import LifeValues from "../components/Life-Values.js"
-
+import LifeCta from "../components/Life-Cta.js"
 
 import Life1 from "../images/LifeAtMapSigma/LifeInsightInvestement.png"
 import Life2 from "../images/LifeAtMapSigma/LifeInsightTechnology.png"
@@ -82,9 +83,9 @@ export default function LifeContent() {
                             We uncover what drives markets and turn that knowledge into smart portfolios and sharp insights for our
                             clients.
                         </p>
-                        <a href="#" className="life-insights-link">
+                        <NavLink to="/InsightsInvestement" className="life-insights-link">
                             Learn More →
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -94,9 +95,9 @@ export default function LifeContent() {
                         <p className="life-insights-desc">
                             Shape the future of investing by turning insight into intelligent systems.
                         </p>
-                        <a href="#" className="life-insights-link">
+                        <NavLink to="/Technology3D" className="life-insights-link">
                             Learn More →
-                        </a>
+                        </NavLink>
                     </div>
                     <img src={Life2} alt="Insight Technology" className="life-insights-img" />
                 </div>
@@ -109,9 +110,9 @@ export default function LifeContent() {
                             Explore our investment internship programs designed to offer real-world experience and meaningful exposure
                             to MAPSIGMA's strategies.
                         </p>
-                        <a href="#" className="life-insights-link">
+                        <NavLink to="/Internship" className="life-insights-link">
                             Learn More →
-                        </a>
+                        </NavLink>
                     </div>
                 </div>
             </section>

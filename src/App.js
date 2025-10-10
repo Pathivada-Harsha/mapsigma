@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTopArrow.js";
 const Culture = React.lazy(() => import("./pages/Culture"));
 const Principles = React.lazy(() => import("./pages/Principles"));
-const Technology = React.lazy(() => import("./pages/Technology3D"));
+const Technology = React.lazy(() => import("./pages/Technology"));
 const RealTime = React.lazy(() => import("./pages/RealTime"));
 const AiPage = React.lazy(() => import("./pages/AiPage"));
 const PMS = React.lazy(() => import("./pages/PMS"));
@@ -32,6 +32,11 @@ const Preloader = React.lazy(() => import("./components/Preloader"));
 const Insights = React.lazy(() => import("./pages/Insights"));
 const OurApproach = React.lazy(() => import("./pages/OurApproach"));
 const ContactPage = React.lazy(() => import("./pages/ContactUsPage"));
+const ArticleDetailedPage = React.lazy(() => import("./components/Ri-Artcles-Detailed"));
+const InsightsInvestement = React.lazy(() => import("./pages/InsightsInvestement"));
+const InsightsTechnology = React.lazy(() => import("./components/Insights-Technology.js"));
+const Technology3D = React.lazy(() => import("./pages/Technology3D.js"));
+const IntershipPage = React.lazy(() => import("./components/InternshipPage.js"));
 // Main App Content Component
 function AppContent() {
   const navigate = useNavigate();
@@ -97,6 +102,11 @@ function AppContent() {
          <Route path="/Insights" element={<Insights />} />
         <Route path="/ApproachPage" element={<OurApproach />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/article/:articleId" element={<ArticleDetailedPage />} />
+        <Route path="/InsightsInvestement" element={<InsightsInvestement />} />
+        <Route path="/InsightsTechnology" element={<InsightsTechnology />} />
+        <Route path="/Internship" element={<IntershipPage />} />
+        <Route path="/Technology3D" element={<Technology3D />} />
         <Route
           path="*"
           element={

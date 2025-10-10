@@ -1,22 +1,24 @@
 "use client"
 
 import { useRef, useState, useEffect } from "react"
+import {NavLink} from "react-router-dom"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls, Sphere, Box, Torus, MeshDistortMaterial, Float, Environment } from "@react-three/drei"
+import { OrbitControls, Sphere, Box, Torus, MeshDistortMaterial, Float, Environment, Line } from "@react-three/drei"
+import * as THREE from "three"
 import "../pages_css/Technology3D.css"
 
 // Animated 3D Sphere for Hero
 function AnimatedSphere() {
-  const meshRef = useRef()
+  const mesto = useRef()
 
   useFrame((state) => {
-    meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2
-    meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
+    mesto.current.rotation.x = state.clock.getElapsedTime() * 0.2
+    mesto.current.rotation.y = state.clock.getElapsedTime() * 0.3
   })
 
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-      <Sphere ref={meshRef} args={[1, 64, 64]} scale={2.5}>
+      <Sphere ref={mesto} args={[1, 64, 64]} scale={2.5}>
         <MeshDistortMaterial
           color="#1e40af"
           attach="material"
@@ -199,6 +201,136 @@ function ClientPortal() {
   )
 }
 
+function DataGlobe() {
+  const globeRef = useRef()
+  const linesRef = useRef([])
+
+  useFrame((state) => {
+    globeRef.current.rotation.y = state.clock.getElapsedTime() * 0.1
+
+    linesRef.current.forEach((line, i) => {
+      if (line) {
+        line.rotation.y = state.clock.getElapsedTime() * (0.2 + i * 0.1)
+      }
+    })
+  })
+
+  // Create orbital paths
+  const orbits = []
+  for (let i = 0; i < 5; i++) {
+    const points = []
+    const radius = 2 + i * 0.3
+    for (let j = 0; j <= 64; j++) {
+      const angle = (j / 64) * Math.PI * 2
+      points.push(new THREE.Vector3(Math.cos(angle) * radius, Math.sin(angle * 2) * 0.5, Math.sin(angle) * radius))
+    }
+    orbits.push(points)
+  }
+
+  return (
+    <group>
+      {/* Central Globe */}
+      <Sphere ref={globeRef} args={[1.8, 64, 64]}>
+        <meshStandardMaterial color="#1e40af" wireframe transparent opacity={0.3} />
+      </Sphere>
+
+      {/* Inner solid sphere */}
+      <Sphere args={[1.7, 32, 32]}>
+        <meshStandardMaterial
+          color="#3b82f6"
+          metalness={0.8}
+          roughness={0.2}
+          emissive="#1e40af"
+          emissiveIntensity={0.3}
+        />
+      </Sphere>
+
+      {/* Data stream orbits */}
+      {orbits.map((points, i) => (
+        <group key={i} ref={(el) => (linesRef.current[i] = el)}>
+          <Line points={points} color={i % 2 === 0 ? "#60a5fa" : "#3b82f6"} lineWidth={2} />
+          {/* Data points on orbits */}
+          <Sphere args={[0.08, 16, 16]} position={points[Math.floor(Math.random() * points.length)]}>
+            <meshStandardMaterial color="#fbbf24" emissive="#fbbf24" emissiveIntensity={1} />
+          </Sphere>
+        </group>
+      ))}
+    </group>
+  )
+}
+
+function PortfolioNodes() {
+  const groupRef = useRef()
+  const nodesRef = useRef([])
+  const linesRef = useRef([])
+
+  useFrame((state) => {
+    groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.15
+
+    nodesRef.current.forEach((node, i) => {
+      if (node) {
+        node.position.y = Math.sin(state.clock.getElapsedTime() * 0.5 + i) * 0.2
+        node.scale.setScalar(1 + Math.sin(state.clock.getElapsedTime() * 2 + i) * 0.1)
+      }
+    })
+  })
+
+  const nodePositions = [
+    [0, 0, 0], // Center
+    [2, 1, 0], // Top right
+    [-2, 1, 0], // Top left
+    [2, -1, 0], // Bottom right
+    [-2, -1, 0], // Bottom left
+    [0, 0, 2], // Front
+    [0, 0, -2], // Back
+  ]
+
+  const connections = [
+    [0, 1],
+    [0, 2],
+    [0, 3],
+    [0, 4],
+    [0, 5],
+    [0, 6],
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    [1, 5],
+    [2, 6],
+  ]
+
+  const colors = ["#0ea5e9", "#1e40af", "#3b82f6", "#60a5fa", "#0284c7"]
+
+  return (
+    <group ref={groupRef}>
+      {/* Connection lines */}
+      {connections.map((conn, i) => (
+        <Line
+          key={i}
+          points={[nodePositions[conn[0]], nodePositions[conn[1]]]}
+          color="#3b82f6"
+          lineWidth={1.5}
+          transparent
+          opacity={0.4}
+        />
+      ))}
+
+      {/* Nodes */}
+      {nodePositions.map((pos, i) => (
+        <Sphere key={i} ref={(el) => (nodesRef.current[i] = el)} position={pos} args={[i === 0 ? 0.5 : 0.3, 32, 32]}>
+          <meshStandardMaterial
+            color={colors[i % colors.length]}
+            metalness={0.8}
+            roughness={0.2}
+            emissive={colors[i % colors.length]}
+            emissiveIntensity={0.5}
+          />
+        </Sphere>
+      ))}
+    </group>
+  )
+}
+
 export default function TechnologyPage() {
   const [activeSection, setActiveSection] = useState(0)
 
@@ -279,13 +411,16 @@ export default function TechnologyPage() {
                 </div>
               </div>
             </div>
+            <NavLink to="/RealTime" className="Technology3d-learn-more">
+              Learn More →
+            </NavLink>
           </div>
           <div className="Technology3d-canvas-container">
             <Canvas camera={{ position: [0, 0, 8], fov: 50 }}>
               <ambientLight intensity={0.5} />
               <pointLight position={[10, 10, 10]} intensity={1} />
               <spotLight position={[0, 10, 0]} intensity={0.5} color="#3b82f6" />
-              <DataNetwork />
+              <DataGlobe />
               <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
             </Canvas>
           </div>
@@ -335,6 +470,9 @@ export default function TechnologyPage() {
                 </div>
               </div>
             </div>
+            <NavLink to="/AiPage" className="Technology3d-learn-more">
+              Learn More →
+            </NavLink>
           </div>
         </div>
       </section>
@@ -373,13 +511,16 @@ export default function TechnologyPage() {
                 </div>
               </div>
             </div>
+            <NavLink to="/PMS" className="Technology3d-learn-more">
+              Learn More →
+            </NavLink>
           </div>
           <div className="Technology3d-canvas-container">
             <Canvas camera={{ position: [0, 2, 8], fov: 50 }}>
               <ambientLight intensity={0.5} />
               <pointLight position={[10, 10, 10]} intensity={1} />
               <spotLight position={[0, 10, 0]} intensity={0.8} color="#0ea5e9" />
-              <PortfolioCubes />
+              <PortfolioNodes />
               <OrbitControls enableZoom={false} />
             </Canvas>
           </div>
@@ -429,6 +570,9 @@ export default function TechnologyPage() {
                 </div>
               </div>
             </div>
+            <NavLink to="/RiskCommand" className="Technology3d-learn-more">
+              Learn More →
+            </NavLink>
           </div>
         </div>
       </section>
@@ -467,6 +611,9 @@ export default function TechnologyPage() {
                 </div>
               </div>
             </div>
+            <NavLink to="/Cybersecurity" className="Technology3d-learn-more">
+              Learn More →
+            </NavLink>
           </div>
           <div className="Technology3d-canvas-container">
             <Canvas camera={{ position: [0, 0, 6], fov: 50 }}>
@@ -524,6 +671,9 @@ export default function TechnologyPage() {
                 </div>
               </div>
             </div>
+            <NavLink to="/ClientCommand" className="Technology3d-learn-more">
+              Learn More →
+            </NavLink>
           </div>
         </div>
       </section>
