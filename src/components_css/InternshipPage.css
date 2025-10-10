@@ -1,0 +1,534 @@
+.InternshipPage-container {
+          
+          color: #1a1a1a;
+          background-color: #ffffff;
+          line-height: 1.6;
+        }
+
+        .InternshipPage-hero {
+          background: 
+            linear-gradient(rgba(26, 26, 46, 0.45), rgba(22, 33, 62, 0.45))
+,
+            url('../images/principles/PrincipleHome.png');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          color: #ffffff;
+          padding: 160px 40px 120px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .InternshipPage-hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+            radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 50%);
+        }
+
+        .InternshipPage-hero-content {
+          max-width: 900px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+        }
+
+        .InternshipPage-hero-tag {
+          display: inline-block;
+          background: rgba(255, 255, 255, 0.15);
+          padding: 8px 24px;
+          border-radius: 30px;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin-bottom: 24px;
+          backdrop-filter: blur(10px);
+        }
+
+        .InternshipPage-hero h1 {
+          font-size: 4.5rem;
+          font-weight: 300;
+          margin-bottom: 28px;
+          letter-spacing: -2px;
+          line-height: 1.1;
+        }
+
+        .InternshipPage-hero-subtitle {
+          font-size: 1.5rem;
+          font-weight: 300;
+          line-height: 1.8;
+          opacity: 0.95;
+          max-width: 800px;
+          margin: 0 auto 40px;
+        }
+
+        .InternshipPage-hero-cta {
+          display: inline-block;
+          background: #ffffff;
+          color: #1a1a2e;
+          padding: 16px 48px;
+          font-size: 1.05rem;
+          font-weight: 600;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          margin-top: 20px;
+        }
+
+        .InternshipPage-hero-cta:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 32px rgba(255, 255, 255, 0.3);
+        }
+
+        .InternshipPage-section {
+          padding: 100px 40px;
+        }
+
+        .InternshipPage-section-title {
+          font-size: 3rem;
+          font-weight: 400;
+          margin-bottom: 20px;
+          color: #1a1a2e;
+          text-align: center;
+          padding: 0 40px;
+        }
+
+        .InternshipPage-section-subtitle {
+          font-size: 1.25rem;
+          color: #666;
+          text-align: center;
+          margin-bottom: 70px;
+          padding: 0 40px;
+        }
+
+        .InternshipPage-programs-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 40px;
+          margin-bottom: 40px;
+          padding: 0 40px;
+        }
+
+        .InternshipPage-program-card {
+          background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+          border: 1px solid transparent;
+          padding: 48px;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .InternshipPage-program-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(90deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s ease;
+        }
+
+        .InternshipPage-program-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .InternshipPage-program-card::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: radial-gradient(circle, rgba(26, 26, 46, 0.03) 0%, transparent 70%);
+          transform: translate(-50%, -50%);
+          transition: width 0.6s ease, height 0.6s ease;
+          border-radius: 50%;
+        }
+
+        .InternshipPage-program-card:hover::after {
+          width: 500px;
+          height: 500px;
+        }
+
+        .InternshipPage-program-card:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 20px 60px rgba(26, 26, 46, 0.15);
+          border-color: #1a1a2e;
+        }
+
+        .InternshipPage-program-header {
+          margin-bottom: 28px;
+          padding-bottom: 24px;
+          border-bottom: 2px solid #e8e8e8;
+          position: relative;
+          z-index: 1;
+        }
+
+        .InternshipPage-program-title {
+          font-size: 1.85rem;
+          font-weight: 600;
+          color: #1a1a2e;
+          margin-bottom: 16px;
+          letter-spacing: -0.5px;
+        }
+
+        .InternshipPage-program-meta {
+          display: flex;
+          gap: 24px;
+          font-size: 0.9rem;
+          color: #666;
+          flex-wrap: wrap;
+        }
+
+        .InternshipPage-program-meta-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(26, 26, 46, 0.05);
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-weight: 500;
+        }
+
+        .InternshipPage-program-description {
+          font-size: 1.05rem;
+          color: #555;
+          line-height: 1.8;
+          margin-bottom: 28px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .InternshipPage-program-section {
+          margin-bottom: 24px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .InternshipPage-program-section-title {
+          font-size: 1rem;
+          font-weight: 700;
+          color: #1a1a2e;
+          margin-bottom: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1.2px;
+          font-size: 0.8rem;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .InternshipPage-program-section-title::before {
+          content: '';
+          width: 24px;
+          height: 2px;
+          background: #1a1a2e;
+        }
+
+        .InternshipPage-program-list {
+          list-style: none;
+          display: grid;
+          gap: 10px;
+        }
+
+        .InternshipPage-program-list li {
+          padding: 10px 10px 10px 32px;
+          position: relative;
+          color: #555;
+          font-size: 0.95rem;
+          background: rgba(26, 26, 46, 0.02);
+          border-radius: 4px;
+          transition: all 0.2s ease;
+        }
+
+        .InternshipPage-program-list li:hover {
+          background: rgba(26, 26, 46, 0.05);
+          padding-left: 36px;
+        }
+
+        .InternshipPage-program-list li::before {
+          content: '→';
+          position: absolute;
+          left: 12px;
+          color: #1a1a2e;
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+
+        .InternshipPage-benefits {
+          background: #f8f9fa;
+        }
+
+        .InternshipPage-benefits-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 40px;
+          padding: 0 40px;
+        }
+
+        .InternshipPage-benefit-card {
+          text-align: center;
+          padding: 32px 24px;
+          background: #ffffff;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+        }
+
+        .InternshipPage-benefit-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .InternshipPage-benefit-icon {
+          font-size: 3.5rem;
+          margin-bottom: 20px;
+          display: block;
+        }
+
+        .InternshipPage-benefit-title {
+          font-size: 1.35rem;
+          font-weight: 600;
+          color: #1a1a2e;
+          margin-bottom: 12px;
+        }
+
+        .InternshipPage-benefit-description {
+          color: #666;
+          line-height: 1.7;
+        }
+
+        .InternshipPage-testimonials {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+          color: #ffffff;
+        }
+
+        .InternshipPage-testimonials-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 40px;
+          padding: 0 40px;
+        }
+
+        .InternshipPage-testimonial-card {
+          background: rgba(255, 255, 255, 0.08);
+          padding: 40px;
+          border-left: 4px solid rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        }
+
+        .InternshipPage-testimonial-card:hover {
+          background: rgba(255, 255, 255, 0.12);
+          border-left-color: #ffffff;
+        }
+
+        .InternshipPage-testimonial-quote {
+          font-size: 1.15rem;
+          line-height: 1.8;
+          margin-bottom: 24px;
+          font-style: italic;
+          opacity: 0.95;
+        }
+
+        .InternshipPage-testimonial-author {
+          font-weight: 600;
+          font-size: 1.1rem;
+          margin-bottom: 4px;
+        }
+
+        .InternshipPage-testimonial-role {
+          font-size: 0.9rem;
+          opacity: 0.7;
+        }
+
+        .InternshipPage-process {
+          background: #ffffff;
+        }
+
+        .InternshipPage-process-timeline {
+          position: relative;
+          padding: 0 40px;
+        }
+
+        .InternshipPage-process-timeline::before {
+          content: '';
+          position: absolute;
+          left: 30px;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: #e5e5e5;
+        }
+
+        .InternshipPage-process-step {
+          display: flex;
+          gap: 40px;
+          margin-bottom: 50px;
+          position: relative;
+        }
+
+        .InternshipPage-process-number {
+          flex-shrink: 0;
+          width: 60px;
+          height: 60px;
+          background: #1a1a2e;
+          color: #ffffff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          position: relative;
+          z-index: 1;
+        }
+
+        .InternshipPage-process-content {
+          flex: 1;
+          padding-top: 8px;
+        }
+
+        .InternshipPage-process-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #1a1a2e;
+          margin-bottom: 12px;
+        }
+
+        .InternshipPage-process-description {
+          font-size: 1.05rem;
+          color: #666;
+          line-height: 1.7;
+        }
+
+        .InternshipPage-cta {
+          background: 
+            linear-gradient(rgba(26, 26, 46, 0.92), rgba(22, 33, 62, 0.92)),
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a1a2e" width="1200" height="600"/><g fill="%23ffffff" opacity="0.06"><path d="M0,200 Q300,100 600,200 T1200,200 L1200,600 L0,600 Z"/><circle cx="150" cy="120" r="60"/><circle cx="950" cy="180" r="80"/><circle cx="500" cy="400" r="100"/><rect x="800" y="350" width="100" height="100" transform="rotate(45 850 400)"/></g></svg>');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          color: #ffffff;
+          text-align: center;
+          padding: 120px 40px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .InternshipPage-cta::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+            radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08) 0%, transparent 60%),
+            radial-gradient(circle at 70% 60%, rgba(255,255,255,0.06) 0%, transparent 60%);
+        }
+
+        .InternshipPage-cta > * {
+          position: relative;
+          z-index: 1;
+        }
+
+        .InternshipPage-cta h2 {
+          font-size: 3rem;
+          font-weight: 400;
+          color: #ffffff;
+          margin-bottom: 24px;
+        }
+
+        .InternshipPage-cta p {
+          font-size: 1.25rem;
+          color: rgba(255, 255, 255, 0.95);
+          margin-bottom: 40px;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .InternshipPage-cta-button {
+          display: inline-block;
+          background: #ffffff;
+          color: #1a1a2e;
+          padding: 18px 56px;
+          font-size: 1.1rem;
+          font-weight: 600;
+          border: 2px solid #ffffff;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+
+        .InternshipPage-cta-button:hover {
+          background: transparent;
+          color: #ffffff;
+          transform: translateY(-3px);
+          box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 968px) {
+          .InternshipPage-hero {
+            padding: 120px 24px 100px;
+          }
+
+          .InternshipPage-hero h1 {
+            font-size: 3rem;
+          }
+
+          .InternshipPage-hero-subtitle {
+            font-size: 1.25rem;
+          }
+
+          .InternshipPage-programs-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .InternshipPage-section {
+            padding: 70px 24px;
+          }
+
+          .InternshipPage-section-title {
+            font-size: 2.25rem;
+          }
+
+          .InternshipPage-process-timeline::before {
+            left: 15px;
+          }
+
+          .InternshipPage-process-step {
+            gap: 24px;
+          }
+
+          .InternshipPage-process-number {
+            width: 48px;
+            height: 48px;
+            font-size: 1.25rem;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .InternshipPage-hero h1 {
+            font-size: 2.5rem;
+          }
+
+          .InternshipPage-benefits-grid,
+          .InternshipPage-testimonials-grid {
+            grid-template-columns: 1fr;
+          }
+        }
