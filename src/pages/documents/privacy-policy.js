@@ -1,595 +1,423 @@
 "use client"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import "../../components_css/documents/privacy_policy.css"
-
 const PrivacyPolicyPage = () => {
-  const headerRef = useRef(null)
-  const contentRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("privacy-animate-in")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
-    if (headerRef.current) observer.observe(headerRef.current)
-    if (contentRef.current) observer.observe(contentRef.current)
-
-    return () => observer.disconnect()
+    setIsVisible(true)
   }, [])
 
   return (
-    <div className="privacy-page">
-      {/* Header Section */}
-      <section className="privacy-header" ref={headerRef}>
-        <div className="privacy-container">
-          <div className="privacy-header-content">
-            <h1 className="privacy-title">Privacy Policy</h1>
-            <p className="privacy-subtitle">
+    <>
+     
+
+      <div className="privacy-policy1-page">
+        {/* Header */}
+        <header className="privacy-policy1-header">
+          <div className="privacy-policy1-header-content">
+            <h1 className="privacy-policy1-title">Privacy Policy</h1>
+            <p className="privacy-policy1-subtitle">
               MAPSIGMA Capital
               <br />
-              <a href="https://mapsigma.com" target="_blank" rel="noopener noreferrer" style={{color:"orange"}}
-              className="privacy-website-link">
+              <a 
+                href="https://mapsigma.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="privacy-policy1-website-link"
+              >
                 https://mapsigma.com
               </a>
             </p>
-            <p className="privacy-last-updated">Last Updated: January 2025</p>
+            <p className="privacy-policy1-last-updated">Last Updated: January 2025</p>
           </div>
-        </div>
-      </section>
+        </header>
 
-      {/* Content Section */}
-      <section className="privacy-content" ref={contentRef}>
-        <div className="privacy-container">
+        {/* Main Content */}
+        <main className="privacy-policy1-container">
           {/* Overview */}
-          <div id="overview" className="privacy-section">
-            <h2>Overview</h2>
-            <p>
-              At MAPSIGMA Capital ("we," "our," or "us"), we are committed to protecting your
-              privacy and ensuring the security of your personal information. This Privacy Policy explains how we
-              collect, use, disclose, and safeguard your information when you visit our website{" "}
-              <strong>https://mapsigma.com/</strong>, use our financial services and solutions, or interact with us in any
-              capacity.
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Overview</h2>
+            <p className="privacy-policy1-text">
+              At MAPSIGMA Capital ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <strong>https://mapsigma.com/</strong>, use our financial services and solutions, or interact with us in any capacity.
             </p>
-            <p>
-              As a leading financial services provider specializing in investment solutions and capital management,
-              we understand the critical importance of data privacy and are committed to maintaining the highest
-              standards of data protection in compliance with applicable privacy laws and regulations, including the
-              Information Technology Act, 2000, and other relevant Indian and international data protection standards.
+            <p className="privacy-policy1-text">
+              As a leading financial services provider specializing in investment solutions and capital management, we understand the critical importance of data privacy and are committed to maintaining the highest standards of data protection in compliance with applicable privacy laws and regulations, including the Information Technology Act, 2000, and other relevant Indian and international data protection standards.
             </p>
-          </div>
+          </section>
 
           {/* Information Collection */}
-          <div id="information-collection" className="privacy-section">
-            <h2>Information We Collect</h2>
-
-            <h3>Personal Information</h3>
-            <p>
-              When you visit mapsigma.com or engage with our services, we may collect the following types of personal
-              information:
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Information We Collect</h2>
+            
+            <h3 className="privacy-policy1-section-subtitle">Personal Information</h3>
+            <p className="privacy-policy1-text">
+              When you visit mapsigma.com or engage with our services, we may collect the following types of personal information:
             </p>
-            <ul>
-              <li>
-                <strong>Contact Information:</strong> Full name, email address, phone number, mailing address, company
-                details
+            <ul className="privacy-policy1-list">
+              <li className="privacy-policy1-list-item">
+                <strong>Contact Information:</strong> Full name, email address, phone number, mailing address, company details
               </li>
-              <li>
-                <strong>Professional Information:</strong> Company name, job title, industry sector, business
-                requirements, investment specifications
+              <li className="privacy-policy1-list-item">
+                <strong>Professional Information:</strong> Company name, job title, industry sector, business requirements, investment specifications
               </li>
-              <li>
-                <strong>Account Information:</strong> Username, password, account preferences, service configurations,
-                and user settings
+              <li className="privacy-policy1-list-item">
+                <strong>Account Information:</strong> Username, password, account preferences, service configurations, and user settings
               </li>
-              <li>
-                <strong>Communication Data:</strong> Records of your communications with us, including emails, phone
-                calls, chat logs, support tickets, and consultation requests
+              <li className="privacy-policy1-list-item">
+                <strong>Communication Data:</strong> Records of your communications with us, including emails, phone calls, chat logs, support tickets, and consultation requests
               </li>
-              <li>
-                <strong>Investment Information:</strong> Financial requirements, investment specifications, portfolio data, and
-                investment preferences
+              <li className="privacy-policy1-list-item">
+                <strong>Investment Information:</strong> Financial requirements, investment specifications, portfolio data, and investment preferences
               </li>
-              <li>
-                <strong>Payment Information:</strong> Billing address, payment method details, transaction history
-                (processed securely through third-party payment processors)
-              </li>
-              <li>
-                <strong>Feedback and Reviews:</strong> Your opinions, feedback, testimonials, and reviews about our
-                services
+              <li className="privacy-policy1-list-item">
+                <strong>Payment Information:</strong> Billing address, payment method details, transaction history (processed securely through third-party payment processors)
               </li>
             </ul>
 
-            <h3>Technical Information</h3>
-            <p>We automatically collect certain technical information when you use our website and services:</p>
-            <ul>
-              <li>
-                <strong>Device Information:</strong> IP address, browser type and version, operating system, device
-                identifiers, screen resolution
+            <h3 className="privacy-policy1-section-subtitle">Technical Information</h3>
+            <p className="privacy-policy1-text">We automatically collect certain technical information when you use our website and services:</p>
+            <ul className="privacy-policy1-list">
+              <li className="privacy-policy1-list-item">
+                <strong>Device Information:</strong> IP address, browser type and version, operating system, device identifiers
               </li>
-              <li>
-                <strong>Usage Data:</strong> Pages visited, time spent on pages, click-through rates, referral sources,
-                search queries, navigation patterns
+              <li className="privacy-policy1-list-item">
+                <strong>Usage Data:</strong> Pages visited, time spent on pages, click-through rates, referral sources, search queries
               </li>
-              <li>
-                <strong>Log Data:</strong> Server logs, error reports, performance metrics, system diagnostics, and
-                access logs
-              </li>
-              <li>
+              <li className="privacy-policy1-list-item">
                 <strong>Location Data:</strong> General geographic location based on IP address for service optimization
-                and localization
               </li>
-              <li>
-                <strong>Cookies and Tracking Data:</strong> Website preferences, session information, analytics data,
-                and user behavior patterns
+              <li className="privacy-policy1-list-item">
+                <strong>Cookies and Tracking Data:</strong> Website preferences, session information, analytics data
               </li>
             </ul>
-          </div>
+          </section>
 
           {/* Information Use */}
-          <div id="information-use" className="privacy-section">
-            <h2>How We Use Your Information</h2>
-            <p>We use the collected information for the following legitimate business purposes:</p>
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">How We Use Your Information</h2>
+            <p className="privacy-policy1-text">We use the collected information for the following legitimate business purposes:</p>
 
-            <div className="privacy-use-grid">
-              <div className="privacy-use-item">
-                <h4>Service Delivery & Management</h4>
-                <p>
-                  To provide, maintain, and improve our financial services, investment solutions, and capital management
-                  offerings
+            <div className="privacy-policy1-grid">
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Service Delivery & Management</h4>
+                <p className="privacy-policy1-card-text">
+                  To provide, maintain, and improve our financial services, investment solutions, and capital management offerings
                 </p>
               </div>
-              <div className="privacy-use-item">
-                <h4>Customer Communication</h4>
-                <p>
-                  To respond to inquiries, provide customer support, send investment updates, and deliver important service
-                  notifications
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Customer Communication</h4>
+                <p className="privacy-policy1-card-text">
+                  To respond to inquiries, provide customer support, send investment updates, and deliver important service notifications
                 </p>
               </div>
-              <div className="privacy-use-item">
-                <h4>Personalization & Customization</h4>
-                <p>
-                  To personalize your experience on mapsigma.com and tailor our services to your specific investment
-                  requirements and preferences
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Personalization</h4>
+                <p className="privacy-policy1-card-text">
+                  To personalize your experience and tailor our services to your specific investment requirements and preferences
                 </p>
               </div>
-              <div className="privacy-use-item">
-                <h4>Analytics & Optimization</h4>
-                <p>
-                  To analyze usage patterns, improve website performance, optimize user experience, and enhance our
-                  service offerings
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Analytics & Optimization</h4>
+                <p className="privacy-policy1-card-text">
+                  To analyze usage patterns, improve website performance, optimize user experience, and enhance our service offerings
                 </p>
               </div>
-              <div className="privacy-use-item">
-                <h4>Research & Development</h4>
-                <p>
-                  To conduct research, develop new investment strategies, improve existing solutions, and advance our financial
-                  capabilities
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Research & Development</h4>
+                <p className="privacy-policy1-card-text">
+                  To conduct research, develop new investment strategies, and advance our financial capabilities
                 </p>
               </div>
-              <div className="privacy-use-item">
-                <h4>Marketing & Communications</h4>
-                <p>
-                  To send promotional materials, service updates, investment insights, and market developments (with
-                  your explicit consent)
-                </p>
-              </div>
-              <div className="privacy-use-item">
-                <h4>Legal Compliance & Security</h4>
-                <p>
-                  To comply with legal obligations, protect our rights and interests, ensure data security, and prevent
-                  fraudulent activities
-                </p>
-              </div>
-              <div className="privacy-use-item">
-                <h4>Business Operations</h4>
-                <p>
-                  To manage our business operations, process transactions, maintain records, and provide administrative
-                  services
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Legal Compliance</h4>
+                <p className="privacy-policy1-card-text">
+                  To comply with legal obligations, protect our rights, ensure data security, and prevent fraudulent activities
                 </p>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Information Sharing */}
-          <div id="information-sharing" className="privacy-section">
-            <h2>Information Sharing and Disclosure</h2>
-            <p>
-              We do not sell, trade, or rent your personal information to third parties. We may share your information
-              only in the following specific and limited circumstances:
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Information Sharing and Disclosure</h2>
+            <p className="privacy-policy1-text">
+              We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following specific and limited circumstances:
             </p>
 
-            <div className="privacy-sharing-list">
-              <div className="privacy-sharing-item">
-                <h4>Trusted Service Providers</h4>
-                <p>
-                  With carefully vetted third-party service providers who assist us in operating our business, such as
-                  cloud hosting providers, payment processors, email services, analytics platforms, and technical
-                  infrastructure partners. All such providers are bound by strict confidentiality agreements and data
-                  protection requirements.
-                </p>
-              </div>
-              <div className="privacy-sharing-item">
-                <h4>Authorized Business Partners</h4>
-                <p>
-                  With authorized financial partners, investment collaborators, and strategic business partners when
-                  necessary to provide comprehensive solutions or deliver requested services, and only with your
-                  explicit consent and for the specific purposes disclosed to you.
-                </p>
-              </div>
-              <div className="privacy-sharing-item">
-                <h4>Legal and Regulatory Requirements</h4>
-                <p>
-                  When required by Indian law, court orders, government regulations, or legal processes, or to protect
-                  our rights, property, safety, or that of our users, employees, and the general public. We will notify
-                  you of such disclosures unless prohibited by law.
-                </p>
-              </div>
-              <div className="privacy-sharing-item">
-                <h4>Business Transfers and Transactions</h4>
-                <p>
-                  In connection with a merger, acquisition, corporate restructuring, or sale of assets, where your
-                  information may be transferred as part of the business transaction, subject to the same privacy
-                  protections outlined in this policy.
-                </p>
-              </div>
+            <div className="privacy-policy1-info-block">
+              <h4 className="privacy-policy1-section-subheading">Trusted Service Providers</h4>
+              <p className="privacy-policy1-text">
+                With carefully vetted third-party service providers who assist us in operating our business, such as cloud hosting providers, payment processors, email services, and analytics platforms. All such providers are bound by strict confidentiality agreements.
+              </p>
             </div>
-          </div>
+
+            <div className="privacy-policy1-info-block">
+              <h4 className="privacy-policy1-section-subheading">Legal and Regulatory Requirements</h4>
+              <p className="privacy-policy1-text">
+                When required by Indian law, court orders, government regulations, or legal processes, or to protect our rights, property, safety, or that of our users and employees.
+              </p>
+            </div>
+
+            <div className="privacy-policy1-info-block">
+              <h4 className="privacy-policy1-section-subheading">Business Transfers</h4>
+              <p className="privacy-policy1-text">
+                In connection with a merger, acquisition, or sale of assets, where your information may be transferred as part of the business transaction, subject to the same privacy protections.
+              </p>
+            </div>
+          </section>
 
           {/* Data Security */}
-          <div id="data-security" className="privacy-section">
-            <h2>Data Security</h2>
-            <p>
-              We implement comprehensive technical and organizational security measures to protect your personal
-              information against unauthorized access, alteration, disclosure, or destruction. Our multi-layered
-              security approach includes:
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Data Security</h2>
+            <p className="privacy-policy1-text">
+              We implement comprehensive technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Our security approach includes:
             </p>
-            <ul>
-              <li>
-                <strong>Data Encryption:</strong> End-to-end encryption of data in transit using SSL/TLS protocols and
-                encryption of data at rest using industry-standard encryption algorithms
+            <ul className="privacy-policy1-list">
+              <li className="privacy-policy1-list-item">
+                <strong>Data Encryption:</strong> End-to-end encryption of data in transit using SSL/TLS protocols and encryption of data at rest
               </li>
-              <li>
-                <strong>Access Controls:</strong> Multi-factor authentication, role-based access controls, regular
-                access reviews, and principle of least privilege implementation
+              <li className="privacy-policy1-list-item">
+                <strong>Access Controls:</strong> Multi-factor authentication, role-based access controls, and principle of least privilege
               </li>
-              <li>
-                <strong>Security Monitoring:</strong> 24/7 security monitoring, intrusion detection systems, automated
-                threat response, and real-time security alerts
+              <li className="privacy-policy1-list-item">
+                <strong>Security Monitoring:</strong> 24/7 security monitoring, intrusion detection systems, and real-time alerts
               </li>
-              <li>
-                <strong>Regular Security Assessments:</strong> Periodic security audits, vulnerability assessments,
-                penetration testing, and compliance evaluations
+              <li className="privacy-policy1-list-item">
+                <strong>Regular Assessments:</strong> Periodic security audits, vulnerability assessments, and penetration testing
               </li>
-              <li>
-                <strong>Employee Training:</strong> Comprehensive data protection training, security awareness programs,
-                and regular updates on privacy best practices
-              </li>
-              <li>
-                <strong>Infrastructure Security:</strong> Secure data centers with physical security measures,
-                environmental controls, and redundant systems
-              </li>
-              <li>
-                <strong>Backup and Recovery:</strong> Regular automated data backups, secure off-site storage, disaster
-                recovery procedures, and business continuity planning
-              </li>
-              <li>
-                <strong>Incident Response:</strong> Established incident response procedures, breach notification
-                protocols, and remediation processes
+              <li className="privacy-policy1-list-item">
+                <strong>Employee Training:</strong> Comprehensive data protection training and security awareness programs
               </li>
             </ul>
-            <p>
-              While we implement industry-leading security measures and continuously monitor and update our security
-              practices, no method of transmission over the internet or electronic storage is 100% secure. We cannot
-              guarantee absolute security but are committed to maintaining the highest level of protection possible and
-              will promptly notify you of any security incidents that may affect your personal information.
-            </p>
-          </div>
+            <div className="privacy-policy1-highlight">
+              <p className="privacy-policy1-text">
+                While we implement industry-leading security measures, no method of transmission over the internet is 100% secure. We are committed to maintaining the highest level of protection possible and will promptly notify you of any security incidents that may affect your personal information.
+              </p>
+            </div>
+          </section>
 
           {/* Cookies */}
-          <div id="cookies" className="privacy-section">
-            <h2>Cookies and Tracking Technologies</h2>
-            <p>
-              We use cookies and similar tracking technologies to enhance your browsing experience on mapsigma.com,
-              analyze website usage, and provide personalized content and services. Cookies are small data files stored
-              on your device that help us understand how you interact with our website.
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Cookies and Tracking Technologies</h2>
+            <p className="privacy-policy1-text">
+              We use cookies and similar tracking technologies to enhance your browsing experience on mapsigma.com, analyze website usage, and provide personalized content and services.
             </p>
 
-            <h3>Types of Cookies We Use:</h3>
-            <div className="privacy-cookies-grid">
-              <div className="privacy-cookie-item">
-                <h4>Essential Cookies</h4>
-                <p>
-                  Required for basic website functionality, security, user authentication, and core features. These
-                  cookies cannot be disabled as they are necessary for the website to function properly.
+            <h3 className="privacy-policy1-section-subtitle">Types of Cookies We Use:</h3>
+            <div className="privacy-policy1-grid">
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Essential Cookies</h4>
+                <p className="privacy-policy1-card-text">
+                  Required for basic website functionality, security, and core features
                 </p>
               </div>
-              <div className="privacy-cookie-item">
-                <h4>Performance Cookies</h4>
-                <p>
-                  Help us understand how visitors interact with mapsigma.com by collecting information about page views,
-                  traffic sources, and user behavior to improve website performance and user experience.
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Performance Cookies</h4>
+                <p className="privacy-policy1-card-text">
+                  Help us understand visitor interactions to improve website performance
                 </p>
               </div>
-              <div className="privacy-cookie-item">
-                <h4>Functional Cookies</h4>
-                <p>
-                  Remember your preferences, settings, and choices to provide a more personalized and convenient
-                  experience when you return to our website.
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Functional Cookies</h4>
+                <p className="privacy-policy1-card-text">
+                  Remember your preferences and settings for a personalized experience
                 </p>
               </div>
-              <div className="privacy-cookie-item">
-                <h4>Analytics Cookies</h4>
-                <p>
-                  Collect information about website usage, traffic patterns, user engagement metrics, and help us
-                  analyze and improve our services and content offerings.
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Analytics Cookies</h4>
+                <p className="privacy-policy1-card-text">
+                  Collect information about website usage and help us improve our services
                 </p>
               </div>
             </div>
 
-            <p>
-              <strong>Cookie Management:</strong> You can control cookies through your browser settings and choose to
-              accept, reject, or delete cookies. However, disabling certain cookies may affect the functionality and
-              user experience of our website. Most browsers allow you to view, manage, and delete cookies, block cookies
-              from specific websites, and set preferences for cookie handling.
-            </p>
-          </div>
+            <div className="privacy-policy1-highlight">
+              <p className="privacy-policy1-text">
+                <strong>Cookie Management:</strong> You can control cookies through your browser settings. However, disabling certain cookies may affect the functionality of our website.
+              </p>
+            </div>
+          </section>
 
           {/* User Rights */}
-          <div id="user-rights" className="privacy-section">
-            <h2>Your Rights and Choices</h2>
-            <p>
-              Under applicable data protection laws, including Indian privacy regulations and international standards,
-              you have the following rights regarding your personal information:
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Your Rights and Choices</h2>
+            <p className="privacy-policy1-text">
+              Under applicable data protection laws, you have the following rights regarding your personal information:
             </p>
 
-            <div className="privacy-rights-list">
-              <div className="privacy-right-item">
-                <h4>Right to Access</h4>
-                <p>
-                  Request access to the personal information we hold about you, including details about how it's
-                  processed, stored, and used
+            <div className="privacy-policy1-grid">
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Right to Access</h4>
+                <p className="privacy-policy1-card-text">
+                  Request access to the personal information we hold about you
                 </p>
               </div>
-              <div className="privacy-right-item">
-                <h4>Right to Correction</h4>
-                <p>
-                  Request correction, updating, or rectification of inaccurate, incomplete, or outdated personal
-                  information
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Right to Correction</h4>
+                <p className="privacy-policy1-card-text">
+                  Request correction of inaccurate or incomplete personal information
                 </p>
               </div>
-              <div className="privacy-right-item">
-                <h4>Right to Deletion</h4>
-                <p>
-                  Request deletion or erasure of your personal information, subject to legal and contractual
-                  requirements and legitimate business needs
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Right to Deletion</h4>
+                <p className="privacy-policy1-card-text">
+                  Request deletion of your personal information, subject to legal requirements
                 </p>
               </div>
-              <div className="privacy-right-item">
-                <h4>Right to Data Portability</h4>
-                <p>
-                  Request transfer of your personal information to another service provider in a structured,
-                  machine-readable format
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Right to Data Portability</h4>
+                <p className="privacy-policy1-card-text">
+                  Request transfer of your information in a structured, machine-readable format
                 </p>
               </div>
-              <div className="privacy-right-item">
-                <h4>Right to Opt-out</h4>
-                <p>
-                  Unsubscribe from marketing communications, promotional emails, and non-essential communications at any
-                  time through provided unsubscribe links
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Right to Opt-out</h4>
+                <p className="privacy-policy1-card-text">
+                  Unsubscribe from marketing communications and promotional emails
                 </p>
               </div>
-              <div className="privacy-right-item">
-                <h4>Right to Restriction</h4>
-                <p>
-                  Request restriction or limitation of processing of your personal information under certain
-                  circumstances and legal grounds
+              <div className="privacy-policy1-card">
+                <h4 className="privacy-policy1-card-title">Right to Restriction</h4>
+                <p className="privacy-policy1-card-text">
+                  Request restriction of processing under certain circumstances
                 </p>
               </div>
             </div>
 
-            <p>
-              <strong>Exercising Your Rights:</strong> To exercise any of these rights, please contact us using the
-              information provided in the "Contact Us" section below. We will respond to your request within 30 days and
-              may require verification of your identity to protect your privacy and security. There is no charge for
-              most requests, but we may charge a reasonable fee for excessive or repetitive requests.
-            </p>
-          </div>
+            <div className="privacy-policy1-highlight">
+              <p className="privacy-policy1-text">
+                <strong>Exercising Your Rights:</strong> To exercise any of these rights, please contact us using the information provided in the Contact Us section. We will respond within 30 days.
+              </p>
+            </div>
+          </section>
 
           {/* Data Retention */}
-          <div className="privacy-section">
-            <h2>Data Retention</h2>
-            <p>
-              We retain your personal information only for as long as necessary to fulfill the purposes outlined in this
-              Privacy Policy, comply with legal obligations, resolve disputes, and enforce our agreements. The retention
-              period varies depending on the type of information and the purpose for which it was collected:
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Data Retention</h2>
+            <p className="privacy-policy1-text">
+              We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy. Retention periods vary depending on the type of information:
             </p>
-            <ul>
-              <li>
-                <strong>Account Information:</strong> Retained for the duration of your account relationship with us
-                plus 3 years after account closure for legal and business purposes
+            <ul className="privacy-policy1-list">
+              <li className="privacy-policy1-list-item">
+                <strong>Account Information:</strong> Retained for the duration of your account relationship plus 3 years after closure
               </li>
-              <li>
-                <strong>Investment and Service Data:</strong> Retained for the service duration plus 7 years for legal,
-                compliance, and regulatory purposes
+              <li className="privacy-policy1-list-item">
+                <strong>Investment and Service Data:</strong> Retained for service duration plus 7 years for legal and regulatory purposes
               </li>
-              <li>
-                <strong>Communication Records:</strong> Retained for 5 years for customer service, legal, and quality
-                assurance purposes
+              <li className="privacy-policy1-list-item">
+                <strong>Communication Records:</strong> Retained for 5 years for customer service and quality assurance
               </li>
-              <li>
-                <strong>Payment and Financial Data:</strong> Retained as required by Indian tax and accounting laws,
-                typically 7-10 years
+              <li className="privacy-policy1-list-item">
+                <strong>Payment Data:</strong> Retained as required by Indian tax and accounting laws, typically 7-10 years
               </li>
-              <li>
-                <strong>Marketing and Analytics Data:</strong> Retained until you opt-out or for 2 years of inactivity,
-                whichever comes first
-              </li>
-              <li>
-                <strong>Technical Logs and Security Data:</strong> Retained for 1-2 years for security monitoring and
-                system optimization
+              <li className="privacy-policy1-list-item">
+                <strong>Marketing Data:</strong> Retained until you opt-out or for 2 years of inactivity
               </li>
             </ul>
-          </div>
+          </section>
 
-          {/* International Transfers */}
-          <div className="privacy-section">
-            <h2>International Data Transfers</h2>
-            <p>
-              Your personal information may be transferred to and processed in countries other than India for service
-              delivery, technical support, or business operations. When we transfer your information internationally, we
-              ensure appropriate safeguards are in place to protect your data:
+          {/* Additional Sections */}
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">International Data Transfers</h2>
+            <p className="privacy-policy1-text">
+              Your personal information may be transferred to and processed in countries other than India. We ensure appropriate safeguards are in place, including standard contractual clauses and adequacy decisions by relevant authorities.
             </p>
-            <ul>
-              <li>Adequacy decisions by relevant data protection authorities</li>
-              <li>Standard contractual clauses approved by regulatory bodies</li>
-              <li>Binding corporate rules for intra-group transfers</li>
-              <li>Certification schemes and codes of conduct</li>
-              <li>Explicit consent for specific transfers where required</li>
-            </ul>
-            <p>
-              We ensure that all international transfers comply with applicable Indian data protection laws and provide
-              the same level of protection as required within India.
-            </p>
-          </div>
+          </section>
 
-          {/* Children's Privacy */}
-          <div className="privacy-section">
-            <h2>Children's Privacy</h2>
-            <p>
-              Our services at mapsigma.com are intended for businesses, professionals, and individuals over the age of 18.
-              We do not knowingly collect personal information from children under the age of 18. If we become aware
-              that we have collected personal information from a child under 18, we will take immediate steps to delete
-              such information from our systems.
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Children's Privacy</h2>
+            <p className="privacy-policy1-text">
+              Our services are intended for businesses and individuals over 18. We do not knowingly collect information from children under 18. If you believe a child has provided us with information, please contact us immediately.
             </p>
-            <p>
-              If you are a parent or guardian and believe your child has provided us with personal information, please
-              contact us immediately using the contact information provided below, and we will promptly address your
-              concerns.
-            </p>
-          </div>
+          </section>
 
-          {/* Third Party Links */}
-          <div className="privacy-section">
-            <h2>Third-Party Links and Services</h2>
-            <p>
-              Our website mapsigma.com may contain links to third-party websites, applications, or services that are not
-              owned or controlled by us. This Privacy Policy does not apply to these third-party services, and we are
-              not responsible for their privacy practices or content.
+          <section className="privacy-policy1-section">
+            <h2 className="privacy-policy1-section-title">Updates to This Privacy Policy</h2>
+            <p className="privacy-policy1-text">
+              We may update this Privacy Policy from time to time. We will notify you of material changes through email or prominent notices on our website. Your continued use of our services after changes indicates acceptance of the updated policy.
             </p>
-            <p>
-              We encourage you to review the privacy policies and terms of service of any third-party services before
-              providing your personal information or engaging with their services. We recommend exercising caution and
-              reviewing the privacy practices of all websites and services you visit.
-            </p>
-          </div>
+          </section>
 
-          {/* Updates */}
-          <div className="privacy-section">
-            <h2>Updates to This Privacy Policy</h2>
-            <p>
-              We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal
-              requirements, or other factors. We will notify you of any material changes through the following methods:
-            </p>
-            <ul>
-              <li>Posting the updated Privacy Policy on mapsigma.com with a new "Last Updated" date</li>
-              <li>Sending email notifications to registered users for significant changes</li>
-              <li>Displaying prominent notices on our website for major policy updates</li>
-              <li>Providing direct notifications through our services for substantial modifications</li>
-            </ul>
-            <p>
-              We encourage you to review this Privacy Policy periodically to stay informed about how we collect, use,
-              and protect your information. Your continued use of our services after any changes indicates your
-              acceptance of the updated Privacy Policy.
-            </p>
-          </div>
+          {/* Contact Section */}
+          <section className="privacy-policy1-section">
+            <div className="privacy-policy1-contact-section">
+              <h2 className="privacy-policy1-section-title">Contact Us</h2>
+              <p className="privacy-policy1-text">
+                If you have any questions or concerns regarding this Privacy Policy, please contact us:
+              </p>
 
-          {/* Contact */}
-          <div id="contact" className="privacy-section privacy-contact">
-            <h2>Contact Us</h2>
-            <p>
-              If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices,
-              please don't hesitate to contact us through any of the following methods:
-            </p>
+              <div className="privacy-policy1-contact-grid">
+                <div className="privacy-policy1-contact-card">
+                  <h4 className="privacy-policy1-contact-label">Company</h4>
+                  <p className="privacy-policy1-contact-value">
+                    <strong>MAPSIGMA Capital</strong><br />
+                    Registered in India
+                  </p>
+                </div>
 
-            <div className="privacy-contact-info">
-              <div className="privacy-contact-item">
-                <h4>Company Information</h4>
-                <p>
-                  <strong>MAPSIGMA Capital</strong>
-                  <br />
-                  Registered in India
-                </p>
+                <div className="privacy-policy1-contact-card">
+                  <h4 className="privacy-policy1-contact-label">Website</h4>
+                  <p className="privacy-policy1-contact-value">
+                    <a 
+                      href="https://mapsigma.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="privacy-policy1-link"
+                    >
+                      https://mapsigma.com
+                    </a>
+                  </p>
+                </div>
+
+                <div className="privacy-policy1-contact-card">
+                  <h4 className="privacy-policy1-contact-label">Privacy Inquiries</h4>
+                  <p className="privacy-policy1-contact-value">
+                    <a href="mailto:noreply@mapsigma.com" className="privacy-policy1-link">
+                      noreply@mapsigma.com
+                    </a>
+                  </p>
+                </div>
+
+                <div className="privacy-policy1-contact-card">
+                  <h4 className="privacy-policy1-contact-label">General Contact</h4>
+                  <p className="privacy-policy1-contact-value">
+                    <a href="mailto:info@mapsigma.com" className="privacy-policy1-link">
+                      info@mapsigma.com
+                    </a>
+                  </p>
+                </div>
+
+                <div className="privacy-policy1-contact-card">
+                  <h4 className="privacy-policy1-contact-label">Phone</h4>
+                  <p className="privacy-policy1-contact-value">+91-63013 77549</p>
+                </div>
+
+                <div className="privacy-policy1-contact-card">
+                  <h4 className="privacy-policy1-contact-label">Registered Address</h4>
+                  <p className="privacy-policy1-contact-value">
+                    133/1/B, 1st Floor Phase ll,<br />
+                    IDA Cherlapally, Hyderabad<br />
+                    India
+                  </p>
+                </div>
               </div>
-              <div className="privacy-contact-item">
-                <h4>Website</h4>
-                <p>
-                  <a
-                    href="https://mapsigma.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="privacy-contact-link"
-                  >
-                    https://mapsigma.com
-                  </a>
-                </p>
-              </div>
-              <div className="privacy-contact-item">
-                <h4>Privacy Inquiries</h4>
-                <p>
-                  <a href="mailto:privacy@mapsigma.com" className="privacy-contact-link">
-                    noreply@mapsigma.com
-                  </a>
-                </p>
-              </div>
-              <div className="privacy-contact-item">
-                <h4>General Contact</h4>
-                <p>
-                  <a href="mailto:contact@mapsigma.com" className="privacy-contact-link">
-                    info@mapsigma.com
-                  </a>
-                </p>
-              </div>
-              <div className="privacy-contact-item">
-                <h4>Phone</h4>
-                <p>+91-63013 77549</p>
-                <p>
-                 
-                </p>
-              </div>
-              <div className="privacy-contact-item">
-                <h4>Registered Address</h4>
-                <p>
-                  133/1/B, 1st Floor Phase ll,
-                  <br />
-                 IDA Cherlapally, Hyderabad
-                  <br />
-                  India
-                </p>
-                <p>
-                </p>
+
+              <div className="privacy-policy1-commitment">
+                <h4 className="privacy-policy1-section-subheading">Our Response Commitment</h4>
+                <p className="privacy-policy1-text">We are committed to addressing your privacy concerns:</p>
+                <ul className="privacy-policy1-list">
+                  <li className="privacy-policy1-list-item">We will acknowledge receipt of your inquiry within 48 hours</li>
+                  <li className="privacy-policy1-list-item">We will provide a substantive response within 30 days</li>
+                  <li className="privacy-policy1-list-item">For complex matters, we will keep you informed of our progress</li>
+                  <li className="privacy-policy1-list-item">We will work diligently to resolve any privacy-related issues</li>
+                </ul>
               </div>
             </div>
-
-            <div className="privacy-response-commitment">
-              <h4>Our Response Commitment</h4>
-              <p>We are committed to addressing your privacy concerns promptly and transparently:</p>
-              <ul>
-                <li>We will acknowledge receipt of your inquiry within 48 hours</li>
-                <li>We will provide a substantive response within 30 days of receipt</li>
-                <li>For complex matters, we will keep you informed of our progress</li>
-                <li>We will work diligently to resolve any privacy-related issues to your satisfaction</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+          </section>
+        </main>
+      </div>
+    </>
   )
 }
 
