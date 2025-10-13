@@ -117,7 +117,7 @@ const LeadershipDetailPage = () => {
         
         .leadership-detail-content {
           padding: 60px 40px;
-          max-width: 1200px;
+          // max-width: 1200px;
           margin: 0 auto;
         }
         
@@ -397,7 +397,7 @@ const LeadershipDetailPage = () => {
 
           <div className="text-center">
             <button className="custom-btn" onClick={handleNavigate}>
-             Learn More
+              More People
             </button>
           </div>
         </section>

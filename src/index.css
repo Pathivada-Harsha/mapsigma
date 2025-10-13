@@ -11,7 +11,7 @@
   scroll-behavior: smooth;
 } */
 
-:root {
+/* :root {
   --mapsigma-green: #004225;
   --mapsigma-white: #ffffff;
   --mapsigma-gray-light: #f8f9fa;
@@ -90,7 +90,7 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+ 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -133,7 +133,7 @@
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
 
 /* Global Styles */
 /* body {
@@ -158,11 +158,11 @@ body {
 }
 
 /* Container */
-.container {
+/* .container { */
   /* max-width: 1200px; */
   /* margin: 0 auto; */
   /* padding: 0 20px; */
-}
+/* } */
 
 /* Navbar Styles */
 
