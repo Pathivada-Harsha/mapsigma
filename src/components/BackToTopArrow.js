@@ -84,7 +84,7 @@ export default function BackToTop() {
             cy="24"
             r="20"
             fill="none"
-            stroke="#FFD700"
+            stroke="#FFffff"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeDasharray={circumference}

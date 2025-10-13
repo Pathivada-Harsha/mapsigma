@@ -74,12 +74,12 @@ const PeoplePage = () => {
       ]
     },
     {
-      name: "Priya Sharma",
-      title: "Chief Investment Officer",
+      name: "Amritpal Singh Gadhoke",
+      title: "Managing Director",
       subtitle: "MAPSIGMA Capital",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&q=80",
       bio: [
-        "Priya Sharma brings over 20 years of investment expertise to MAPSIGMA Capital, where she oversees all investment strategies and portfolio management operations.",
+        "Amritpal Singh Gadhoke brings over 20 years of investment expertise to MAPSIGMA Capital, where she oversees all investment strategies and portfolio management operations.",
         "Before joining MAPSIGMA, Priya was a Senior Portfolio Manager at BlackRock, managing multi-billion dollar portfolios with a focus on emerging markets and sustainable investments.",
         "Priya holds a CFA charter and an MBA in Finance from INSEAD. She is passionate about ESG investing and has been instrumental in developing MAPSIGMA's sustainable investment framework."
       ],
@@ -100,12 +100,12 @@ const PeoplePage = () => {
       ]
     },
     {
-      name: "Arun Mehta",
-      title: "Managing Partner",
+      name: "Arun S",
+      title: "Director Legal ",
       subtitle: "Strategy & Operations",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&q=80",
       bio: [
-        "Arun Mehta leads strategy and operations at MAPSIGMA Capital, ensuring operational excellence and strategic alignment across all business functions.",
+        "Arun  leads strategy and operations at MAPSIGMA Capital, ensuring operational excellence and strategic alignment across all business functions.",
         "With 18 years of experience in financial services, Arun previously held leadership roles at McKinsey & Company and Citigroup, where he specialized in operational transformation and strategic planning.",
         "Arun earned his MBA from Wharton School and a Bachelor's degree in Engineering from IIT Delhi. He is known for his analytical approach and ability to drive organizational efficiency."
       ],
@@ -126,12 +126,12 @@ const PeoplePage = () => {
       ]
     },
     {
-      name: "Kavita Reddy",
+      name: "Chief Operation Officer ",
       title: "Partner",
       subtitle: "Risk Management & Compliance",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80",
       bio: [
-        "Kavita Reddy heads risk management and compliance at MAPSIGMA Capital, ensuring the firm maintains the highest standards of regulatory compliance and risk controls.",
+        "Chief Operation Officer  heads risk management and compliance at MAPSIGMA Capital, ensuring the firm maintains the highest standards of regulatory compliance and risk controls.",
         "Before joining MAPSIGMA, Kavita was Head of Risk at Deutsche Bank Asia Pacific, where she developed comprehensive risk frameworks for complex financial products.",
         "Kavita holds an MBA from Columbia Business School and is a certified FRM (Financial Risk Manager). She is a thought leader in enterprise risk management and regulatory compliance."
       ],
@@ -529,14 +529,15 @@ const PeoplePage = () => {
                 className={animatedElements.has('partners-p1') ? 'animate-fade-up animate-delay-1' : ''}
                 style={{textAlign: 'center', fontSize: '1.125rem', color: '#374151', lineHeight: '1.7', marginBottom: '16px'}}
               >
-                Our partners are more than executives and staff, they are the driving force behind MAPSIGMA CAPITAL.
+                Our partners are more than executives and staff, they are the driving force behind MAPSIGMA CAPITAL. Each brings deep expertise, sharp execution and a shared commitment to our mission.
+
               </p>
               <p 
                 data-animate-id="partners-p2"
                 className={animatedElements.has('partners-p2') ? 'animate-fade-up animate-delay-2' : ''}
                 style={{textAlign: 'center', fontSize: '1.125rem', color: '#374151', lineHeight: '1.7'}}
               >
-                Together, they operate with discipline, agility and trust building the systems, relationships and results that define our success.
+                Together, they operate with discipline, agility and trust building the systems, relationships and results that define our success. This is a team aligned by purpose and united by principles, working every day to deliver lasting impact for our clients and communities.
               </p>
             </div>
 
