@@ -202,9 +202,9 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
           padding: 12px 20px 4px 20px;
         }
 
-        .sparkle-navigation-menu ul li .active a {
-          color: #e7c3c3ff ;
-          text-shadow: 0 0 8px #C3E7CC 33;
+       .sparkle-navigation-menu ul li.active a {
+          color: #FFFFFF !important;
+          text-shadow: 0 0 8px #C3E7CC33;
         }
 
         .sparkle-navigation-menu .active-element {
