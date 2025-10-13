@@ -191,7 +191,7 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
 
         .sparkle-navigation-menu ul li a {
           text-decoration: none;
-          color: white;
+          color: #C3E7CC;
           font-size: 13px;
           font-weight: 600;
           letter-spacing: 0.5px;
@@ -202,9 +202,9 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
           padding: 12px 20px 4px 20px;
         }
 
-        .sparkle-navigation-menu ul li:not(.active):hover a {
-          color: ${color};
-          text-shadow: 0 0 8px ${color}33;
+        .sparkle-navigation-menu ul li .active a {
+          color: #e7c3c3ff ;
+          text-shadow: 0 0 8px #C3E7CC 33;
         }
 
         .sparkle-navigation-menu .active-element {
@@ -285,6 +285,9 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
         .sparkle-navigation-menu.before .active-element {
           transform: rotateY(180deg);
         }
+          .customHoverEffect:hover{
+            color:white !important;
+          }
       `}</style>
 
       <nav className="sparkle-navigation-menu" ref={navRef}>
@@ -297,6 +300,7 @@ const SparkleNavbar = ({ items, color = "#8B4513" }) => {
                   buttonRefs.current[index] = el;
                 }}
                 onClick={() => handleClick(index)}
+                className="customHoverEffect"
               >
                 {item.name}
               </NavLink>

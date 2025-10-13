@@ -84,7 +84,7 @@ const Navbar = ({ logoSrc, logoAlt = "MAPSIGMA CAPITAL", onLogoClick }) => {
         </div>
 
         {/* Bottom Section: SparkleNavbar (Desktop Only) */}
-        <div className="navbar-bottom-row d-none d-lg-block bg-dark">
+        <div className="navbar-bottom-row d-none d-lg-block " style={{backgroundColor:"#004225"}}>
           <div className="container-fluid ">
             <SparkleNavbar 
               items={mainMenuItems}

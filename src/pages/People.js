@@ -5,6 +5,10 @@ import '../pages_css/People.css'
 import people_01 from '../images/people/people_02.png'
 import people_02 from '../images/people/people_03.png'
 import people_03 from '../images/people/people_04.png'
+import Austin from '../images/people/Austin.jpg'
+import Arun from '../images/people/Arunsie.png'
+import femaildummy from '../images/femaildummy.png'
+
 
 const PeoplePage = () => {
   const [showAllVideos, setShowAllVideos] = useState(false);
@@ -44,113 +48,141 @@ const PeoplePage = () => {
 
   const leaders = [
     {
-      name: "Rajesh Kumar",
-      title: "Founder & CEO",
-      subtitle: "MAPSIGMA Capital",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&q=80",
-      bio: [
-        "Rajesh Kumar founded MAPSIGMA Capital in 2015 with a vision to revolutionize investment management in emerging markets. With over 25 years of experience in global finance, he has built the firm into one of the region's most respected investment houses.",
-        "Prior to founding MAPSIGMA, Rajesh served as Managing Director at Goldman Sachs Asia, where he led the firm's alternative investments division. He also held senior positions at Morgan Stanley and JP Morgan, gaining deep expertise across asset classes and geographies.",
-        "Rajesh holds an MBA from Harvard Business School and a Bachelor's degree in Economics from the London School of Economics. He is a frequent speaker at global investment conferences and serves on the boards of several industry organizations."
-      ],
-      stats: [
-        { number: "25+", label: "Years Experience" },
-        { number: "$5B+", label: "Assets Managed" },
-        { number: "15+", label: "Countries Served" }
-      ],
-      achievements: [
-        {
-          title: "Investment Innovation Award",
-          description: "Recognized for pioneering sustainable investment strategies in emerging markets"
-        },
-        {
-          title: "CEO of the Year 2023",
-          description: "Honored by Asia Finance Magazine for exceptional leadership and vision"
-        },
-        {
-          title: "Published Author",
-          description: "Author of 'The Future of Capital: Investing in Tomorrow's Markets'"
-        }
-      ]
-    },
-    {
-      name: "Amritpal Singh Gadhoke",
-      title: "Managing Director",
-      subtitle: "MAPSIGMA Capital",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=600&fit=crop&q=80",
-      bio: [
-        "Amritpal Singh Gadhoke brings over 20 years of investment expertise to MAPSIGMA Capital, where she oversees all investment strategies and portfolio management operations.",
-        "Before joining MAPSIGMA, Priya was a Senior Portfolio Manager at BlackRock, managing multi-billion dollar portfolios with a focus on emerging markets and sustainable investments.",
-        "Priya holds a CFA charter and an MBA in Finance from INSEAD. She is passionate about ESG investing and has been instrumental in developing MAPSIGMA's sustainable investment framework."
-      ],
-      stats: [
-        { number: "20+", label: "Years Experience" },
-        { number: "$3B+", label: "Portfolio Managed" },
-        { number: "98%", label: "Client Satisfaction" }
-      ],
-      achievements: [
-        {
-          title: "CIO Excellence Award 2024",
-          description: "Recognized for outstanding portfolio performance and risk management"
-        },
-        {
-          title: "ESG Leadership",
-          description: "Pioneer in integrating ESG principles into investment strategies"
-        }
-      ]
-    },
-    {
-      name: "Arun S",
-      title: "Director Legal ",
-      subtitle: "Strategy & Operations",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&q=80",
-      bio: [
-        "Arun  leads strategy and operations at MAPSIGMA Capital, ensuring operational excellence and strategic alignment across all business functions.",
-        "With 18 years of experience in financial services, Arun previously held leadership roles at McKinsey & Company and Citigroup, where he specialized in operational transformation and strategic planning.",
-        "Arun earned his MBA from Wharton School and a Bachelor's degree in Engineering from IIT Delhi. He is known for his analytical approach and ability to drive organizational efficiency."
-      ],
-      stats: [
-        { number: "18+", label: "Years Experience" },
-        { number: "50+", label: "Strategic Projects Led" },
-        { number: "30%", label: "Efficiency Improvement" }
-      ],
-      achievements: [
-        {
-          title: "Operations Excellence Award",
-          description: "Streamlined operations reducing costs by 30% while improving service quality"
-        },
-        {
-          title: "Digital Transformation Leader",
-          description: "Led successful implementation of cutting-edge technology platforms"
-        }
-      ]
-    },
-    {
-      name: "Chief Operation Officer ",
-      title: "Partner",
-      subtitle: "Risk Management & Compliance",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80",
-      bio: [
-        "Chief Operation Officer  heads risk management and compliance at MAPSIGMA Capital, ensuring the firm maintains the highest standards of regulatory compliance and risk controls.",
-        "Before joining MAPSIGMA, Kavita was Head of Risk at Deutsche Bank Asia Pacific, where she developed comprehensive risk frameworks for complex financial products.",
-        "Kavita holds an MBA from Columbia Business School and is a certified FRM (Financial Risk Manager). She is a thought leader in enterprise risk management and regulatory compliance."
-      ],
-      stats: [
-        { number: "15+", label: "Years Experience" },
-        { number: "100%", label: "Compliance Record" },
-        { number: "Zero", label: "Major Incidents" }
-      ],
-      achievements: [
-        {
-          title: "Risk Management Excellence",
-          description: "Maintained perfect compliance record for three consecutive years"
-        },
-        {
-          title: "Industry Recognition",
-          description: "Featured speaker at global risk management conferences"
-        }
-      ]
-    }
+    name: "Austin Prakesh",
+    title: "Founder & CEO",
+    subtitle: "MAPSIGMA Capital",
+    image: Austin,
+    bio: [
+      "Austin Prakesh founded MAPSIGMA CAPITAL in 2022 with a vision to build a next-generation investment platform grounded in strategic insight, disciplined execution and long-term value creation. Deeply rooted in family values, he believes that true wealth goes beyond capital—it includes the principles, skills and resilience we pass on to our children.",
+      "Born in 1976 in Singapore, Austin's journey spans from humble beginnings to becoming a key figure in global fintech. Between 2000 and 2009, he helped manage and scale businesses valued at over $8 billion. In 2011, he moved to Bangalore as an angel investor and Director strategic advisor to Zerodha, now India's largest trading firm, where he continues to serve as Director of Strategy.",
+      "Austin has also invested in iScientific Technology Labs (smart meters), acquired Sesola (solar energy solutions in 2023), and co-founded Fitness Fight Club. Through an NGO named Vs, he helped fund heart surgeries for 228 children and supported education for over 22 children. After a life-changing skydiving accident in 2022 and courageously amputating both legs in 2024, he continues to lead as Chief Strategist and Principal Investor, mentoring the next generation of MAPSIGMA leaders."
+    ],
+    stats: [
+      { number: "25+", label: "Years Experience" },
+      { number: "$8B+", label: "Businesses Scaled" },
+      { number: "2022", label: "Founded MAPSIGMA" }
+    ],
+    achievements: [
+      {
+        title: "Fintech Pioneer",
+        description: "Key early investor and strategic advisor to Zerodha, India's largest trading platform"
+      },
+      {
+        title: "Social Impact Leader",
+        description: "Funded 228 children's heart surgeries and education for 22+ children through NGO Vs"
+      },
+      {
+        title: "Sustainable Innovation",
+        description: "Acquired Sesola to accelerate solar energy and green power solutions across India"
+      },
+      {
+        title: "Resilience & Purpose",
+        description: "Transformed personal adversity into a mission of legacy building and generational impact"
+      }
+    ]
+  },
+  {
+    name: "Amritpal Singh Gadhoke",
+    title: "Managing Director",
+    subtitle: "MAPSIGMA Capital",
+    image: "https://secure.b8cdn.com/images/uploads/user_photos/97/12068297_20141114091918.jpg",
+    bio: [
+      "Amritpal Singh Gadhoke is a seasoned leader with over 18 years of experience in the food and beverage retail industry. Known for his expertise in turnaround leadership and entrepreneurial innovation, he excels in driving strategic growth, profitability, and brand expansion.",
+      "As Managing Director of Passion Singh DMCC, Dubai, Mr. Gadhoke has led successful organisational transformations and revitalised brands. Previously, as CEO of London Dairy Café and Bistro UAE, he established a leading lifestyle consumer brand in a competitive market, showcasing his strategic and operational expertise.",
+      "A commerce graduate from Mumbai University and alumnus of the Executive Post Graduate Program in Management at Welingkar's Institute, he blends academic rigour with practical industry experience. His focus on business strategy, profit centre management, and new product launches has delivered significant market and revenue impact."
+    ],
+    stats: [
+      { number: "18+", label: "Years Experience" },
+      { number: "F&B", label: "Retail Industry" },
+      { number: "Dubai", label: "Based Location" }
+    ],
+    achievements: [
+      {
+        title: "Turnaround Leadership",
+        description: "Successfully revitalised brands through organisational transformation at Passion Singh DMCC"
+      },
+      {
+        title: "Brand Builder",
+        description: "Established London Dairy Café and Bistro UAE as a prominent lifestyle consumer brand"
+      },
+      {
+        title: "Strategic Growth Expert",
+        description: "Proven track record in driving unprecedented revenue growth and profitability"
+      },
+      {
+        title: "Operational Excellence",
+        description: "Expertise in talent management, marketing, and improving operational efficiency"
+      }
+    ]
+  },
+  {
+    name: "Arun S",
+    title: "Director Legal",
+    subtitle: "MAPSIGMA Capital",
+    image: Arun,
+    bio: [
+      "Arun S., Senior Partner at ALMT Legal, is an accomplished corporate lawyer with extensive expertise in private equity, capital markets, corporate finance, and both domestic and international mergers & acquisitions. With a particular focus on the technology and IT-enabled services sectors, he has been instrumental in advising companies on Indian IPOs, intellectual property matters, and real estate investment trusts.",
+      "In recent years, Arun has expanded his portfolio to include emerging industries such as blockchain, virtual financial assets, artificial intelligence, electric mobility, and eco-friendly technologies. His deep understanding of these sectors has established him as a trusted advisor to private equity funds, investment firms, and corporate issuers.",
+      "Recognized for his cross-border expertise, Arun has successfully managed transactions across jurisdictions including the United States, United Kingdom, China, UAE, and Singapore. A prolific author and esteemed speaker, he frequently publishes articles on private equity and IT laws and actively participates in global seminars."
+    ],
+    stats: [
+      { number: "20+", label: "Years Experience" },
+      { number: "5+", label: "Global Jurisdictions" },
+      { number: "100+", label: "M&A Deals Advised" }
+    ],
+    achievements: [
+      {
+        title: "Cross-Border Legal Expert",
+        description: "Managed complex transactions across US, UK, China, UAE, and Singapore"
+      },
+      {
+        title: "Tech & Innovation Specialist",
+        description: "Pioneer in advising on blockchain, AI, electric mobility, and virtual financial assets"
+      },
+      {
+        title: "Thought Leadership",
+        description: "Prolific author and speaker on private equity and IT laws at global forums"
+      },
+      {
+        title: "Capital Markets Authority",
+        description: "Instrumental in guiding Indian IPOs and real estate investment trusts"
+      }
+    ]
+  },
+  {
+    name: "Kokila Raja Ratna",
+    title: "Chief Operation Officer",
+    subtitle: "MAPSIGMA Capital",
+    image: femaildummy,
+     bio: [
+      "Kokila Raja Ratna is a seasoned professional in Operational Risk, Compliance, and Anti-Fraud, with over 21 years of experience in the global banking and financial services industry. She has held senior risk management roles at leading institutions, including Habib Bank AG Zurich, Emirates NBD, ING Vysya, and HSBC, showcasing exceptional leadership and technical expertise.",
+      "A Certified Internal Auditor (CIA), Ms. Raja Ratna has driven key initiatives in risk management, policy development, and regulatory compliance, strengthening organisational resilience. Her expertise spans global regulatory frameworks such as BASEL, AML/CFT, and GDPR, ensuring strong compliance with industry standards.",
+      "As Chief Risk Officer at MAPSIGMA, she oversees strategic risk management, fostering a proactive risk-aware culture. Ms. Raja Ratna works closely with regulatory bodies and executive leadership to align compliance efforts with organisational goals, enabling global operations to tackle challenges and seize growth opportunities confidently."
+    ],
+    stats: [
+      { number: "21+", label: "Years Experience" },
+      { number: "CIA", label: "Certified Auditor" },
+      { number: "100%", label: "Compliance Record" }
+    ],
+    achievements: [
+      {
+        title: "Global Banking Expertise",
+        description: "Senior risk management roles at Habib Bank AG Zurich, Emirates NBD, ING Vysya, and HSBC"
+      },
+      {
+        title: "Regulatory Framework Authority",
+        description: "Expert in BASEL, AML/CFT, and GDPR implementation and compliance"
+      },
+      {
+        title: "Risk Management Excellence",
+        description: "Maintained perfect compliance record while fostering risk-aware culture"
+      },
+      {
+        title: "Strategic Leadership",
+        description: "Drives organisational resilience through innovative risk management solutions"
+      }
+    ]
+  }
   ];
 
   const stories = [
@@ -236,7 +268,7 @@ const PeoplePage = () => {
       title: "Sustainable Investing",
       date: "December 16, 2024",
       excerpt: "How we integrate ESG principles.",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?w=600&h=600&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop&q=80",
       size: "small",
       fullContent: [
         "Sustainable investing is at the core of everything we do at MAPSIGMA Capital. We believe that companies with strong ESG practices are better positioned to deliver long-term value and withstand market volatility.",

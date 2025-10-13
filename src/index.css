@@ -1,5 +1,5 @@
 
-/* Reset and base styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,10 +7,10 @@
   @apply border-border outline-ring/50;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
-/* CSS Variables for MAPSIGMA Theme */
+} */
+
 :root {
   --mapsigma-green: #004225;
   --mapsigma-white: #ffffff;
@@ -159,13 +159,15 @@ body {
 
 /* Container */
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   /* margin: 0 auto; */
   /* padding: 0 20px; */
 }
 
 /* Navbar Styles */
-.mapsigma-navbar {
+
+
+/* .mapsigma-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -191,7 +193,7 @@ body {
   width: 100%;
 }
 
-/* Logo Section */
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -227,7 +229,7 @@ body {
   letter-spacing: -0.025em;
 }
 
-/* Desktop Navigation */
+
 .navbar-nav {
   display: flex;
   list-style: none;
@@ -271,7 +273,7 @@ body {
   width: 80%;
 }
 
-/* Mobile Menu Toggle */
+
 .mobile-menu-toggle {
   display: none;
   border: none;
@@ -318,7 +320,7 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Menu */
+
 .mobile-menu {
   display: none;
   position: absolute;
@@ -355,7 +357,7 @@ body {
   display: none;
 }
 
-/* Responsive Design */
+
 @media (max-width: 991px) {
   .navbar-nav {
     display: none;
@@ -382,10 +384,10 @@ body {
   .company-name {
     font-size: 1.5rem;
   }
-}
+} */
 
 /* Animation for mobile menu */
-@keyframes slideDown {
+/* @keyframes slideDown {
   from {
     opacity: 0;
     transform: translateY(-10px);
@@ -394,4 +396,4 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
