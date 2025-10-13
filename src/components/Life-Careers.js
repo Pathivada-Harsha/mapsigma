@@ -200,14 +200,14 @@ export default function LifeCareers() {
       description: 'Learn more about how a position at our firm can help you excel.',
       linkText: 'Explore Career Insights',
       image: life6,
-      link: '/Careers'
+      link: '/CareerPerspectives'
     },
     {
       title: 'Internships',
       description: 'Find information about our one-of-a-kind internship program.',
       linkText: 'Learn More About Internships',
       image: life7,
-      link: '/internships'
+      link: '/internship'
     },
     {
       title: 'Open Opportunities',

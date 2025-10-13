@@ -1,4 +1,16 @@
 import "../pages_css/Insights.css"
+import Article1 from "../images/Research&insights/H-Article1.png"
+import Article2 from "../images/Research&insights/H-Article2.png"
+import Article3 from "../images/Research&insights/H-Article3.png"
+import Article4 from "../images/Research&insights/H-Article4.png"
+import Article5 from "../images/Research&insights/H-Article5.png"
+import Article6 from "../images/Research&insights/H-Article6.png"
+import Article7 from "../images/Research&insights/H-Article7.png"
+import Article8 from "../images/Research&insights/H-Article8.png"
+import Article9 from "../images/Research&insights/H-Article9.png"
+import Article10 from "../images/Research&insights/H-Article10.png"
+import Article11 from "../images/Research&insights/H-Article11.png"
+import Article12 from "../images/Research&insights/H-Article12.png"
 export default function InsightsPage() {
   const featuredInsight = {
     category: "Market Analysis",
@@ -7,7 +19,7 @@ export default function InsightsPage() {
     author: "MAPSIGMA Research Team",
     date: "January 15, 2025",
     readTime: "12 min read",
-    image: "/images/insights-featured.jpg"
+    image: Article1
   }
 
   const latestInsights = [
@@ -17,7 +29,7 @@ export default function InsightsPage() {
       excerpt: "Analyzing the coordinated monetary policy changes across major economies and their impact on asset allocation strategies.",
       date: "January 10, 2025",
       readTime: "8 min read",
-      image: "/images/insight-economic.jpg"
+      image: Article2
     },
     {
       category: "Technology Trends",
@@ -25,7 +37,7 @@ export default function InsightsPage() {
       excerpt: "Exploring how artificial intelligence is transforming investment management and creating new market dynamics.",
       date: "January 8, 2025",
       readTime: "10 min read",
-      image: "/images/insight-ai.jpg"
+      image: Article3
     },
     {
       category: "ESG Investing",
@@ -33,7 +45,7 @@ export default function InsightsPage() {
       excerpt: "How environmental, social, and governance factors are reshaping investment strategies and generating alpha.",
       date: "January 5, 2025",
       readTime: "7 min read",
-      image: "/images/insight-esg.jpg"
+      image: Article4
     },
     {
       category: "Global Markets",
@@ -41,7 +53,7 @@ export default function InsightsPage() {
       excerpt: "Identifying opportunities in developing economies positioned for long-term structural growth.",
       date: "January 3, 2025",
       readTime: "9 min read",
-      image: "/images/insight-emerging.jpg"
+      image: Article5
     },
     {
       category: "Risk Management",
@@ -49,7 +61,7 @@ export default function InsightsPage() {
       excerpt: "Advanced techniques for assessing portfolio resilience across multiple risk scenarios.",
       date: "December 28, 2024",
       readTime: "11 min read",
-      image: "/images/insight-risk.jpg"
+      image: Article6
     },
     {
       category: "Alternative Assets",
@@ -57,7 +69,7 @@ export default function InsightsPage() {
       excerpt: "Understanding the role of private equity and credit in modern portfolio construction.",
       date: "December 25, 2024",
       readTime: "10 min read",
-      image: "/images/insight-private.jpg"
+      image: Article7
     }
   ]
 
@@ -75,14 +87,14 @@ export default function InsightsPage() {
       title: "Austin Prakesh on Building Generational Wealth",
       type: "Founder's Perspective",
       description: "Insights on family values, legacy building, and long-term investment philosophy that guides MAPSIGMA CAPITAL.",
-      image: "/images/austin-thought.jpg",
+      image: Article9,
       author: "Austin Prakesh"
     },
     {
       title: "Principles-Driven Investing in Uncertain Times",
       type: "Investment Philosophy",
       description: "How clarity, discipline, and truth-seeking guide investment decisions in volatile market environments.",
-      image: "/images/principles-investing.jpg",
+      image: Article8,
       author: "Research Team"
     }
   ]
@@ -93,14 +105,14 @@ export default function InsightsPage() {
       date: "February 5, 2025",
       time: "2:00 PM EST",
       speaker: "MAPSIGMA Strategy Team",
-      image: "/images/webinar-q1.jpg"
+      image: Article10
     },
     {
       title: "AI in Portfolio Management: Real Applications",
       date: "January 28, 2025",
       time: "3:00 PM EST",
       speaker: "Technology & Research",
-      image: "/images/webinar-ai.jpg"
+      image: Article11
     }
   ]
 

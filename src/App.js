@@ -37,6 +37,7 @@ const InsightsInvestement = React.lazy(() => import("./pages/InsightsInvestement
 const InsightsTechnology = React.lazy(() => import("./components/Insights-Technology.js"));
 const Technology3D = React.lazy(() => import("./pages/Technology3D.js"));
 const IntershipPage = React.lazy(() => import("./components/InternshipPage.js"));
+const CareerPerspectivesPage = React.lazy(() => import("./components/Career-Perspective"));
 // Main App Content Component
 function AppContent() {
   const navigate = useNavigate();
@@ -107,6 +108,7 @@ function AppContent() {
         <Route path="/InsightsTechnology" element={<InsightsTechnology />} />
         <Route path="/Internship" element={<IntershipPage />} />
         <Route path="/Technology3D" element={<Technology3D />} />
+        <Route path="/CareerPerspectives" element={<CareerPerspectivesPage />} />
         <Route
           path="*"
           element={

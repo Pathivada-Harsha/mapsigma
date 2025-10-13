@@ -83,7 +83,7 @@ export default function LifeContent() {
                             We uncover what drives markets and turn that knowledge into smart portfolios and sharp insights for our
                             clients.
                         </p>
-                        <NavLink to="/InsightsInvestement" className="life-insights-link">
+                        <NavLink to="/Insights" className="life-insights-link">
                             Learn More →
                         </NavLink>
                     </div>
@@ -128,7 +128,9 @@ export default function LifeContent() {
                             At MAPSIGMA, culture isn’t just part of our work—it is the foundation of our success.
                             It shapes how we think, how we collaborate, and how we create lasting impact for our clients and communities.
                         </p>
-                        <button className="life-pictures-btn">Discover Our Culture</button>
+                        <NavLink to="/culture" className="life-pictures-btn">
+                            Discover Our Culture
+                        </NavLink>
                     </div>
                 </div>
 
@@ -151,8 +153,8 @@ export default function LifeContent() {
                 </div>
             </section>
 
-            
-           <LifeValues />
+
+            <LifeValues />
             <LifeCareers />
             {/* Job Openings Section */}
             <section className="life-jobs">
