@@ -127,7 +127,7 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mapsigma">
       <AppContent />
     </BrowserRouter>
   );

@@ -1,5 +1,6 @@
 {
   "name": "mapsigma",
+   "homepage": "/mapsigma",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

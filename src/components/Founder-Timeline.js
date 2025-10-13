@@ -11,7 +11,7 @@ import Founder10 from "./../images/Founder/Founder10.jpeg"
 import Founder11 from "./../images/Founder/Founder11.jpeg"
 import Founder12 from "./../images/Founder/Founder12.jpeg"
 import Founder13 from "./../images/Founder/Founder13.jpeg"
-
+import Founder14 from "./../images/Founder/Founder15.jpeg"
 export default function FounderTimeline() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -83,7 +83,7 @@ export default function FounderTimeline() {
       year: "2023",
       title: "Sesola Acquisition",
       description: "Austin expanded into sustainable innovation by acquiring Sesola, a company focused on solar energy and green power solutions.",
-      image: Founder8,
+      image: Founder14,
     },
     {
       year: "2024",

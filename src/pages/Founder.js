@@ -23,6 +23,7 @@ import Founder11 from "./../images/Founder/Founder11.jpeg"
 import Founder12 from "./../images/Founder/Founder12.jpeg"
 import Founder13 from "./../images/Founder/Founder13.jpeg"
 import Founder14 from "./../images/Founder/Founder14.jpeg"
+import Founder15 from "./../images/Founder/Founder15.jpeg"
 export default function FounderContent() {
     const [activeTimeline, setActiveTimeline] = useState(null)
 
@@ -163,8 +164,8 @@ export default function FounderContent() {
             image: Founder10,
         },
         {
-            year: "2013",
-            title: "iScientific Technology Labs",
+            year: "2015",
+            title: "iScientific Technology Labs Pvt Ltd",
             description: `Austin invested in iScientific Technology Labs (ISTL), supporting innovation in smart meters 
     and digital infrastructure for India’s power sector. His backing accelerated the country’s shift 
     toward smarter, more reliable energy management systems.`,
@@ -199,7 +200,7 @@ export default function FounderContent() {
             description: `Austin expanded into sustainable innovation by acquiring Sesola, 
     a company focused on solar energy and green power solutions. His goal was to accelerate India’s 
     transition to clean energy while creating jobs and fostering independence in rural and urban regions alike.`,
-            image: "/founder-sesola.jpg",
+            image: Founder15,
         },
         {
             year: "2024",
