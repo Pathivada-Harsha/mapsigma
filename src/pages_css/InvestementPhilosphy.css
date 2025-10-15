@@ -1,0 +1,651 @@
+/* Investment Philosophy Page Styles with Investment-Philosophy-Page- prefix */
+
+.Investment-Philosophy-Page-container {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* Animation Classes */
+.Investment-Philosophy-Page-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.Investment-Philosophy-Page-animate.Investment-Philosophy-Page-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Investment-Philosophy-Page-animate-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.Investment-Philosophy-Page-animate-left.Investment-Philosophy-Page-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Investment-Philosophy-Page-animate-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.Investment-Philosophy-Page-animate-right.Investment-Philosophy-Page-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Investment-Philosophy-Page-animate-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.Investment-Philosophy-Page-animate-scale.Investment-Philosophy-Page-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hero Section with Background Image */
+.Investment-Philosophy-Page-hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/principles/PrincipleHome2.png') center/cover no-repeat;
+  overflow: hidden;
+}
+
+.Investment-Philosophy-Page-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(0, 66, 37, 0.75) 100%);
+  z-index: 1;
+}
+
+.Investment-Philosophy-Page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  text-align: center;
+  color: white;
+}
+
+.Investment-Philosophy-Page-hero-label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.Investment-Philosophy-Page-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.Investment-Philosophy-Page-hero-subtitle {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Introduction Section */
+.Investment-Philosophy-Page-intro {
+  padding: 8rem 5%;
+  background: #ffffff;
+}
+
+.Investment-Philosophy-Page-intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Investment-Philosophy-Page-section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.Investment-Philosophy-Page-intro-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+/* Core Principles Section */
+.Investment-Philosophy-Page-principles {
+  padding: 8rem 5%;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+}
+
+.Investment-Philosophy-Page-principles-header {
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.Investment-Philosophy-Page-section-subtitle {
+  font-size: 1.2rem;
+  color: #718096;
+  margin-top: 1rem;
+}
+
+.Investment-Philosophy-Page-principles-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.Investment-Philosophy-Page-principle-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Investment-Philosophy-Page-principle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1a1a2e 0%, #004225 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.Investment-Philosophy-Page-principle-card:hover::before {
+  transform: scaleX(1);
+}
+
+.Investment-Philosophy-Page-principle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.Investment-Philosophy-Page-principle-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.Investment-Philosophy-Page-principle-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.Investment-Philosophy-Page-principle-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Investment Framework Section */
+.Investment-Philosophy-Page-framework {
+  padding: 8rem 5%;
+  background: white;
+}
+
+.Investment-Philosophy-Page-framework-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.Investment-Philosophy-Page-framework-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.Investment-Philosophy-Page-section-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #004225;
+  margin-bottom: 1rem;
+  padding: 6px 16px;
+  background: rgba(0, 66, 37, 0.1);
+  border-radius: 20px;
+}
+
+.Investment-Philosophy-Page-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 2.5rem;
+}
+
+.Investment-Philosophy-Page-framework-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.Investment-Philosophy-Page-step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.Investment-Philosophy-Page-step:hover {
+  background: #edf2f7;
+  transform: translateX(8px);
+}
+
+.Investment-Philosophy-Page-step-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.Investment-Philosophy-Page-step-content h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.Investment-Philosophy-Page-step-content p {
+  font-size: 1rem;
+  color: #718096;
+  line-height: 1.6;
+}
+
+/* Investment Process Section */
+.Investment-Philosophy-Page-process {
+  padding: 8rem 5%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #004225 100%);
+  color: white;
+}
+
+.Investment-Philosophy-Page-process-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.Investment-Philosophy-Page-process-text .Investment-Philosophy-Page-section-label {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.Investment-Philosophy-Page-process-text .Investment-Philosophy-Page-section-title {
+  color: white;
+}
+
+.Investment-Philosophy-Page-process-text .Investment-Philosophy-Page-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.Investment-Philosophy-Page-process-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.Investment-Philosophy-Page-process-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.Investment-Philosophy-Page-highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.Investment-Philosophy-Page-highlight-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.Investment-Philosophy-Page-highlight-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Risk Management Section */
+.Investment-Philosophy-Page-risk {
+  padding: 8rem 5%;
+  background: white;
+}
+
+.Investment-Philosophy-Page-risk-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.Investment-Philosophy-Page-risk-header {
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.Investment-Philosophy-Page-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.Investment-Philosophy-Page-risk-card {
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, #f7fafc 0%, #ffffff 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.Investment-Philosophy-Page-risk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border-color: #004225;
+}
+
+.Investment-Philosophy-Page-risk-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.Investment-Philosophy-Page-risk-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.Investment-Philosophy-Page-risk-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Our Edge Section */
+.Investment-Philosophy-Page-edge {
+  padding: 8rem 5%;
+  background: linear-gradient(135deg, #edf2f7 0%, #f7fafc 100%);
+}
+
+.Investment-Philosophy-Page-edge-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Investment-Philosophy-Page-edge-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.Investment-Philosophy-Page-edge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.Investment-Philosophy-Page-edge-item {
+  padding: 3rem;
+  background: white;
+  border-radius: 16px;
+  border-left: 4px solid #004225;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.Investment-Philosophy-Page-edge-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.Investment-Philosophy-Page-edge-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.Investment-Philosophy-Page-edge-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* CTA Section with Background Image */
+.Investment-Philosophy-Page-cta {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/people/people_03.png') center/cover no-repeat;
+  overflow: hidden;
+}
+
+.Investment-Philosophy-Page-cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 66, 37, 0.9) 0%, rgba(26, 26, 46, 0.85) 100%);
+  z-index: 1;
+}
+
+.Investment-Philosophy-Page-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 5%;
+  text-align: center;
+  color: white;
+}
+
+.Investment-Philosophy-Page-cta-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.Investment-Philosophy-Page-cta-description {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Investment-Philosophy-Page-cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  background: white;
+  color: #004225;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Investment-Philosophy-Page-cta-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .Investment-Philosophy-Page-hero-title {
+    font-size: 3rem;
+  }
+
+  .Investment-Philosophy-Page-framework-content,
+  .Investment-Philosophy-Page-process-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .Investment-Philosophy-Page-process-visual {
+    order: -1;
+  }
+
+  .Investment-Philosophy-Page-process-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .Investment-Philosophy-Page-edge-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .Investment-Philosophy-Page-hero {
+    min-height: 60vh;
+  }
+
+  .Investment-Philosophy-Page-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .Investment-Philosophy-Page-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .Investment-Philosophy-Page-section-title {
+    font-size: 2.2rem;
+  }
+
+  .Investment-Philosophy-Page-principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Investment-Philosophy-Page-cta-title {
+    font-size: 2.5rem;
+  }
+
+  .Investment-Philosophy-Page-cta-description {
+    font-size: 1.1rem;
+  }
+
+  .Investment-Philosophy-Page-intro,
+  .Investment-Philosophy-Page-principles,
+  .Investment-Philosophy-Page-framework,
+  .Investment-Philosophy-Page-process,
+  .Investment-Philosophy-Page-risk,
+  .Investment-Philosophy-Page-edge {
+    padding: 5rem 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Investment-Philosophy-Page-hero-title {
+    font-size: 2rem;
+  }
+
+  .Investment-Philosophy-Page-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .Investment-Philosophy-Page-section-title {
+    font-size: 1.8rem;
+  }
+
+  .Investment-Philosophy-Page-principle-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .Investment-Philosophy-Page-cta-title {
+    font-size: 2rem;
+  }
+
+  .Investment-Philosophy-Page-cta-button {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+
+  .Investment-Philosophy-Page-step {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -49,7 +49,9 @@ export default function PrinciplesContent() {
     const isVisible = (section) => visibleSections.has(section)
 
     return (
+        
         <div className="pr-container">
+            
             {/* Hero Section */}
             {/* <section className="pr-hero">
         <div className="pr-hero-bg-overlay"></div>
