@@ -65,3 +65,9 @@ body {
   position: relative;
   min-height: 100vh;
 }
+
+@media (min-width:769px){
+.custom-page-padding{
+  padding-top: 120px;
+}
+}

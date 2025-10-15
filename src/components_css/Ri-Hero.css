@@ -9,6 +9,11 @@
   background: linear-gradient(135deg, #f8fafb 0%, #e8edf2 50%, #dfe6ed 100%);
 }
 
+@media (max-width:769px){
+.hc-carousel-wrapper{
+  padding-top: 200px;
+}
+}
 .hc-carousel-wrapper {
   width: 100%;
   height: 100%;

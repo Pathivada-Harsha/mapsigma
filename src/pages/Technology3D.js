@@ -9,16 +9,18 @@ import "../pages_css/Technology3D.css"
 
 // Animated 3D Sphere for Hero
 function AnimatedSphere() {
-  const mesto = useRef()
+  const meshRef = useRef()
 
   useFrame((state) => {
-    mesto.current.rotation.x = state.clock.getElapsedTime() * 0.2
-    mesto.current.rotation.y = state.clock.getElapsedTime() * 0.3
-  })
+    if (meshRef.current) {
+      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
+    }
+  }, [])
 
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-      <Sphere ref={mesto} args={[1, 64, 64]} scale={2.5}>
+      <Sphere ref={meshRef} args={[1, 64, 64]} scale={2.5}>
         <MeshDistortMaterial
           color="#1e40af"
           attach="material"
@@ -38,14 +40,16 @@ function DataNetwork() {
   const particlesRef = useRef([])
 
   useFrame((state) => {
-    groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.1
+    if (groupRef.current) {
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.1
+    }
 
     particlesRef.current.forEach((particle, i) => {
       if (particle) {
         particle.position.y = Math.sin(state.clock.getElapsedTime() + i) * 0.5
       }
     })
-  })
+  }, [])
 
   const positions = []
   for (let i = 0; i < 50; i++) {
@@ -73,9 +77,11 @@ function AIBrain() {
   const groupRef = useRef()
 
   useFrame((state) => {
-    groupRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2
-    groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
-  })
+    if (groupRef.current) {
+      groupRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
+    }
+  }, [])
 
   return (
     <group ref={groupRef}>
@@ -107,7 +113,7 @@ function PortfolioCubes() {
         cube.rotation.y = state.clock.getElapsedTime() * 0.5
       }
     })
-  })
+  }, [])
 
   const positions = [
     [-2, 0, 0],
@@ -134,11 +140,12 @@ function RiskShield() {
   const shieldRef = useRef()
 
   useFrame((state) => {
-    shieldRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
-    shieldRef.current.scale.x = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.1
-    shieldRef.current.scale.y = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.1
-    shieldRef.current.scale.z = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.1
-  })
+    if (shieldRef.current) {
+      shieldRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
+      const scale = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.1
+      shieldRef.current.scale.set(scale, scale, scale)
+    }
+  }, [])
 
   return (
     <group ref={shieldRef}>
@@ -157,8 +164,10 @@ function SecurityLock() {
   const lockRef = useRef()
 
   useFrame((state) => {
-    lockRef.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3
-  })
+    if (lockRef.current) {
+      lockRef.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3
+    }
+  }, [])
 
   return (
     <group ref={lockRef}>
@@ -180,8 +189,10 @@ function ClientPortal() {
   const groupRef = useRef()
 
   useFrame((state) => {
-    groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
-  })
+    if (groupRef.current) {
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
+    }
+  }, [])
 
   return (
     <group ref={groupRef}>
@@ -206,14 +217,16 @@ function DataGlobe() {
   const linesRef = useRef([])
 
   useFrame((state) => {
-    globeRef.current.rotation.y = state.clock.getElapsedTime() * 0.1
+    if (globeRef.current) {
+      globeRef.current.rotation.y = state.clock.getElapsedTime() * 0.1
+    }
 
     linesRef.current.forEach((line, i) => {
       if (line) {
         line.rotation.y = state.clock.getElapsedTime() * (0.2 + i * 0.1)
       }
     })
-  })
+  }, [])
 
   // Create orbital paths
   const orbits = []
@@ -262,10 +275,11 @@ function DataGlobe() {
 function PortfolioNodes() {
   const groupRef = useRef()
   const nodesRef = useRef([])
-  const linesRef = useRef([])
 
   useFrame((state) => {
-    groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.15
+    if (groupRef.current) {
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.15
+    }
 
     nodesRef.current.forEach((node, i) => {
       if (node) {
@@ -273,7 +287,7 @@ function PortfolioNodes() {
         node.scale.setScalar(1 + Math.sin(state.clock.getElapsedTime() * 2 + i) * 0.1)
       }
     })
-  })
+  }, [])
 
   const nodePositions = [
     [0, 0, 0], // Center
@@ -364,7 +378,10 @@ export default function TechnologyPage() {
             <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
             <AnimatedSphere />
             <Environment preset="city" />
-            <OrbitControls enableZoom={false} enablePan={false} />
+            <OrbitControls 
+              enableZoom={false} 
+              enablePan={false}
+            />
           </Canvas>
         </div>
         <div className="Technology3d-hero-content">
@@ -421,7 +438,11 @@ export default function TechnologyPage() {
               <pointLight position={[10, 10, 10]} intensity={1} />
               <spotLight position={[0, 10, 0]} intensity={0.5} color="#3b82f6" />
               <DataGlobe />
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
+              <OrbitControls 
+                enableZoom={false} 
+                autoRotate 
+                autoRotateSpeed={0.5}
+              />
             </Canvas>
           </div>
         </div>
@@ -437,7 +458,11 @@ export default function TechnologyPage() {
               <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8b5cf6" />
               <AIBrain />
               <Environment preset="night" />
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
+              <OrbitControls 
+                enableZoom={false} 
+                autoRotate 
+                autoRotateSpeed={1}
+              />
             </Canvas>
           </div>
           <div className="Technology3d-text-content">
@@ -537,7 +562,11 @@ export default function TechnologyPage() {
               <pointLight position={[-10, 0, -10]} intensity={0.8} color="#ef4444" />
               <RiskShield />
               <Environment preset="sunset" />
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.8} />
+              <OrbitControls 
+                enableZoom={false} 
+                autoRotate 
+                autoRotateSpeed={0.8}
+              />
             </Canvas>
           </div>
           <div className="Technology3d-text-content">
@@ -637,7 +666,11 @@ export default function TechnologyPage() {
               <pointLight position={[-10, -10, -10]} intensity={0.5} color="#6366f1" />
               <ClientPortal />
               <Environment preset="studio" />
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.5} />
+              <OrbitControls 
+                enableZoom={false} 
+                autoRotate 
+                autoRotateSpeed={1.5}
+              />
             </Canvas>
           </div>
           <div className="Technology3d-text-content">
