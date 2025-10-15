@@ -2,11 +2,7 @@ import React from 'react';
 import '../components_css/Preloader.css';
 import PreloaderImg from '../images/preloader.png'
 
-const CoinPreloader = ({
-  size = 300,
-  duration = 1.0,
-  logoImage = PreloaderImg
-}) => {
+const CoinPreloader = ({size = 300,duration = 1.0,logoImage = PreloaderImg}) => {
   return (
     <div className="coin-preloader-container">
       {/* Animated background elements */}

@@ -37,6 +37,7 @@ const InsightsInvestement = React.lazy(() => import("./pages/InsightsInvestement
 const InsightsTechnology = React.lazy(() => import("./components/Insights-Technology.js"));
 const Technology3D = React.lazy(() => import("./pages/Technology3D.js"));
 const IntershipPage = React.lazy(() => import("./components/InternshipPage.js"));
+const CareerPerspectivesPage = React.lazy(() => import("./components/Career-Perspective"));
 
 // Scroll to top component
 function ScrollToTop() {
@@ -109,7 +110,7 @@ function AppContent() {
       <ScrollToTop />
       <Navbar onLogoClick={handleLogoClick} />
       {/* Add padding to prevent content from hiding under fixed navbar */}
-      <div style={{ paddingTop: '120px' }}>
+      <div className="custom-page-padding">
         <React.Suspense fallback={<div style={{ minHeight: '100vh' }}></div>}>
           <Routes>
             <Route path="/" element={<Research_insights />} />
@@ -143,6 +144,7 @@ function AppContent() {
             <Route path="/InsightsTechnology" element={<InsightsTechnology />} />
             <Route path="/Internship" element={<IntershipPage />} />
             <Route path="/Technology3D" element={<Technology3D />} />
+             <Route path="/CareerPerspectives" element={<CareerPerspectivesPage />} />
             <Route
               path="*"
               element={

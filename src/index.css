@@ -7,7 +7,9 @@
   @apply border-border outline-ring/50;
 }
 
-
+element.style {
+    padding-top: 0px !important;
+}
 /* html {
   scroll-behavior: smooth;
 } */

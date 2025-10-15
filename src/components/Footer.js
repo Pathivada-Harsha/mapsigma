@@ -268,8 +268,8 @@ const Footer = () => {
                             <ul className="footer-links">
                                 <li><a href="#">Portfolio Companies</a></li>
                                 <li><NavLink to='/'>Research & Insights</NavLink></li>
-                                <li><a href="#">Investment Strategy</a></li>
-                                <li><a href="#">Sectors</a></li>
+                                <li><NavLink to='/Insights'>Investment Strategy</NavLink></li>
+                                <li><NavLink to='/Technology3D'>Sectors</NavLink></li>
                             </ul>
                         </div>
 
