@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Research_insights from "./pages/Research_Insights";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTopArrow.js";
+import VideoLoader from "./components/VideoLoader.js";
 
 const Culture = React.lazy(() => import("./pages/Culture"));
 const Principles = React.lazy(() => import("./pages/Principles"));
@@ -76,6 +77,8 @@ function AppContent() {
   const navigate = useNavigate();
   const [showPreloader, setShowPreloader] = useState(true);
   const [hasShownPreloader, setHasShownPreloader] = useState(false);
+  const { pathname } = useLocation();
+
 
   useEffect(() => {
     // Always show preloader on initial page load (any URL)
@@ -86,8 +89,8 @@ function AppContent() {
       const timer = setTimeout(() => {
         setShowPreloader(false);
         setHasShownPreloader(true);
-        navigate('/');
-      }, 2000);
+        navigate(pathname);
+      }, 4000);
 
       return () => clearTimeout(timer);
     }
@@ -101,7 +104,11 @@ function AppContent() {
 
   // Show preloader on initial load or when logo is clicked
   if (showPreloader && !hasShownPreloader) {
-    return <Preloader />;
+    // return <Preloader show={true} />;
+       return <VideoLoader onFinish={() => {
+        setShowPreloader(false);
+        setHasShownPreloader(true);
+    }} />;
   }
 
   // Show main app content
@@ -110,7 +117,7 @@ function AppContent() {
       <ScrollToTop />
       <Navbar onLogoClick={handleLogoClick} />
       {/* Add padding to prevent content from hiding under fixed navbar */}
-      <div style={{ paddingTop: '120px' }}>
+      <div className="custom-page-padding">
         <React.Suspense fallback={<div style={{ minHeight: '100vh' }}></div>}>
           <Routes>
             <Route path="/" element={<Research_insights />} />
@@ -166,7 +173,7 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/mapsigma">
       <AppContent />
     </BrowserRouter>
   );
