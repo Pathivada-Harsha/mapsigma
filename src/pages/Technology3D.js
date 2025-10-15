@@ -16,7 +16,7 @@ function AnimatedSphere() {
       meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2
       meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
     }
-  }, [])
+  })
 
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
@@ -49,7 +49,7 @@ function DataNetwork() {
         particle.position.y = Math.sin(state.clock.getElapsedTime() + i) * 0.5
       }
     })
-  }, [])
+  })
 
   const positions = []
   for (let i = 0; i < 50; i++) {
@@ -81,7 +81,7 @@ function AIBrain() {
       groupRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2
       groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
     }
-  }, [])
+  })
 
   return (
     <group ref={groupRef}>
@@ -113,7 +113,7 @@ function PortfolioCubes() {
         cube.rotation.y = state.clock.getElapsedTime() * 0.5
       }
     })
-  }, [])
+  })
 
   const positions = [
     [-2, 0, 0],
@@ -145,7 +145,7 @@ function RiskShield() {
       const scale = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.1
       shieldRef.current.scale.set(scale, scale, scale)
     }
-  }, [])
+  })
 
   return (
     <group ref={shieldRef}>
@@ -167,7 +167,7 @@ function SecurityLock() {
     if (lockRef.current) {
       lockRef.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3
     }
-  }, [])
+  })
 
   return (
     <group ref={lockRef}>
@@ -192,7 +192,7 @@ function ClientPortal() {
     if (groupRef.current) {
       groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
     }
-  }, [])
+  })
 
   return (
     <group ref={groupRef}>
@@ -226,7 +226,7 @@ function DataGlobe() {
         line.rotation.y = state.clock.getElapsedTime() * (0.2 + i * 0.1)
       }
     })
-  }, [])
+  })
 
   // Create orbital paths
   const orbits = []
@@ -287,7 +287,7 @@ function PortfolioNodes() {
         node.scale.setScalar(1 + Math.sin(state.clock.getElapsedTime() * 2 + i) * 0.1)
       }
     })
-  }, [])
+  })
 
   const nodePositions = [
     [0, 0, 0], // Center
@@ -363,8 +363,8 @@ export default function TechnologyPage() {
       })
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    // window.addEventListener("scroll", handleScroll)
+    // return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
@@ -379,6 +379,7 @@ export default function TechnologyPage() {
             <AnimatedSphere />
             <Environment preset="city" />
             <OrbitControls 
+              makeDefault
               enableZoom={false} 
               enablePan={false}
             />
@@ -439,6 +440,7 @@ export default function TechnologyPage() {
               <spotLight position={[0, 10, 0]} intensity={0.5} color="#3b82f6" />
               <DataGlobe />
               <OrbitControls 
+                makeDefault
                 enableZoom={false} 
                 autoRotate 
                 autoRotateSpeed={0.5}
@@ -459,6 +461,7 @@ export default function TechnologyPage() {
               <AIBrain />
               <Environment preset="night" />
               <OrbitControls 
+                makeDefault
                 enableZoom={false} 
                 autoRotate 
                 autoRotateSpeed={1}
@@ -546,7 +549,7 @@ export default function TechnologyPage() {
               <pointLight position={[10, 10, 10]} intensity={1} />
               <spotLight position={[0, 10, 0]} intensity={0.8} color="#0ea5e9" />
               <PortfolioNodes />
-              <OrbitControls enableZoom={false} />
+              <OrbitControls makeDefault enableZoom={false} />
             </Canvas>
           </div>
         </div>
@@ -563,6 +566,7 @@ export default function TechnologyPage() {
               <RiskShield />
               <Environment preset="sunset" />
               <OrbitControls 
+                makeDefault
                 enableZoom={false} 
                 autoRotate 
                 autoRotateSpeed={0.8}
@@ -650,7 +654,7 @@ export default function TechnologyPage() {
               <pointLight position={[10, 10, 10]} intensity={1} />
               <spotLight position={[0, 5, 5]} intensity={1} color="#10b981" />
               <SecurityLock />
-              <OrbitControls enableZoom={false} />
+              <OrbitControls makeDefault enableZoom={false} />
             </Canvas>
           </div>
         </div>
@@ -667,6 +671,7 @@ export default function TechnologyPage() {
               <ClientPortal />
               <Environment preset="studio" />
               <OrbitControls 
+                makeDefault
                 enableZoom={false} 
                 autoRotate 
                 autoRotateSpeed={1.5}

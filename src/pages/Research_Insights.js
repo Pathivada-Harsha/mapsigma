@@ -1,6 +1,6 @@
 "use client"
 
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import "../pages_css/Research_insights.css"
 import Map_Your_Move from '../components/Map_Your_Move'
 import Hero from "../components/Ri-Hero.js"
@@ -12,28 +12,28 @@ export default function ResearchInsights() {
   // const [email, setEmail] = useState("")
   // const [name, setName] = useState("")
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
-  const [showModel,setShowModel]=useState(false);
+  const [showModel, setShowModel] = useState(false);
 
-const handleScroll = (e) => {
-  const element = e.target;
-  const isAtBottom = Math.abs(element.scrollHeight - element.scrollTop - element.clientHeight) < 5;
-  setIsScrolledToBottom(isAtBottom);
-};
+  const handleScroll = (e) => {
+    const element = e.target;
+    const isAtBottom = Math.abs(element.scrollHeight - element.scrollTop - element.clientHeight) < 5;
+    setIsScrolledToBottom(isAtBottom);
+  };
 
- useEffect(() => {
+  useEffect(() => {
     const hasAgreed = sessionStorage.getItem("agreedToDisclaimer");
     if (!hasAgreed) {
       setShowModel(true);
     }
   }, []);
-const handleAgree = () => {
-    sessionStorage.setItem("agreedToDisclaimer", "true"); 
+  const handleAgree = () => {
+    sessionStorage.setItem("agreedToDisclaimer", "true");
     setShowModel(false);
   };
 
-const handleCancel = () => {
-  setShowModel(false)
-};
+  const handleCancel = () => {
+    setShowModel(false)
+  };
   const articles = [
     {
       id: 1,
@@ -229,7 +229,7 @@ const handleCancel = () => {
       </section> */}
 
 
-     {showModel  && (<div className="modal fade show" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.8)', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999 }}>
+      {showModel && (<div className="modal fade show" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.8)', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999 }}>
         <div className="modal-dialog modal-dialog-centered modal-lg" style={{ maxWidth: '800px', margin: '1.75rem auto' }}>
           <div className="modal-content" style={{ backgroundColor: '#212529', color: '#fff', border: '1px solid #495057' }}>
 
@@ -271,52 +271,76 @@ const handleCancel = () => {
             >
               <div className="customTextAlignment" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                 <p>
-                  Bridgewater Associates, LP is a global investment management firm. Bridgewater Associates, LP advises certain private investment funds and institutional clients, and is not available to provide investment advisory or similar services to most other investors. This website is a resource for audiences other than investors such as potential employees, researchers, students, counterparties and industry participants. Bridgewater Associates, LP believes it is useful for such persons to have an accurate source of relevant information. Under no circumstances should any information presented on this website be construed as an offer to sell, or solicitation of any offer to purchase, any securities or other investments. This website does not contain the information that an investor should consider or evaluate to make a potential investment. Offering materials relating to investments in entities managed by Bridgewater Associates, LP are not available to the general public.
+                  MAPSIGMA CAPITAL is a global investment management and research-driven firm.
+                  MAPSIGMA CAPITAL provides investment advisory and portfolio management services
+                  exclusively to a limited group of institutional and qualified clients.
+                  This website serves as an informational resource for audiences other than investors —
+                  including potential employees, partners, researchers, students, and industry professionals.
+                  MAPSIGMA CAPITAL believes it is essential for such audiences to have access to accurate and
+                  relevant information about the firm.
+                  Under no circumstances should any content presented on this website be interpreted as
+                  an offer to sell or a solicitation to purchase any securities, financial products, or investment interests.
+                  This website does not contain the information required to evaluate or make any investment decisions.
+                  Offering materials relating to entities managed by MAPSIGMA CAPITAL are not available to the general public.
                 </p>
 
                 <p>
-                  To view this content, you must agree to the following terms, in addition to and supplementing the Bridgewater Terms of Use and Privacy Policy:
+                  To continue viewing this content, you must agree to the following terms,
+                  in addition to and supplementing the MAPSIGMA CAPITAL Terms of Use and Privacy Policy:
                 </p>
 
                 <p style={{ fontWeight: '600', color: '#fff', marginTop: '1rem' }}>
-                  I confirm to Bridgewater Associates, LP and agree that:
+                  I confirm to MAPSIGMA CAPITAL and agree that:
                 </p>
 
                 <ul style={{ listStyle: 'none', paddingLeft: '0', marginTop: '1rem' }}>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    I am entering this website only to obtain general information regarding Bridgewater Associates, LP and not for any other purpose.
+                    I am entering this website solely to obtain general information regarding MAPSIGMA CAPITAL
+                    and not for any investment or solicitation purposes.
                   </li>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    I understand that investments managed by Bridgewater Associates, LP are not available to the general public.
+                    I understand that investment opportunities managed by MAPSIGMA CAPITAL are not open to the general public.
                   </li>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    I understand that this website does not contain the information I would need to consider for an investment, and that such information is only available to a limited group of persons and institutions meeting specified criteria.
+                    I acknowledge that this website does not include sufficient details to evaluate any investment opportunity,
+                    and that such materials are available only to qualified institutions and clients who meet specific criteria.
                   </li>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    I understand that this website has not been reviewed or approved by, filed with, or otherwise furnished to any governmental or similar authority, and is intended only to provide limited information to members of the public who have a legitimate interest in that information for reasons unrelated to making investments.
+                    I understand that this website has not been reviewed, filed with, or approved by any regulatory or governmental authority,
+                    and is intended solely to provide limited corporate information to interested members of the public
+                    for purposes unrelated to investment solicitation.
                   </li>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    I understand that when Bridgewater Associates, LP makes third party information available, Bridgewater generally will not have verified statements made by the third party, and the presentation of information may omit important information.
+                    I acknowledge that when MAPSIGMA CAPITAL shares third-party materials or external data,
+                    the firm may not have independently verified the statements made therein,
+                    and such materials may omit important information or context.
                   </li>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    I understand that third party materials such as live interviews made available by Bridgewater Associates, LP generally will not have been edited by Bridgewater and statements in those materials by individuals associated with Bridgewater should be understood in the conversational context in which they were made, which may include providing historical background.
+                    I understand that third-party interviews, articles, or videos featured by MAPSIGMA CAPITAL
+                    may include conversational statements or historical commentary,
+                    and may not reflect the firm’s current position or strategy.
                   </li>
                   <li style={{ marginBottom: '0.75rem', paddingLeft: '1.5rem', position: 'relative' }}>
                     <span style={{ position: 'absolute', left: '0', color: '#60a5fa' }}>•</span>
-                    The content constitutes the proprietary intellectual property of Bridgewater or its licensors and that I will not directly or indirectly copy, modify, recast, create derivative works, post, publish, display, redistribute, disclose, or make available the content, in whole or in part, to any third parties, or assist others to do the same, or otherwise make any commercial use of the content without the prior written consent of Bridgewater.
+                    I acknowledge that all content on this website constitutes the proprietary intellectual property
+                    of MAPSIGMA CAPITAL or its licensors, and I agree not to copy, modify, redistribute,
+                    republish, disclose, or use the content for any commercial purpose
+                    without prior written consent from MAPSIGMA CAPITAL.
                   </li>
                 </ul>
 
                 <p style={{ marginTop: '1.5rem', color: '#fff', fontWeight: '500' }}>
-                  By clicking "Agree," I certify that I have read, understand and agree to the foregoing Disclaimer, Terms of Use and Privacy Policy.
+                  By clicking "Agree," I certify that I have read, understood, and accepted
+                  the above Disclaimer, Terms of Use, and Privacy Policy of MAPSIGMA CAPITAL.
                 </p>
               </div>
+
             </div>
 
             {/* Scroll Indicator */}
