@@ -1,14 +1,287 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import "../pages_css/Technology3D.css"
-import RealtimeData from "../images/Technology/RealTime3D.png"
-import AI3D from "../images/Technology/AI3D.png"
-import Pms3D from "../images/Technology/PMS.png"
-import Risk3D from "../images/Technology/RiskCommand.png"
-import Cyber3D from "../images/Technology/CyberSecurity.png"
-import Client3D from "../images/Technology/CommandPortal.png"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { OrbitControls, Sphere, Box, Torus, MeshDistortMaterial, Float, Environment, Line } from "@react-three/drei"
+import * as THREE from "three"
+import "../styles/TechnologyPage1.css"
+
+function AnimatedSphere() {
+  const meshRef = useRef()
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
+    }
+  })
+
+  return (
+    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+      <Sphere ref={meshRef} args={[1, 64, 64]} scale={2.5}>
+        <MeshDistortMaterial
+          color="#1e40af"
+          attach="material"
+          distort={0.4}
+          speed={2}
+          roughness={0.2}
+          metalness={0.8}
+        />
+      </Sphere>
+    </Float>
+  )
+}
+
+function DataGlobe() {
+  const globeRef = useRef()
+  const linesRef = useRef([])
+
+  useFrame((state) => {
+    if (globeRef.current) {
+      globeRef.current.rotation.y = state.clock.getElapsedTime() * 0.1
+    }
+
+    linesRef.current.forEach((line, i) => {
+      if (line) {
+        line.rotation.y = state.clock.getElapsedTime() * (0.2 + i * 0.1)
+      }
+    })
+  })
+
+  // Create orbital paths
+  const orbits = []
+  for (let i = 0; i < 5; i++) {
+    const points = []
+    const radius = 2 + i * 0.3
+    for (let j = 0; j <= 64; j++) {
+      const angle = (j / 64) * Math.PI * 2
+      points.push(new THREE.Vector3(Math.cos(angle) * radius, Math.sin(angle * 2) * 0.5, Math.sin(angle) * radius))
+    }
+    orbits.push(points)
+  }
+
+  return (
+    <group>
+      {/* Central Globe */}
+      <Sphere ref={globeRef} args={[1.8, 64, 64]}>
+        <meshStandardMaterial color="#1e40af" wireframe transparent opacity={0.3} />
+      </Sphere>
+
+      {/* Inner solid sphere */}
+      <Sphere args={[1.7, 32, 32]}>
+        <meshStandardMaterial
+          color="#3b82f6"
+          metalness={0.8}
+          roughness={0.2}
+          emissive="#1e40af"
+          emissiveIntensity={0.3}
+        />
+      </Sphere>
+
+      {/* Data stream orbits */}
+      {orbits.map((points, i) => (
+        <group key={i} ref={(el) => (linesRef.current[i] = el)}>
+          <Line points={points} color={i % 2 === 0 ? "#60a5fa" : "#3b82f6"} lineWidth={2} />
+          {/* Data points on orbits */}
+          <Sphere args={[0.08, 16, 16]} position={points[Math.floor(Math.random() * points.length)]}>
+            <meshStandardMaterial color="#fbbf24" emissive="#fbbf24" emissiveIntensity={1} />
+          </Sphere>
+        </group>
+      ))}
+    </group>
+  )
+}
+
+function AIBrain() {
+  const groupRef = useRef()
+
+  useFrame((state) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.3) * 0.2
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
+    }
+  })
+
+  return (
+    <group ref={groupRef}>
+      <Torus args={[1.5, 0.4, 16, 100]} position={[0, 0, 0]}>
+        <meshStandardMaterial color="#8b5cf6" metalness={0.8} roughness={0.2} />
+      </Torus>
+      <Torus args={[1.5, 0.4, 16, 100]} rotation={[Math.PI / 2, 0, 0]}>
+        <meshStandardMaterial color="#ec4899" metalness={0.8} roughness={0.2} />
+      </Torus>
+      <Torus args={[1.5, 0.4, 16, 100]} rotation={[0, Math.PI / 2, 0]}>
+        <meshStandardMaterial color="#06b6d4" metalness={0.8} roughness={0.2} />
+      </Torus>
+      <Sphere args={[0.5, 32, 32]}>
+        <meshStandardMaterial color="#ffffff" emissive="#ffffff" emissiveIntensity={0.5} />
+      </Sphere>
+    </group>
+  )
+}
+
+function PortfolioNodes() {
+  const groupRef = useRef()
+  const nodesRef = useRef([])
+
+  useFrame((state) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.15
+    }
+
+    nodesRef.current.forEach((node, i) => {
+      if (node) {
+        node.position.y = Math.sin(state.clock.getElapsedTime() * 0.5 + i) * 0.2
+        node.scale.setScalar(1 + Math.sin(state.clock.getElapsedTime() * 2 + i) * 0.1)
+      }
+    })
+  })
+
+  const nodePositions = [
+    [0, 0, 0], // Center
+    [2, 1, 0], // Top right
+    [-2, 1, 0], // Top left
+    [2, -1, 0], // Bottom right
+    [-2, -1, 0], // Bottom left
+    [0, 0, 2], // Front
+    [0, 0, -2], // Back
+  ]
+
+  const connections = [
+    [0, 1],
+    [0, 2],
+    [0, 3],
+    [0, 4],
+    [0, 5],
+    [0, 6],
+    [1, 2],
+    [3, 4],
+    [5, 6],
+    [1, 5],
+    [2, 6],
+  ]
+
+  const colors = ["#0ea5e9", "#1e40af", "#3b82f6", "#60a5fa", "#0284c7"]
+
+  return (
+    <group ref={groupRef}>
+      {/* Connection lines */}
+      {connections.map((conn, i) => (
+        <Line
+          key={i}
+          points={[nodePositions[conn[0]], nodePositions[conn[1]]]}
+          color="#3b82f6"
+          lineWidth={1.5}
+          transparent
+          opacity={0.4}
+        />
+      ))}
+
+      {/* Nodes */}
+      {nodePositions.map((pos, i) => (
+        <Sphere key={i} ref={(el) => (nodesRef.current[i] = el)} position={pos} args={[i === 0 ? 0.5 : 0.3, 32, 32]}>
+          <meshStandardMaterial
+            color={colors[i % colors.length]}
+            metalness={0.8}
+            roughness={0.2}
+            emissive={colors[i % colors.length]}
+            emissiveIntensity={0.5}
+          />
+        </Sphere>
+      ))}
+    </group>
+  )
+}
+
+function RiskShield() {
+  const shieldRef = useRef()
+
+  useFrame((state) => {
+    if (shieldRef.current) {
+      shieldRef.current.rotation.y = state.clock.getElapsedTime() * 0.3
+      const scale = 1 + Math.sin(state.clock.getElapsedTime() * 2) * 0.1
+      shieldRef.current.scale.set(scale, scale, scale)
+    }
+  })
+
+  return (
+    <group ref={shieldRef}>
+      <Sphere args={[1.5, 32, 32]}>
+        <meshStandardMaterial color="#ef4444" transparent opacity={0.3} metalness={0.8} roughness={0.2} wireframe />
+      </Sphere>
+      <Sphere args={[1.2, 32, 32]}>
+        <meshStandardMaterial color="#f59e0b" transparent opacity={0.4} metalness={0.8} roughness={0.2} />
+      </Sphere>
+    </group>
+  )
+}
+
+function SecurityLock() {
+  const lockRef = useRef()
+
+  useFrame((state) => {
+    if (lockRef.current) {
+      lockRef.current.rotation.y = Math.sin(state.clock.getElapsedTime() * 0.5) * 0.3
+    }
+  })
+
+  return (
+    <group ref={lockRef}>
+      <Box args={[1.5, 2, 1]} position={[0, -0.5, 0]}>
+        <meshStandardMaterial color="#059669" metalness={0.9} roughness={0.1} />
+      </Box>
+      <Torus args={[0.8, 0.2, 16, 32]} position={[0, 0.8, 0]}>
+        <meshStandardMaterial color="#10b981" metalness={0.9} roughness={0.1} />
+      </Torus>
+      <Sphere args={[0.3, 32, 32]} position={[0, -0.5, 0.6]}>
+        <meshStandardMaterial color="#fbbf24" emissive="#fbbf24" emissiveIntensity={0.8} />
+      </Sphere>
+    </group>
+  )
+}
+
+function ClientPortal() {
+  const groupRef = useRef()
+
+  useFrame((state) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y = state.clock.getElapsedTime() * 0.2
+    }
+  })
+
+  return (
+    <group ref={groupRef}>
+      <Torus args={[2, 0.1, 16, 100]}>
+        <meshStandardMaterial color="#6366f1" emissive="#6366f1" emissiveIntensity={0.5} />
+      </Torus>
+      <Torus args={[1.5, 0.08, 16, 100]}>
+        <meshStandardMaterial color="#8b5cf6" emissive="#8b5cf6" emissiveIntensity={0.5} />
+      </Torus>
+      <Torus args={[1, 0.06, 16, 100]}>
+        <meshStandardMaterial color="#a855f7" emissive="#a855f7" emissiveIntensity={0.5} />
+      </Torus>
+      <Sphere args={[0.4, 32, 32]}>
+        <meshStandardMaterial color="#ffffff" emissive="#ffffff" emissiveIntensity={1} />
+      </Sphere>
+    </group>
+  )
+}
+
+function CanvasWrapper({ children, ...props }) {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return <div style={{ width: "100%", height: "100%", background: "#0a0a0a" }} />
+  }
+
+  return <Canvas {...props}>{children}</Canvas>
+}
+
 export default function Technology3D() {
   const [activeSection, setActiveSection] = useState(0)
 
@@ -35,23 +308,15 @@ export default function Technology3D() {
     <div className="Technology3d-page">
       {/* Hero Section */}
       <section className="Technology3d-hero">
-        <div className="Technology3d-hero-3d">
-          <div className="Technology3d-hero-sphere"></div>
-          <div className="Technology3d-hero-ring"></div>
-          <div className="Technology3d-hero-particles">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="Technology3d-particle"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${3 + Math.random() * 2}s`,
-                }}
-              />
-            ))}
-          </div>
+        <div className="Technology3d-hero-canvas">
+          <CanvasWrapper camera={{ position: [0, 0, 5], fov: 50 }}>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} intensity={1} />
+            <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
+            <AnimatedSphere />
+            <Environment preset="city" />
+            <OrbitControls enableZoom={false} enablePan={false} />
+          </CanvasWrapper>
         </div>
         <div className="Technology3d-hero-content">
           <h1 className="Technology3d-hero-title">Technology</h1>
@@ -101,12 +366,14 @@ export default function Technology3D() {
               Learn More →
             </Link>
           </div>
-          <div className="Technology3d-visual-container">
-            <img
-              src={RealtimeData}
-              alt="Real Time Data Infrastructure"
-              className="Technology3d-visual-image"
-            />
+          <div className="Technology3d-canvas-container">
+            <CanvasWrapper camera={{ position: [0, 0, 8], fov: 50 }}>
+              <ambientLight intensity={0.5} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <spotLight position={[0, 10, 0]} intensity={0.5} color="#3b82f6" />
+              <DataGlobe />
+              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
+            </CanvasWrapper>
           </div>
         </div>
       </section>
@@ -114,12 +381,15 @@ export default function Technology3D() {
       {/* AI Enhanced Investment Models */}
       <section className="Technology3d-section Technology3d-section-dark">
         <div className="Technology3d-section-content Technology3d-section-reverse">
-          <div className="Technology3d-visual-container">
-            <img
-              src={AI3D}
-              alt="AI Enhanced Investment Models"
-              className="Technology3d-visual-image"
-            />
+          <div className="Technology3d-canvas-container">
+            <CanvasWrapper camera={{ position: [0, 0, 6], fov: 50 }}>
+              <ambientLight intensity={0.5} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8b5cf6" />
+              <AIBrain />
+              <Environment preset="night" />
+              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
+            </CanvasWrapper>
           </div>
           <div className="Technology3d-text-content">
             <div className="Technology3d-label">ARTIFICIAL INTELLIGENCE</div>
@@ -196,12 +466,14 @@ export default function Technology3D() {
               Learn More →
             </Link>
           </div>
-          <div className="Technology3d-visual-container">
-            <img
-              src={Pms3D}
-              alt="Portfolio Management System"
-              className="Technology3d-visual-image"
-            />
+          <div className="Technology3d-canvas-container">
+            <CanvasWrapper camera={{ position: [0, 2, 8], fov: 50 }}>
+              <ambientLight intensity={0.5} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <spotLight position={[0, 10, 0]} intensity={0.8} color="#0ea5e9" />
+              <PortfolioNodes />
+              <OrbitControls enableZoom={false} />
+            </CanvasWrapper>
           </div>
         </div>
       </section>
@@ -209,8 +481,15 @@ export default function Technology3D() {
       {/* Risk Command Center */}
       <section className="Technology3d-section Technology3d-section-dark">
         <div className="Technology3d-section-content Technology3d-section-reverse">
-          <div className="Technology3d-visual-container">
-            <img src={Risk3D} alt="Risk Command Center" className="Technology3d-visual-image" />
+          <div className="Technology3d-canvas-container">
+            <CanvasWrapper camera={{ position: [0, 0, 6], fov: 50 }}>
+              <ambientLight intensity={0.5} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <pointLight position={[-10, 0, -10]} intensity={0.8} color="#ef4444" />
+              <RiskShield />
+              <Environment preset="sunset" />
+              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.8} />
+            </CanvasWrapper>
           </div>
           <div className="Technology3d-text-content">
             <div className="Technology3d-label">RISK MANAGEMENT</div>
@@ -287,12 +566,14 @@ export default function Technology3D() {
               Learn More →
             </Link>
           </div>
-          <div className="Technology3d-visual-container">
-            <img
-              src={Cyber3D}
-              alt="Cybersecurity & Data Governance"
-              className="Technology3d-visual-image"
-            />
+          <div className="Technology3d-canvas-container">
+            <CanvasWrapper camera={{ position: [0, 0, 6], fov: 50 }}>
+              <ambientLight intensity={0.5} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <spotLight position={[0, 5, 5]} intensity={1} color="#10b981" />
+              <SecurityLock />
+              <OrbitControls enableZoom={false} />
+            </CanvasWrapper>
           </div>
         </div>
       </section>
@@ -300,8 +581,15 @@ export default function Technology3D() {
       {/* Client Command Portal */}
       <section className="Technology3d-section Technology3d-section-dark">
         <div className="Technology3d-section-content Technology3d-section-reverse">
-          <div className="Technology3d-visual-container">
-            <img src={Client3D} alt="Client Command Portal" className="Technology3d-visual-image" />
+          <div className="Technology3d-canvas-container">
+            <CanvasWrapper camera={{ position: [0, 0, 6], fov: 50 }}>
+              <ambientLight intensity={0.5} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <pointLight position={[-10, -10, -10]} intensity={0.5} color="#6366f1" />
+              <ClientPortal />
+              <Environment preset="studio" />
+              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.5} />
+            </CanvasWrapper>
           </div>
           <div className="Technology3d-text-content">
             <div className="Technology3d-label">CLIENT EXPERIENCE</div>

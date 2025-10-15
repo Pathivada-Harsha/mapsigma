@@ -1,7 +1,5 @@
-"use client"
-
 import { useState, useEffect, useRef } from "react"
-import { NavLink } from "react-router-dom" // Add this import
+import { NavLink } from "react-router-dom"
 import "../components_css/Ri-Hero.css"
 import hero1 from "./../images/Research&insights/ri1.png"
 import hero2 from "./../images/Research&insights/ri2.png"
@@ -26,7 +24,7 @@ const HeroCarousel = () => {
             description:
                 "At MAPSIGMA CAPITAL, we go beyond headlines. Our research uncovers patterns, opportunities, and risks others overlook—helping clients make decisions with clarity and conviction.",
             buttonText: "Explore Insights",
-            buttonLink: "/Insights", // Add link property
+            buttonLink: "/Insights",
             illustration: hero6,
         },
         {
@@ -35,7 +33,7 @@ const HeroCarousel = () => {
             description:
                 "Markets shift daily, but principles stand firm. Our insights cut through noise, grounded in discipline, precision, and decades of real-world experience.",
             buttonText: "Read Principles",
-            buttonLink: "/Principles", // Add link property
+            buttonLink: "/Principles",
             illustration: hero7,
         },
         {
@@ -44,7 +42,7 @@ const HeroCarousel = () => {
             description:
                 "Our insights connect technology, global markets, and human values. We provide foresight that protects today and builds for tomorrow.",
             buttonText: "Discover More",
-            buttonLink: "/Technology", // Add link property
+            buttonLink: "/Technology",
             illustration: hero8,
         },
     ]
