@@ -7,7 +7,7 @@
   height: 100vh;
   max-height: 900px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8fafb 0%, #e8edf2 50%, #dfe6ed 100%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(200, 200, 200, 0.2)), url("../images/Research&insights/Homebg3.png");
   margin-top: -120px; /* Negative margin to overlap with padding from App.js */
   padding-top: 120px; /* Add padding back to maintain internal spacing */
 }

@@ -29,7 +29,6 @@ const LeadershipDetailPage = () => {
         .leadership-detail-page {
           background-color: #f9fafb;
           min-height: 100vh;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
         
         .leadership-back-button {
