@@ -246,7 +246,7 @@ export default function ResearchInsights() {
                   border: 'none',
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
-                  color: '#fff',
+                  color: '#fff !important',
                   opacity: 0.8,
                   cursor: 'pointer',
                   padding: '0',
@@ -336,53 +336,62 @@ export default function ResearchInsights() {
                 </ul>
 
                 <p style={{ marginTop: '1.5rem', color: '#fff', fontWeight: '500' }}>
-                  By clicking "Agree," I certify that I have read, understood, and accepted
+                  By clicking "<span style={{ color: "red", fontWeight: "bold" }}>Agree</span>," I certify that I have read, understood, and accepted
                   the above Disclaimer, Terms of Use, and Privacy Policy of MAPSIGMA CAPITAL.
                 </p>
               </div>
 
             </div>
 
-            {/* Scroll Indicator */}
-            {!isScrolledToBottom && (
-              <div style={{ padding: '0.5rem 1rem', textAlign: 'center', fontSize: '0.875rem', color: '#fbbf24' }}>
-                Please scroll to the bottom to enable the Agree button
-              </div>
-            )}
+
 
             {/* Modal Footer */}
-            <div className="modal-footer" style={{ borderTop: '1px solid #495057', padding: '1rem', display: 'flex', justifyContent: 'flex-end', gap: '0.5rem' }}>
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={handleCancel}
-                style={{
-                  padding: '0.5rem 1.5rem',
-                  backgroundColor: '#6c757d',
-                  border: 'none',
-                  borderRadius: '4px',
-                  color: 'white',
-                  cursor: 'pointer'
-                }}
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={handleAgree}
-                disabled={!isScrolledToBottom}
-                style={{
-                  padding: '0.5rem 1.5rem',
-                  backgroundColor: isScrolledToBottom ? '#0d6efd' : '#495057',
-                  border: 'none',
-                  borderRadius: '4px',
-                  color: isScrolledToBottom ? 'white' : '#6c757d',
-                  cursor: isScrolledToBottom ? 'pointer' : 'not-allowed'
-                }}
-              >
-                Agree
-              </button>
+            {/* Modal Footer */}
+            <div className="modal-footer" style={{ borderTop: '1px solid #495057', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+              {/* Scroll Indicator - Left Side */}
+              <div style={{ flex: '1' }}>
+                {!isScrolledToBottom && (
+                  <div style={{ fontSize: '1rem', color: '#fbbf24' }}>
+                    * SCROLL DOWN TO AGREE
+                  </div>
+                )}
+              </div>
+
+              {/* Buttons - Right Side */}
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={handleCancel}
+                  style={{
+                    padding: '0.5rem 1.5rem',
+                    backgroundColor: '#6c757d',
+                    border: 'none',
+                    borderRadius: '4px',
+                    color: 'white',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleAgree}
+                  disabled={!isScrolledToBottom}
+                  style={{
+                    padding: '0.5rem 1.5rem',
+                    backgroundColor: isScrolledToBottom ? '#0d6efd' : '#495057',
+                    border: 'none',
+                    borderRadius: '4px',
+                    color: isScrolledToBottom ? 'white' : '#6c757d',
+                    cursor: isScrolledToBottom ? 'pointer' : 'not-allowed'
+                  }}
+                >
+                  Agree
+                </button>
+              </div>
             </div>
 
           </div>
