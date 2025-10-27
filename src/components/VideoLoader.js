@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import video_03 from '../videos/video_03.mp4';  // ✅ Imported video
+import video_03 from '../videos/video_05.mp4';  // ✅ Imported video
 
 export default function VideoLoader({ onFinish }) {
   const videoRef = useRef(null); // ✅ Should be null initially
@@ -15,7 +15,7 @@ export default function VideoLoader({ onFinish }) {
     video.addEventListener("ended", handleEnd);
 
     // ✅ Fallback in case video fails to play
-    const fallback = setTimeout(handleEnd, 7000);
+    const fallback = setTimeout(handleEnd, 10000);
 
     return () => {
       video.removeEventListener("ended", handleEnd);
